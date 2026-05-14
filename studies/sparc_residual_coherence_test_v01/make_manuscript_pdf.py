@@ -424,8 +424,8 @@ def forest_rows() -> list[dict[str, object]]:
 def control_forest_drawing() -> Drawing:
     rows = forest_rows()
     drawing = Drawing(500, 280)
-    left, right = 210, 430
-    top, row_gap = 220, 30
+    left, right = 225, 425
+    top, row_gap = 220, 31
     scale_min, scale_max = -0.12, 0.23
 
     def x(value: float) -> float:
@@ -436,22 +436,21 @@ def control_forest_drawing() -> Drawing:
     drawing.add(Line(x(0), 48, x(0), 238, strokeColor=colors.HexColor("#777777"), strokeWidth=0.7, strokeDashArray=[4, 3]))
     for tick in [-0.1, 0.0, 0.1, 0.2]:
         drawing.add(Line(x(tick), 38, x(tick), 46, strokeColor=colors.black, strokeWidth=0.5))
-        drawing.add(String(x(tick), 25, f"{tick:.1f}", fontName="Helvetica", fontSize=8, textAnchor="middle"))
+        drawing.add(String(x(tick), 25, f"{tick:.2f}", fontName="Helvetica", fontSize=8.5, textAnchor="middle"))
     for idx, row in enumerate(rows):
         y = top - idx * row_gap
         effect = float(row["effect"])
         ci_low = row["ci_low"]
         ci_high = row["ci_high"]
-        drawing.add(String(18, y - 3, str(row["label"]), fontName="Helvetica", fontSize=8.8, textAnchor="start"))
+        drawing.add(String(18, y - 3, str(row["label"]), fontName="Helvetica", fontSize=9.2, textAnchor="start"))
         drawing.add(String(470, y - 3, f"p={float(row['p']):.4f}", fontName="Helvetica", fontSize=8.2, textAnchor="end"))
         if ci_low is not None and ci_high is not None:
             drawing.add(Line(x(float(ci_low)), y, x(float(ci_high)), y, strokeColor=colors.HexColor("#116466"), strokeWidth=3.4))
         else:
             drawing.add(Line(x(effect) - 7, y, x(effect) + 7, y, strokeColor=colors.HexColor("#116466"), strokeWidth=3.4))
         drawing.add(Circle(x(effect), y, 3.8, fillColor=colors.HexColor("#d1495b"), strokeColor=None))
-        drawing.add(String(x(effect), y + 10, fmt(effect, 3), fontName="Helvetica", fontSize=7.5, textAnchor="middle"))
-        drawing.add(String(18, y - 14, str(row["detail"]), fontName="Helvetica", fontSize=7.2, fillColor=colors.HexColor("#555555")))
-    drawing.add(String(250, 8, "median residual difference; positive supports C>A", fontName="Helvetica", fontSize=7.8, textAnchor="middle"))
+        drawing.add(String(x(effect), y + 10, fmt(effect, 3), fontName="Helvetica", fontSize=8, textAnchor="middle"))
+    drawing.add(String(250, 8, "C-A median rms-log residual difference", fontName="Helvetica", fontSize=8.3, textAnchor="middle"))
     return drawing
 
 
@@ -598,9 +597,9 @@ def svg_text(x: float, y: float, text: str, size: int = 12, anchor: str = "middl
 
 def render_control_forest_svg() -> str:
     rows = forest_rows()
-    width, height = 760, 430
-    left, right = 310, 680
-    top, row_gap = 95, 45
+    width, height = 760, 405
+    left, right = 335, 665
+    top, row_gap = 88, 43
     scale_min, scale_max = -0.12, 0.23
 
     def x(value: float) -> float:
@@ -610,20 +609,19 @@ def render_control_forest_svg() -> str:
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<rect width="100%" height="100%" fill="white"/>',
         svg_text(width / 2, 32, "C-minus-A control effects", size=20),
-        f'<line x1="{left}" y1="370" x2="{right}" y2="370" stroke="#333"/>',
-        f'<line x1="{x(0):.2f}" y1="62" x2="{x(0):.2f}" y2="370" stroke="#777" stroke-dasharray="5,5"/>',
+        f'<line x1="{left}" y1="350" x2="{right}" y2="350" stroke="#333"/>',
+        f'<line x1="{x(0):.2f}" y1="58" x2="{x(0):.2f}" y2="350" stroke="#777" stroke-dasharray="5,5"/>',
     ]
     for tick in [-0.1, 0.0, 0.1, 0.2]:
-        parts.append(f'<line x1="{x(tick):.2f}" y1="365" x2="{x(tick):.2f}" y2="376" stroke="#333"/>')
-        parts.append(svg_text(x(tick), 394, f"{tick:.1f}", size=12))
+        parts.append(f'<line x1="{x(tick):.2f}" y1="345" x2="{x(tick):.2f}" y2="356" stroke="#333"/>')
+        parts.append(svg_text(x(tick), 374, f"{tick:.2f}", size=12))
     for idx, row in enumerate(rows):
         y = top + idx * row_gap
         effect = float(row["effect"])
         ci_low = row["ci_low"]
         ci_high = row["ci_high"]
-        parts.append(svg_text(36, y + 4, str(row["label"]), size=13, anchor="start"))
-        parts.append(svg_text(36, y + 22, str(row["detail"]), size=11, anchor="start"))
-        parts.append(svg_text(725, y + 4, f"p={float(row['p']):.4f}", size=12, anchor="end"))
+        parts.append(svg_text(42, y + 4, str(row["label"]), size=14, anchor="start"))
+        parts.append(svg_text(710, y + 4, f"p={float(row['p']):.4f}", size=12, anchor="end"))
         if ci_low is not None and ci_high is not None:
             parts.append(
                 f'<line x1="{x(float(ci_low)):.2f}" y1="{y:.2f}" x2="{x(float(ci_high)):.2f}" y2="{y:.2f}" '
@@ -636,7 +634,7 @@ def render_control_forest_svg() -> str:
             )
         parts.append(f'<circle cx="{x(effect):.2f}" cy="{y:.2f}" r="6" fill="#d1495b"/>')
         parts.append(svg_text(x(effect), y - 14, fmt(effect, 3), size=11))
-    parts.append(svg_text(width / 2, 418, "median residual difference; positive supports C>A", size=12))
+    parts.append(svg_text(width / 2, 397, "C-A median rms-log residual difference", size=12))
     parts.append("</svg>")
     return "\n".join(parts)
 

@@ -87,7 +87,12 @@ def render_class_scatter_svg(
                 f'fill="{colors[label]}" opacity="0.68"/>'
             )
 
-    parts.append(_svg_text(22, (top + bottom) / 2, ylabel or metric, size=14, anchor="middle"))
+    axis_label = ylabel or metric
+    axis_y = (top + bottom) / 2
+    parts.append(
+        f'<text x="24.00" y="{axis_y:.2f}" font-family="Arial, sans-serif" font-size="14" '
+        f'text-anchor="middle" fill="#222" transform="rotate(-90 24.00 {axis_y:.2f})">{axis_label}</text>'
+    )
     parts.append("</svg>")
     return "\n".join(parts)
 

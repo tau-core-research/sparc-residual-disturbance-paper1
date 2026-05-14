@@ -94,5 +94,5 @@
 <circle cx="573.00" cy="330.87" r="4.5" fill="#f03b20" opacity="0.68"/>
 <circle cx="569.00" cy="250.58" r="4.5" fill="#f03b20" opacity="0.68"/>
 <circle cx="565.00" cy="356.62" r="4.5" fill="#f03b20" opacity="0.68"/>
-<text x="22.00" y="225.00" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#222">rms-log residual</text>
+<text x="24.00" y="225.00" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#222" transform="rotate(-90 24.00 225.00)">rms-log residual</text>
 </svg>
