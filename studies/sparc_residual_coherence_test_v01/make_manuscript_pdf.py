@@ -864,8 +864,8 @@ def main() -> None:
     render_pdf(
         SOURCE,
         PDF,
-        "SPARC residual-disturbance manuscript",
-        "SPARC residual-disturbance manuscript",
+        "SPARC residual-disturbance audit",
+        "SPARC residual-disturbance audit",
     )
 
 
