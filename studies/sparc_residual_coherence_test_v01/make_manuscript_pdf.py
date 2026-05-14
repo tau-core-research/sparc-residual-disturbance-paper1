@@ -92,6 +92,7 @@ styles.add(
         leading=16,
         spaceBefore=14,
         spaceAfter=8,
+        keepWithNext=True,
     )
 )
 styles.add(
@@ -103,6 +104,7 @@ styles.add(
         leading=14,
         spaceBefore=10,
         spaceAfter=5,
+        keepWithNext=True,
     )
 )
 styles.add(
