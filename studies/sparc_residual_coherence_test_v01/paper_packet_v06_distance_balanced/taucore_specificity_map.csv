@@ -1,0 +1,15 @@
+BinType,Bin,Comparator,ComparatorLabel,N_A_points,N_C_points,MedianProjectionMinusComparator_A,MedianProjectionMinusComparator_C,Interaction_CminusA,MedianProjectionMinusComparator_All
+acceleration,aN/a0<0.1,mond_simple_mu,MOND simple-mu,157,303,0.0238476,-0.0416805,-0.0655281,-0.0333922
+acceleration,aN/a0<0.1,rar_mcgaugh,Empirical RAR,157,303,0.0248166,-0.0402755,-0.0650921,-0.0318476
+acceleration,0.1<=aN/a0<0.3,mond_simple_mu,MOND simple-mu,126,85,0.0124534,-0.0134135,-0.0258669,0.0016773
+acceleration,0.1<=aN/a0<0.3,rar_mcgaugh,Empirical RAR,126,85,0.00830936,-0.00955068,-0.01786,0.00430625
+acceleration,0.3<=aN/a0<1,mond_simple_mu,MOND simple-mu,93,53,-0.0122968,-0.0127821,-0.000485278,-0.0124131
+acceleration,0.3<=aN/a0<1,rar_mcgaugh,Empirical RAR,93,53,-0.00645424,-0.00654285,-8.86078e-05,-0.00648245
+acceleration,aN/a0>=1,mond_simple_mu,MOND simple-mu,17,92,-0.0185596,-0.0164417,0.00211792,-0.0171694
+acceleration,aN/a0>=1,rar_mcgaugh,Empirical RAR,17,92,-0.00156962,0.00198203,0.00355165,0.00172143
+radius,inner_R<0.33Rmax,mond_simple_mu,MOND simple-mu,172,225,-0.0122363,-0.0159375,-0.00370117,-0.0129087
+radius,inner_R<0.33Rmax,rar_mcgaugh,Empirical RAR,172,225,0.00319626,-0.00203714,-0.0052334,-0.00143064
+radius,middle_0.33-0.67Rmax,mond_simple_mu,MOND simple-mu,105,149,0.0130667,-0.0131298,-0.0261965,-0.0122109
+radius,middle_0.33-0.67Rmax,rar_mcgaugh,Empirical RAR,105,149,0.00937641,-0.00653777,-0.0159142,-0.0064438
+radius,outer_R>=0.67Rmax,mond_simple_mu,MOND simple-mu,116,159,-0.0124207,-0.0303973,-0.0179766,-0.0174546
+radius,outer_R>=0.67Rmax,rar_mcgaugh,Empirical RAR,116,159,-0.00785969,-0.028563,-0.0207033,-0.0143205

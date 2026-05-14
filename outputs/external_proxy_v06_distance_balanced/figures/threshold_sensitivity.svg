@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420">
+<rect width="100%" height="100%" fill="white"/>
+<text x="380.00" y="30.00" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#222">C-minus-nonC sensitivity across quality cuts</text>
+<text x="420.00" y="58.00" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#222">max mean Vobs error</text>
+<text x="190.00" y="58.00" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#222">4</text>
+<text x="310.00" y="58.00" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#222">6</text>
+<text x="430.00" y="58.00" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#222">8</text>
+<text x="112.00" y="109.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">6</text>
+<rect x="130.00" y="70.00" width="116" height="66" fill="#90d040" stroke="#444"/>
+<text x="188.00" y="98.00" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#222">0.074</text>
+<text x="188.00" y="119.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">nC=22</text>
+<rect x="250.00" y="70.00" width="116" height="66" fill="#a2d65d" stroke="#444"/>
+<text x="308.00" y="98.00" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#222">0.062</text>
+<text x="308.00" y="119.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">nC=33</text>
+<rect x="370.00" y="70.00" width="116" height="66" fill="#b6dc7c" stroke="#444"/>
+<text x="428.00" y="98.00" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#222">0.049</text>
+<text x="428.00" y="119.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">nC=35</text>
+<text x="112.00" y="179.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">8</text>
+<rect x="130.00" y="140.00" width="116" height="66" fill="#8fcf3f" stroke="#444"/>
+<text x="188.00" y="168.00" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#222">0.075</text>
+<text x="188.00" y="189.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">nC=20</text>
+<rect x="250.00" y="140.00" width="116" height="66" fill="#96d24a" stroke="#444"/>
+<text x="308.00" y="168.00" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#222">0.070</text>
+<text x="308.00" y="189.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">nC=28</text>
+<rect x="370.00" y="140.00" width="116" height="66" fill="#9ed457" stroke="#444"/>
+<text x="428.00" y="168.00" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#222">0.065</text>
+<text x="428.00" y="189.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">nC=30</text>
+<text x="112.00" y="249.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">10</text>
+<rect x="130.00" y="210.00" width="116" height="66" fill="#95d148" stroke="#444"/>
+<text x="188.00" y="238.00" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#222">0.071</text>
+<text x="188.00" y="259.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">nC=14</text>
+<rect x="250.00" y="210.00" width="116" height="66" fill="#a4d660" stroke="#444"/>
+<text x="308.00" y="238.00" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#222">0.061</text>
+<text x="308.00" y="259.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">nC=20</text>
+<rect x="370.00" y="210.00" width="116" height="66" fill="#b9dd81" stroke="#444"/>
+<text x="428.00" y="238.00" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#222">0.047</text>
+<text x="428.00" y="259.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">nC=22</text>
+<text x="112.00" y="319.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">12</text>
+<rect x="130.00" y="280.00" width="116" height="66" fill="#87cd32" stroke="#444"/>
+<text x="188.00" y="308.00" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#222">0.080</text>
+<text x="188.00" y="329.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">nC=12</text>
+<rect x="250.00" y="280.00" width="116" height="66" fill="#9cd454" stroke="#444"/>
+<text x="308.00" y="308.00" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#222">0.066</text>
+<text x="308.00" y="329.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">nC=16</text>
+<rect x="370.00" y="280.00" width="116" height="66" fill="#b2db76" stroke="#444"/>
+<text x="428.00" y="308.00" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#222">0.051</text>
+<text x="428.00" y="329.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">nC=18</text>
+<text x="34.00" y="210.00" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#222">min points</text>
+</svg>

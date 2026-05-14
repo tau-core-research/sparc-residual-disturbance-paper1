@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sparc-residual-disturbance-paper1"
+version = "0.1.0"
+description = "Reproducibility package for the SPARC residual-disturbance Paper 1 audit"
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "reportlab",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

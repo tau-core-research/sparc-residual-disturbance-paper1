@@ -1,0 +1,176 @@
+galaxy_name,n_points,mean_err_vobs_kms,max_radius_kpc,hubble_type,distance_quality,inclination_deg,inclination_error_deg,suggested_class,suggested_proxy,label_confidence,reason
+CamB,9,1.5,1.79,10,2,65.0,5.0,B,0.5,Low,low mean Vobs error; short radial coverage; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+D512-2,4,3.8975,3.83,10,1,56.0,10.0,C,0.0,Low,few rotation-curve points; large inclination uncertainty; good distance-quality flag; irregular/dwarf Hubble type
+D564-8,6,1.75,3.07,10,2,63.0,7.0,C,0.0,Low,few rotation-curve points; low mean Vobs error; good distance-quality flag; irregular/dwarf Hubble type
+D631-7,16,2.440625,7.19,10,2,59.0,3.0,B,0.5,Medium,many rotation-curve points; low mean Vobs error; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+DDO064,14,5.077857142857143,2.98,10,1,60.0,5.0,C,0.0,Low,short radial coverage; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+DDO154,12,0.6250000000000001,5.92,10,2,64.0,3.0,B,0.5,Medium,low mean Vobs error; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+DDO161,31,2.346774193548387,13.37,10,1,70.0,10.0,B,0.5,Low,many rotation-curve points; low mean Vobs error; extended radial coverage; large inclination uncertainty; good distance-quality flag; irregular/dwarf Hubble type
+DDO168,10,1.94,4.12,10,2,63.0,6.0,B,0.5,Medium,low mean Vobs error; good distance-quality flag; irregular/dwarf Hubble type
+DDO170,8,1.3875,12.33,10,1,66.0,7.0,B,0.5,Medium,low mean Vobs error; extended radial coverage; good distance-quality flag; irregular/dwarf Hubble type
+ESO079-G014,15,5.7186666666666675,16.67,4,1,79.0,5.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+ESO116-G012,15,3.134666666666667,9.86,7,1,74.0,3.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+ESO444-G084,7,3.2157142857142853,4.44,10,2,32.0,6.0,C,0.0,Low,few rotation-curve points; good distance-quality flag; irregular/dwarf Hubble type
+ESO563-G021,30,9.091333333333333,42.41,4,1,83.0,3.0,B,0.5,Medium,many rotation-curve points; high mean Vobs error; extended radial coverage; good distance-quality flag; disk-like Hubble type
+F561-1,6,5.833333333333333,9.66,9,1,24.0,10.0,C,0.0,Low,few rotation-curve points; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag
+F563-1,17,13.528235294117646,20.1,9,1,25.0,5.0,C,0.0,Low,many rotation-curve points; high mean Vobs error; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag
+F563-V1,6,5.0,7.87,10,1,60.0,10.0,C,0.0,Low,few rotation-curve points; large inclination uncertainty; good distance-quality flag; irregular/dwarf Hubble type
+F563-V2,10,18.232,10.47,10,1,29.0,10.0,C,0.0,Low,high mean Vobs error; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag; irregular/dwarf Hubble type
+F565-V2,7,7.428571428571429,8.8,10,1,60.0,10.0,C,0.0,Low,few rotation-curve points; extended radial coverage; large inclination uncertainty; good distance-quality flag; irregular/dwarf Hubble type
+F567-2,5,7.2,9.59,9,1,20.0,10.0,C,0.0,Low,few rotation-curve points; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag
+F568-1,12,12.481666666666664,13.23,5,1,26.0,5.0,C,0.0,Low,high mean Vobs error; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag; disk-like Hubble type
+F568-3,18,8.803888888888888,17.98,7,1,40.0,10.0,B,0.5,Low,many rotation-curve points; high mean Vobs error; extended radial coverage; large inclination uncertainty; good distance-quality flag; disk-like Hubble type
+F568-V1,15,16.28,17.63,7,1,40.0,10.0,B,0.5,Low,many rotation-curve points; high mean Vobs error; extended radial coverage; large inclination uncertainty; good distance-quality flag; disk-like Hubble type
+F571-8,13,5.123076923076923,15.55,5,1,85.0,5.0,B,0.5,Medium,extended radial coverage; good distance-quality flag; disk-like Hubble type
+F571-V1,7,7.285714285714286,13.59,7,1,30.0,10.0,C,0.0,Low,few rotation-curve points; extended radial coverage; large inclination uncertainty; good distance-quality flag; disk-like Hubble type
+F574-1,14,4.6,12.6,7,1,65.0,10.0,B,0.5,Medium,extended radial coverage; large inclination uncertainty; good distance-quality flag; disk-like Hubble type
+F574-2,5,8.8,10.83,9,1,30.0,10.0,C,0.0,Low,few rotation-curve points; high mean Vobs error; extended radial coverage; large inclination uncertainty; good distance-quality flag
+F579-V1,14,11.82142857142857,15.16,5,1,26.0,10.0,C,0.0,Low,high mean Vobs error; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag; disk-like Hubble type
+F583-1,25,7.5164,16.26,9,1,63.0,5.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag
+F583-4,12,4.949999999999999,7.29,5,1,55.0,10.0,B,0.5,Medium,large inclination uncertainty; good distance-quality flag; disk-like Hubble type
+IC2574,34,3.2411764705882353,10.23,9,2,75.0,7.0,B,0.5,Medium,many rotation-curve points; extended radial coverage; good distance-quality flag
+IC4202,32,7.367499999999997,25.9,4,1,90.0,1.0,B,0.5,Low,many rotation-curve points; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag; disk-like Hubble type
+KK98-251,15,2.0,3.13,10,1,59.0,5.0,B,0.5,Medium,many rotation-curve points; low mean Vobs error; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+NGC0024,29,7.6162068965517244,11.27,5,2,64.0,3.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC0055,21,3.8619047619047624,13.5,9,2,77.0,3.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag
+NGC0100,21,5.564285714285715,9.62,6,1,89.0,1.0,B,0.5,Low,many rotation-curve points; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag; disk-like Hubble type
+NGC0247,26,5.003846153846155,14.54,7,2,74.0,3.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC0289,28,11.590000000000003,71.12,4,1,46.0,5.0,B,0.5,Medium,many rotation-curve points; high mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC0300,25,6.4639999999999995,11.8,7,2,42.0,10.0,B,0.5,Medium,many rotation-curve points; extended radial coverage; large inclination uncertainty; good distance-quality flag; disk-like Hubble type
+NGC0801,13,5.2846153846153845,59.82,5,1,80.0,1.0,A,1.0,Medium,extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC0891,18,4.495,17.11,3,2,90.0,1.0,B,0.5,Low,many rotation-curve points; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag; disk-like Hubble type
+NGC1003,36,2.897222222222222,30.24,6,1,67.0,5.0,A,1.0,Medium,many rotation-curve points; low mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC1090,24,4.5516666666666685,30.09,4,1,64.0,3.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC1705,14,5.7492857142857146,6.0,11,2,80.0,10.0,C,0.0,Low,large inclination uncertainty; good distance-quality flag; irregular/dwarf Hubble type
+NGC2366,26,2.607307692307693,6.06,10,2,68.0,5.0,B,0.5,Medium,many rotation-curve points; low mean Vobs error; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+NGC2403,73,2.4208219178082198,20.87,6,2,63.0,3.0,A,1.0,Medium,many rotation-curve points; low mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC2683,11,9.0,34.62,3,2,80.0,5.0,B,0.5,Medium,high mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC2841,50,7.670200000000003,63.64,3,3,76.0,10.0,B,0.5,Medium,many rotation-curve points; extended radial coverage; large inclination uncertainty; good distance-quality flag; disk-like Hubble type
+NGC2903,34,4.029411764705882,24.96,4,1,66.0,3.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC2915,30,8.064333333333334,10.04,11,2,56.0,4.0,B,0.5,Low,many rotation-curve points; high mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+NGC2955,24,8.713749999999997,35.43,3,1,56.0,7.0,B,0.5,Medium,many rotation-curve points; high mean Vobs error; extended radial coverage; good distance-quality flag; disk-like Hubble type
+NGC2976,27,3.5051851851851854,2.27,5,2,61.0,10.0,B,0.5,Low,many rotation-curve points; short radial coverage; large inclination uncertainty; good distance-quality flag; disk-like Hubble type
+NGC2998,13,8.76923076923077,42.28,5,1,58.0,2.0,B,0.5,Medium,high mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC3109,25,2.752,6.45,9,2,70.0,5.0,A,1.0,Medium,many rotation-curve points; low mean Vobs error; well-conditioned inclination; good distance-quality flag
+NGC3198,43,5.043023255813953,44.08,5,3,73.0,3.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC3521,41,13.492439024390247,17.74,4,1,75.0,5.0,B,0.5,Medium,many rotation-curve points; high mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC3726,12,6.870833333333334,32.52,5,4,53.0,2.0,B,0.5,Medium,extended radial coverage; well-conditioned inclination; disk-like Hubble type
+NGC3741,21,2.3019047619047623,7.0,10,2,70.0,4.0,B,0.5,Medium,many rotation-curve points; low mean Vobs error; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+NGC3769,12,7.800000000000001,37.16,3,4,70.0,2.0,B,0.5,Medium,extended radial coverage; well-conditioned inclination; disk-like Hubble type
+NGC3877,13,6.376923076923077,11.35,5,4,76.0,1.0,B,0.5,Medium,extended radial coverage; well-conditioned inclination; disk-like Hubble type
+NGC3893,10,8.459999999999999,19.05,5,4,49.0,2.0,B,0.5,Medium,high mean Vobs error; extended radial coverage; well-conditioned inclination; disk-like Hubble type
+NGC3917,17,4.211764705882352,14.86,6,4,79.0,2.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; disk-like Hubble type
+NGC3949,7,9.9,7.07,4,4,55.0,2.0,C,0.0,Low,few rotation-curve points; high mean Vobs error; well-conditioned inclination; disk-like Hubble type
+NGC3953,8,6.65,15.68,4,4,62.0,1.0,B,0.5,Medium,extended radial coverage; well-conditioned inclination; disk-like Hubble type
+NGC3972,10,5.01,8.72,4,4,77.0,1.0,B,0.5,Medium,extended radial coverage; well-conditioned inclination; disk-like Hubble type
+NGC3992,9,6.4222222222222225,46.02,4,5,56.0,2.0,B,0.5,Medium,extended radial coverage; well-conditioned inclination; weak distance-quality flag; disk-like Hubble type
+NGC4010,12,5.458333333333335,10.47,7,4,89.0,1.0,C,0.0,Low,extended radial coverage; face-on or edge-on inclination risk; disk-like Hubble type
+NGC4013,36,5.694444444444445,31.01,3,4,89.0,1.0,B,0.5,Low,many rotation-curve points; extended radial coverage; face-on or edge-on inclination risk; disk-like Hubble type
+NGC4051,7,8.371428571428572,12.19,4,4,49.0,3.0,C,0.0,Low,few rotation-curve points; high mean Vobs error; extended radial coverage; well-conditioned inclination; disk-like Hubble type
+NGC4068,6,2.9866666666666664,2.33,10,2,44.0,6.0,C,0.0,Low,few rotation-curve points; low mean Vobs error; short radial coverage; good distance-quality flag; irregular/dwarf Hubble type
+NGC4085,7,5.871428571428571,6.2,5,4,82.0,2.0,C,0.0,Low,few rotation-curve points; disk-like Hubble type
+NGC4088,12,7.508333333333333,21.48,4,4,69.0,2.0,B,0.5,Medium,extended radial coverage; well-conditioned inclination; disk-like Hubble type
+NGC4100,24,6.270833333333333,22.76,4,4,73.0,2.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; disk-like Hubble type
+NGC4138,7,14.314285714285715,18.58,0,4,53.0,3.0,C,0.0,Low,few rotation-curve points; high mean Vobs error; extended radial coverage; well-conditioned inclination
+NGC4157,17,8.52941176470588,29.61,3,4,82.0,3.0,B,0.5,Medium,many rotation-curve points; high mean Vobs error; extended radial coverage; disk-like Hubble type
+NGC4183,23,5.960869565217393,21.02,6,4,82.0,2.0,B,0.5,Medium,many rotation-curve points; extended radial coverage; disk-like Hubble type
+NGC4214,14,6.63357142857143,5.63,10,2,15.0,10.0,C,0.0,Low,face-on or edge-on inclination risk; good distance-quality flag; irregular/dwarf Hubble type
+NGC4217,19,7.1078947368421055,16.72,3,4,86.0,2.0,B,0.5,Low,many rotation-curve points; extended radial coverage; face-on or edge-on inclination risk; disk-like Hubble type
+NGC4389,6,6.583333333333333,5.32,4,4,50.0,4.0,C,0.0,Low,few rotation-curve points; well-conditioned inclination; disk-like Hubble type
+NGC4559,32,5.450312500000001,20.97,6,1,67.0,1.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC5005,18,21.23722222222222,11.47,4,5,68.0,2.0,B,0.5,Low,many rotation-curve points; high mean Vobs error; extended radial coverage; well-conditioned inclination; weak distance-quality flag; disk-like Hubble type
+NGC5033,22,4.590909090909091,44.59,5,1,66.0,1.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC5055,28,3.3560714285714277,54.59,4,2,55.0,6.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; good distance-quality flag; disk-like Hubble type
+NGC5371,19,4.105263157894737,46.24,4,1,53.0,2.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC5585,24,2.223333333333333,10.96,7,1,51.0,2.0,A,1.0,Medium,many rotation-curve points; low mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC5907,19,3.5789473684210527,50.33,5,2,88.0,2.0,B,0.5,Low,many rotation-curve points; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag; disk-like Hubble type
+NGC5985,33,6.094242424242425,34.72,3,1,60.0,2.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC6015,44,3.9318181818181817,29.23,6,1,60.0,2.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC6195,23,7.274347826086957,36.43,3,1,62.0,5.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC6503,31,2.3548387096774195,23.5,6,2,74.0,2.0,A,1.0,Medium,many rotation-curve points; low mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC6674,15,8.266666666666667,72.41,3,1,54.0,6.0,B,0.5,Medium,many rotation-curve points; high mean Vobs error; extended radial coverage; good distance-quality flag; disk-like Hubble type
+NGC6789,4,5.3149999999999995,0.71,11,2,43.0,7.0,C,0.0,Low,few rotation-curve points; short radial coverage; good distance-quality flag; irregular/dwarf Hubble type
+NGC6946,58,6.241379310344827,20.4,6,2,38.0,2.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; good distance-quality flag; disk-like Hubble type
+NGC7331,36,5.138888888888889,36.31,3,3,75.0,2.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+NGC7793,46,6.9347826086956506,7.87,7,2,47.0,9.0,B,0.5,Medium,many rotation-curve points; good distance-quality flag; disk-like Hubble type
+NGC7814,18,5.610555555555554,19.53,2,2,90.0,1.0,B,0.5,Low,many rotation-curve points; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag
+PGC51017,6,2.256666666666667,3.63,11,2,66.0,3.0,C,0.0,Low,few rotation-curve points; low mean Vobs error; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+UGC00128,22,2.6354545454545457,53.75,8,1,57.0,10.0,B,0.5,Medium,many rotation-curve points; low mean Vobs error; extended radial coverage; large inclination uncertainty; good distance-quality flag
+UGC00191,9,2.2966666666666664,9.98,9,1,45.0,5.0,A,1.0,Medium,low mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag
+UGC00634,4,2.2725,18.01,9,1,37.0,8.0,B,0.5,Low,few rotation-curve points; low mean Vobs error; extended radial coverage; good distance-quality flag
+UGC00731,12,2.7966666666666664,10.91,10,1,57.0,3.0,B,0.5,Medium,low mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+UGC00891,5,1.2840000000000003,7.39,9,1,60.0,5.0,B,0.5,Low,few rotation-curve points; low mean Vobs error; well-conditioned inclination; good distance-quality flag
+UGC01230,11,11.372727272727273,36.54,9,1,22.0,10.0,C,0.0,Low,high mean Vobs error; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag
+UGC01281,25,4.8948,4.99,8,2,90.0,1.0,C,0.0,Low,many rotation-curve points; face-on or edge-on inclination risk; good distance-quality flag
+UGC02023,5,8.69,3.78,10,1,19.0,10.0,C,0.0,Low,few rotation-curve points; high mean Vobs error; face-on or edge-on inclination risk; good distance-quality flag; irregular/dwarf Hubble type
+UGC02259,8,2.2125,8.14,8,1,41.0,3.0,A,1.0,Medium,low mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag
+UGC02455,8,3.64,4.03,10,1,51.0,5.0,B,0.5,Medium,well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+UGC02487,17,6.98235294117647,80.38,0,1,36.0,5.0,B,0.5,Medium,many rotation-curve points; extended radial coverage; good distance-quality flag
+UGC02885,19,10.0,74.07,5,1,64.0,4.0,B,0.5,Medium,many rotation-curve points; high mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+UGC02916,43,8.183488372093024,38.0,2,1,50.0,5.0,B,0.5,Medium,many rotation-curve points; high mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag
+UGC02953,115,6.850608695652174,62.39,2,1,50.0,4.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag
+UGC03205,48,7.545208333333331,40.04,2,1,67.0,4.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag
+UGC03546,30,15.526666666666666,29.23,1,1,55.0,5.0,B,0.5,Medium,many rotation-curve points; high mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag
+UGC03580,47,5.185957446808511,27.06,1,1,63.0,4.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag
+UGC04278,25,6.0451999999999995,6.69,7,1,90.0,3.0,B,0.5,Low,many rotation-curve points; face-on or edge-on inclination risk; good distance-quality flag; disk-like Hubble type
+UGC04305,22,3.5599999999999996,5.52,10,2,40.0,10.0,C,0.0,Low,many rotation-curve points; large inclination uncertainty; good distance-quality flag; irregular/dwarf Hubble type
+UGC04325,8,3.0525,5.59,9,1,41.0,3.0,B,0.5,Medium,well-conditioned inclination; good distance-quality flag
+UGC04483,8,1.7975,1.21,10,2,58.0,3.0,B,0.5,Low,low mean Vobs error; short radial coverage; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+UGC04499,9,2.948888888888889,8.18,8,1,50.0,3.0,A,1.0,Medium,low mean Vobs error; extended radial coverage; well-conditioned inclination; good distance-quality flag
+UGC05005,11,12.873636363636365,28.61,10,1,41.0,10.0,C,0.0,Low,high mean Vobs error; extended radial coverage; large inclination uncertainty; good distance-quality flag; irregular/dwarf Hubble type
+UGC05253,73,5.951232876712327,53.29,2,1,37.0,4.0,B,0.5,Medium,many rotation-curve points; extended radial coverage; good distance-quality flag
+UGC05414,6,2.4516666666666667,4.11,10,1,55.0,3.0,C,0.0,Low,few rotation-curve points; low mean Vobs error; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+UGC05716,12,1.2566666666666666,12.37,9,1,54.0,10.0,B,0.5,Medium,low mean Vobs error; extended radial coverage; large inclination uncertainty; good distance-quality flag
+UGC05721,23,5.344782608695649,6.74,7,1,61.0,5.0,A,1.0,Medium,many rotation-curve points; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+UGC05750,11,8.536363636363637,22.85,8,1,64.0,10.0,C,0.0,Low,high mean Vobs error; extended radial coverage; large inclination uncertainty; good distance-quality flag
+UGC05764,10,1.302,3.62,10,1,60.0,10.0,C,0.0,Low,low mean Vobs error; large inclination uncertainty; good distance-quality flag; irregular/dwarf Hubble type
+UGC05829,11,5.0600000000000005,6.91,10,1,34.0,10.0,C,0.0,Low,large inclination uncertainty; good distance-quality flag; irregular/dwarf Hubble type
+UGC05918,8,3.93,4.46,10,1,46.0,5.0,B,0.5,Medium,well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+UGC05986,15,3.267333333333333,9.41,9,1,90.0,3.0,B,0.5,Low,many rotation-curve points; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag
+UGC05999,5,5.0,16.22,10,1,22.0,10.0,C,0.0,Low,few rotation-curve points; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag; irregular/dwarf Hubble type
+UGC06399,9,4.966666666666666,7.85,9,4,75.0,2.0,B,0.5,Medium,well-conditioned inclination
+UGC06446,17,5.000000000000001,10.22,7,1,51.0,3.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+UGC06614,13,14.099999999999998,64.59,1,1,36.0,10.0,C,0.0,Low,high mean Vobs error; extended radial coverage; large inclination uncertainty; good distance-quality flag
+UGC06628,7,8.269999999999998,7.69,9,1,20.0,10.0,C,0.0,Low,few rotation-curve points; high mean Vobs error; face-on or edge-on inclination risk; good distance-quality flag
+UGC06667,9,3.4111111111111105,7.85,6,4,89.0,1.0,C,0.0,Low,face-on or edge-on inclination risk; disk-like Hubble type
+UGC06786,45,7.273555555555557,34.05,0,1,64.0,3.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag
+UGC06787,71,6.790000000000001,37.19,2,1,66.0,3.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag
+UGC06818,8,5.15625,6.98,9,4,75.0,3.0,B,0.5,Medium,well-conditioned inclination
+UGC06917,11,4.163636363636363,10.47,9,4,56.0,2.0,B,0.5,Medium,extended radial coverage; well-conditioned inclination
+UGC06923,6,5.375,5.16,10,4,65.0,2.0,C,0.0,Low,few rotation-curve points; well-conditioned inclination; irregular/dwarf Hubble type
+UGC06930,10,6.45,16.61,7,4,32.0,5.0,B,0.5,Medium,extended radial coverage; disk-like Hubble type
+UGC06973,9,5.688888888888889,7.85,2,4,71.0,3.0,B,0.5,Medium,well-conditioned inclination
+UGC06983,17,6.094117647058822,15.68,6,4,49.0,1.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; disk-like Hubble type
+UGC07089,12,5.191666666666666,9.16,8,4,80.0,3.0,B,0.5,Medium,extended radial coverage; well-conditioned inclination
+UGC07125,13,2.616153846153846,18.68,9,1,90.0,3.0,B,0.5,Low,low mean Vobs error; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag
+UGC07151,11,2.6045454545454545,5.5,6,2,90.0,3.0,B,0.5,Low,low mean Vobs error; face-on or edge-on inclination risk; good distance-quality flag; disk-like Hubble type
+UGC07232,4,3.3,0.82,10,2,59.0,5.0,C,0.0,Low,few rotation-curve points; short radial coverage; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+UGC07261,7,5.660000000000001,6.67,8,1,30.0,10.0,C,0.0,Low,few rotation-curve points; large inclination uncertainty; good distance-quality flag
+UGC07323,10,3.87,5.82,8,1,47.0,3.0,B,0.5,Medium,well-conditioned inclination; good distance-quality flag
+UGC07399,10,3.379,6.13,8,1,55.0,3.0,B,0.5,Medium,well-conditioned inclination; good distance-quality flag
+UGC07524,31,3.490322580645162,10.69,9,2,46.0,3.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag
+UGC07559,7,3.23,2.53,10,2,61.0,3.0,C,0.0,Low,few rotation-curve points; short radial coverage; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+UGC07577,9,3.17,1.69,10,2,63.0,3.0,C,0.0,Low,short radial coverage; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+UGC07603,12,2.89,4.11,7,1,78.0,3.0,A,1.0,Medium,low mean Vobs error; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+UGC07608,8,6.6899999999999995,4.78,10,1,25.0,10.0,C,0.0,Low,face-on or edge-on inclination risk; good distance-quality flag; irregular/dwarf Hubble type
+UGC07690,7,4.31,4.13,10,1,41.0,5.0,C,0.0,Low,few rotation-curve points; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+UGC07866,7,4.07,2.32,10,2,44.0,5.0,C,0.0,Low,few rotation-curve points; short radial coverage; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+UGC08286,17,2.216470588235294,8.04,6,2,90.0,3.0,B,0.5,Low,many rotation-curve points; low mean Vobs error; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag; disk-like Hubble type
+UGC08490,30,3.6899999999999986,10.15,9,2,50.0,3.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag
+UGC08550,11,2.1236363636363635,5.36,7,1,90.0,3.0,B,0.5,Low,low mean Vobs error; face-on or edge-on inclination risk; good distance-quality flag; disk-like Hubble type
+UGC08699,41,7.649512195121949,25.7,2,1,73.0,9.0,B,0.5,Medium,many rotation-curve points; extended radial coverage; good distance-quality flag
+UGC08837,8,2.53875,4.2,10,2,80.0,5.0,B,0.5,Medium,low mean Vobs error; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+UGC09037,22,7.230909090909091,27.96,6,1,65.0,5.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag; disk-like Hubble type
+UGC09133,68,5.943823529411765,108.31,2,1,53.0,6.0,B,0.5,Medium,many rotation-curve points; extended radial coverage; good distance-quality flag
+UGC09992,5,5.66,3.89,10,1,30.0,10.0,C,0.0,Low,few rotation-curve points; large inclination uncertainty; good distance-quality flag; irregular/dwarf Hubble type
+UGC10310,7,5.06,7.74,9,1,34.0,6.0,C,0.0,Low,few rotation-curve points; good distance-quality flag
+UGC11455,36,7.7555555555555555,41.93,6,1,90.0,1.0,B,0.5,Low,many rotation-curve points; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag; disk-like Hubble type
+UGC11557,12,7.875000000000001,10.56,8,1,30.0,10.0,B,0.5,Medium,extended radial coverage; large inclination uncertainty; good distance-quality flag
+UGC11820,10,2.9379999999999997,15.82,9,1,45.0,10.0,B,0.5,Medium,low mean Vobs error; extended radial coverage; large inclination uncertainty; good distance-quality flag
+UGC11914,65,9.740153846153849,9.83,2,1,31.0,5.0,B,0.5,Medium,many rotation-curve points; high mean Vobs error; extended radial coverage; good distance-quality flag
+UGC12506,31,14.44838709677419,49.99,6,1,86.0,4.0,C,0.0,Low,many rotation-curve points; high mean Vobs error; extended radial coverage; face-on or edge-on inclination risk; good distance-quality flag; disk-like Hubble type
+UGC12632,15,3.560666666666667,10.66,9,1,46.0,3.0,A,1.0,Medium,many rotation-curve points; extended radial coverage; well-conditioned inclination; good distance-quality flag
+UGC12732,16,3.6268749999999996,15.4,9,1,39.0,6.0,B,0.5,Medium,many rotation-curve points; extended radial coverage; good distance-quality flag
+UGCA281,7,1.78,1.08,11,2,67.0,3.0,C,0.0,Low,few rotation-curve points; low mean Vobs error; short radial coverage; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type
+UGCA442,8,2.00375,6.33,9,2,64.0,7.0,B,0.5,Medium,low mean Vobs error; good distance-quality flag
+UGCA444,36,3.9086111111111115,2.62,10,2,78.0,4.0,B,0.5,Low,many rotation-curve points; short radial coverage; well-conditioned inclination; good distance-quality flag; irregular/dwarf Hubble type

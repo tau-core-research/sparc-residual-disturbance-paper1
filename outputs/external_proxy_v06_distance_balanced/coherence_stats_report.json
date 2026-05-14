@@ -1,0 +1,79 @@
+{
+  "groups": [
+    {
+      "label": "A",
+      "n": 19,
+      "median_rms_log_tpg": 0.12435549865651069,
+      "median_weighted_rms_log_tpg": 0.09799160786312039,
+      "median_outer_mean_log_residual_tpg": 0.009280228312582193
+    },
+    {
+      "label": "B",
+      "n": 103,
+      "median_rms_log_tpg": 0.1704878739909504,
+      "median_weighted_rms_log_tpg": 0.16081388155303142,
+      "median_outer_mean_log_residual_tpg": -0.0005278181466157016
+    },
+    {
+      "label": "C",
+      "n": 53,
+      "median_rms_log_tpg": 0.19447788980183073,
+      "median_weighted_rms_log_tpg": 0.1981222408564065,
+      "median_outer_mean_log_residual_tpg": -0.02873247288958129
+    }
+  ],
+  "binary_comparisons": [
+    {
+      "name": "nonA_minus_A",
+      "metric": "rms_log_tpg",
+      "left_label": "A",
+      "right_label": "B+C",
+      "alternative": "greater",
+      "n_left": 19,
+      "n_right": 156,
+      "median_left": 0.12435549865651069,
+      "median_right": 0.18218272699538746,
+      "median_difference_right_minus_left": 0.05782722833887677,
+      "permutation_p_one_sided": 0.014298570142985701,
+      "bootstrap_ci95_low": 0.018513942678507256,
+      "bootstrap_ci95_high": 0.09097563507134625
+    },
+    {
+      "name": "C_minus_nonC",
+      "metric": "rms_log_tpg",
+      "left_label": "A+B",
+      "right_label": "C",
+      "alternative": "greater",
+      "n_left": 122,
+      "n_right": 53,
+      "median_left": 0.15114522604038697,
+      "median_right": 0.19447788980183073,
+      "median_difference_right_minus_left": 0.04333266376144376,
+      "permutation_p_one_sided": 0.0892910708929107,
+      "bootstrap_ci95_low": -0.009469399490390551,
+      "bootstrap_ci95_high": 0.0835880331436479
+    },
+    {
+      "name": "C_minus_A",
+      "metric": "rms_log_tpg",
+      "left_label": "A",
+      "right_label": "C",
+      "alternative": "greater",
+      "n_left": 19,
+      "n_right": 53,
+      "median_left": 0.12435549865651069,
+      "median_right": 0.19447788980183073,
+      "median_difference_right_minus_left": 0.07012239114532004,
+      "permutation_p_one_sided": 0.0021997800219978004,
+      "bootstrap_ci95_low": 0.021698762088653484,
+      "bootstrap_ci95_high": 0.11506978231892939
+    }
+  ],
+  "trend": {
+    "metric": "rms_log_tpg",
+    "n": 175,
+    "alternative": "greater",
+    "spearman_rho_label_order": 0.16733434777361197,
+    "permutation_p_one_sided": 0.0143985601439856
+  }
+}

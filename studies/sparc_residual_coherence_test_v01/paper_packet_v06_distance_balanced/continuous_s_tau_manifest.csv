@@ -1,0 +1,74 @@
+GalaxyName,Class,EvidenceType,S_tau_continuous,S_tau_soft_calibrated,MappingMethod,MappingReason,ResidualBlind
+CamB,A,regular_kinematics,0.9,0.91,evidence_type_fallback,regular_kinematics,true
+DDO154,A,regular_kinematics,0.9,0.91,evidence_type_fallback,regular_kinematics,true
+ESO079-G014,A,regular_kinematics,0.9,0.91,evidence_type_fallback,regular_kinematics,true
+ESO116-G012,A,regular_kinematics,0.9,0.91,evidence_type_fallback,regular_kinematics,true
+NGC2403,A,regular_kinematics,0.9,0.91,evidence_type_fallback,regular_kinematics,true
+NGC3198,A,low_asymmetry,0.865833,0.896333,downloaded_catalog_numeric_proxy,Amap=0.14; Avel=0.014,true
+NGC3917,A,regular_kinematics,0.9,0.91,evidence_type_fallback,regular_kinematics,true
+NGC3972,A,regular_kinematics,0.9,0.91,evidence_type_fallback,regular_kinematics,true
+NGC4183,A,regular_kinematics,0.9,0.91,evidence_type_fallback,regular_kinematics,true
+NGC4559,A,low_asymmetry,0.822917,0.879167,downloaded_catalog_numeric_proxy,Amap=0.15; Avel=0.025,true
+NGC5585,A,low_asymmetry,0.772083,0.858833,downloaded_catalog_numeric_proxy,Amap=0.13; Avel=0.044,true
+NGC6503,A,regular_kinematics,0.9,0.91,evidence_type_fallback,regular_kinematics,true
+NGC7331,A,regular_kinematics,0.9,0.91,evidence_type_fallback,regular_kinematics,true
+UGC00128,A,low_asymmetry,0.81,0.874,downloaded_catalog_numeric_proxy,Af=1.04; Ac=1.15,true
+UGC00191,A,low_asymmetry,0.97,0.938,downloaded_catalog_numeric_proxy,Af=1.01; Ac=1.02,true
+UGC05716,A,low_asymmetry,0.99,0.946,downloaded_catalog_numeric_proxy,Af=1.01; Ac=1,true
+UGC05764,A,low_asymmetry,0.94,0.926,downloaded_catalog_numeric_proxy,Af=1.02; Ac=1.04,true
+D631-7,B,no_data,0.5,0.75,evidence_type_fallback,no_data,true
+DDO064,B,other,0.5,0.75,evidence_type_fallback,other,true
+DDO161,B,other,0.5,0.75,evidence_type_fallback,other,true
+DDO168,B,other,0.5,0.75,evidence_type_fallback,other,true
+DDO170,B,no_data,0.5,0.75,evidence_type_fallback,no_data,true
+F571-8,B,no_data,0.5,0.75,evidence_type_fallback,no_data,true
+F574-1,B,no_data,0.5,0.75,evidence_type_fallback,no_data,true
+F583-4,B,no_data,0.5,0.75,evidence_type_fallback,no_data,true
+KK98-251,B,no_data,0.5,0.75,evidence_type_fallback,no_data,true
+NGC0247,B,other,0.5,0.75,evidence_type_fallback,other,true
+NGC0801,B,no_data,0.5,0.75,evidence_type_fallback,no_data,true
+NGC1003,B,other,0.5,0.75,evidence_type_fallback,other,true
+NGC1090,B,other,0.5,0.75,evidence_type_fallback,other,true
+NGC2903,B,mixed,0.5,0.75,evidence_type_fallback,mixed,true
+NGC5033,B,other,0.5,0.75,evidence_type_fallback,other,true
+NGC5371,B,other,0.5,0.75,evidence_type_fallback,other,true
+NGC6015,B,other,0.5,0.75,evidence_type_fallback,other,true
+UGC02259,B,no_data,0.5,0.75,evidence_type_fallback,no_data,true
+UGC04483,B,other,0.375833,0.700333,downloaded_catalog_numeric_proxy,WHISP_A=0.749,true
+UGC05721,B,mixed,0.476667,0.740667,downloaded_catalog_numeric_proxy,WHISP_A=0.628; WHISP_Lop=1.371; WHISP_A=0.628; Af=1.07; Ac=1.2,true
+UGC06399,B,no_data,0.5,0.75,evidence_type_fallback,no_data,true
+UGC07089,B,mixed,0,0.55,downloaded_catalog_numeric_proxy,WHISP_A=1.247,true
+UGC07524,B,mixed,0.499167,0.749667,downloaded_catalog_numeric_proxy,WHISP_A=0.61; WHISP_Lop=1.403; WHISP_A=0.601; Af=1.05; Ac=1.12,true
+UGC09133,B,mixed,0.473333,0.739333,downloaded_catalog_numeric_proxy,WHISP_A=0.632; WHISP_Lop=1.389; WHISP_A=0.632; Af=1.09; Ac=1.27,true
+UGC11820,B,no_data,0.73,0.842,downloaded_catalog_numeric_proxy,Af=1.07; Ac=1.2,true
+UGC12732,B,mixed,0.520833,0.758333,downloaded_catalog_numeric_proxy,WHISP_A=0.588; WHISP_Lop=1.414; WHISP_A=0.575; Af=1.07; Ac=1.2,true
+UGCA442,B,other,0.5,0.75,evidence_type_fallback,other,true
+UGCA444,B,no_data,0.5,0.75,evidence_type_fallback,no_data,true
+IC2574,C,disturbed_hi,0.2,0.63,evidence_type_fallback,disturbed_hi,true
+NGC0055,C,disturbed_hi,0.2,0.63,evidence_type_fallback,disturbed_hi,true
+NGC1705,C,disturbed_hi,0.2,0.63,evidence_type_fallback,disturbed_hi,true
+NGC2366,C,disturbed_hi,0.2,0.63,evidence_type_fallback,disturbed_hi,true
+NGC2976,C,tidal,0.1,0.59,evidence_type_fallback,tidal,true
+NGC3109,C,warp,0.2,0.63,evidence_type_fallback,warp,true
+NGC3741,C,warp,0.2,0.63,evidence_type_fallback,warp,true
+NGC5055,C,tidal,0.71125,0.8345,downloaded_catalog_numeric_proxy,Amap=0.27; Avel=0.036,true
+UGC00731,C,disturbed_hi,0.3425,0.687,downloaded_catalog_numeric_proxy,WHISP_A=0.648; WHISP_Lop=1.414; WHISP_A=0.789,true
+UGC02455,C,disturbed_hi,0.439167,0.725667,downloaded_catalog_numeric_proxy,WHISP_A=0.673; WHISP_Lop=1.414; WHISP_A=1.126; Af=1.13; Ac=1.19,true
+UGC03580,C,disturbed_hi,0.193333,0.627333,downloaded_catalog_numeric_proxy,WHISP_A=0.968; WHISP_Lop=1.376; WHISP_A=0.968,true
+UGC04305,C,disturbed_hi,0.09,0.586,downloaded_catalog_numeric_proxy,WHISP_A=1.092; WHISP_Lop=1.414; WHISP_A=1.09,true
+UGC04325,C,disturbed_hi,0.229167,0.641667,downloaded_catalog_numeric_proxy,WHISP_A=0.925; WHISP_Lop=1.414; WHISP_A=0.825,true
+UGC04499,C,disturbed_hi,0.348333,0.689333,downloaded_catalog_numeric_proxy,WHISP_A=0.714; WHISP_Lop=1.414; WHISP_A=0.782,true
+UGC05253,C,interaction,0,0.55,downloaded_catalog_numeric_proxy,WHISP_A=1.46; WHISP_Lop=1.352; WHISP_A=1.477,true
+UGC05829,C,disturbed_hi,0.0925,0.587,downloaded_catalog_numeric_proxy,WHISP_A=1.089; WHISP_Lop=1.414; WHISP_A=1.196; Af=1.02; Ac=1.07,true
+UGC05918,C,disturbed_hi,0,0.55,downloaded_catalog_numeric_proxy,WHISP_A=1.93; WHISP_Lop=1.397; WHISP_A=1.946,true
+UGC06446,C,disturbed_hi,0.400833,0.710333,downloaded_catalog_numeric_proxy,WHISP_A=0.703; WHISP_Lop=1.38; WHISP_A=0.719,true
+UGC06818,C,interaction,0.15,0.61,evidence_type_fallback,interaction,true
+UGC06917,C,disturbed_hi,0.2,0.63,evidence_type_fallback,disturbed_hi,true
+UGC06973,C,interaction,0.15,0.61,evidence_type_fallback,interaction,true
+UGC07323,C,disturbed_hi,0.383333,0.703333,downloaded_catalog_numeric_proxy,WHISP_A=0.74; WHISP_Lop=1.414; WHISP_A=0.74,true
+UGC07399,C,disturbed_hi,0.0966667,0.588667,downloaded_catalog_numeric_proxy,WHISP_A=1.084; WHISP_Lop=1.381; WHISP_A=1.084,true
+UGC07577,C,disturbed_hi,0,0.55,downloaded_catalog_numeric_proxy,WHISP_A=2; WHISP_Lop=1.406; WHISP_A=2,true
+UGC07603,C,disturbed_hi,0.235833,0.644333,downloaded_catalog_numeric_proxy,WHISP_A=0.917; WHISP_Lop=1.414; WHISP_A=0.917; Af=1.03; Ac=1.05,true
+UGC08490,C,disturbed_hi,0.23,0.642,downloaded_catalog_numeric_proxy,WHISP_A=0.924; WHISP_Lop=1.414; WHISP_A=0.911,true
+UGC08837,C,disturbed_hi,0.186667,0.624667,downloaded_catalog_numeric_proxy,WHISP_A=0.976; WHISP_Lop=1.414; WHISP_A=0.896,true
+UGC12632,C,disturbed_hi,0.04,0.566,downloaded_catalog_numeric_proxy,WHISP_A=1.152; WHISP_Lop=1.394; WHISP_A=1.168,true

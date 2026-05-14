@@ -1,0 +1,15 @@
+BinType,Bin,Comparator,ComparatorLabel,N_A_galaxies,N_C_galaxies,MedianProjectionMinusComparator_A,MedianProjectionMinusComparator_C,Interaction_CminusA,MedianProjectionMinusComparator_All
+acceleration,0.1<=aN/a0<0.3,mond_simple_mu,MOND simple-mu,12,17,0.0131243,-0.0133753,-0.0264996,0.012676
+acceleration,0.1<=aN/a0<0.3,rar_mcgaugh,Empirical RAR,12,17,0.00959513,-0.00949116,-0.0190863,0.0094143
+acceleration,0.3<=aN/a0<1,mond_simple_mu,MOND simple-mu,8,8,-0.0122784,-0.0128456,-0.00056726,-0.0124064
+acceleration,0.3<=aN/a0<1,rar_mcgaugh,Empirical RAR,8,8,-0.00656752,-0.00651588,5.16438e-05,-0.00652746
+acceleration,aN/a0<0.1,mond_simple_mu,MOND simple-mu,14,24,0.022915,-0.0100673,-0.0329823,0.00944025
+acceleration,aN/a0<0.1,rar_mcgaugh,Empirical RAR,14,24,0.0233688,-0.00934466,-0.0327135,0.0104825
+acceleration,aN/a0>=1,mond_simple_mu,MOND simple-mu,3,4,-0.0190465,-0.0186864,0.000360183,-0.018802
+acceleration,aN/a0>=1,rar_mcgaugh,Empirical RAR,3,4,-0.00532924,-0.000621577,0.00470766,-0.00226673
+radius,inner_R<0.33Rmax,mond_simple_mu,MOND simple-mu,17,28,0.011442,-0.0155998,-0.0270418,-0.0126712
+radius,inner_R<0.33Rmax,rar_mcgaugh,Empirical RAR,17,28,0.00664167,-0.0064168,-0.0130585,-0.00389583
+radius,middle_0.33-0.67Rmax,mond_simple_mu,MOND simple-mu,17,28,0.012676,-0.0126819,-0.0253579,0.00277759
+radius,middle_0.33-0.67Rmax,rar_mcgaugh,Empirical RAR,17,28,0.00839363,-0.00388839,-0.012282,0.00334565
+radius,outer_R>=0.67Rmax,mond_simple_mu,MOND simple-mu,17,28,0.00253498,-0.0194991,-0.0220341,-0.0155949
+radius,outer_R>=0.67Rmax,rar_mcgaugh,Empirical RAR,17,28,0.0027581,-0.0149712,-0.0177293,-0.00967448

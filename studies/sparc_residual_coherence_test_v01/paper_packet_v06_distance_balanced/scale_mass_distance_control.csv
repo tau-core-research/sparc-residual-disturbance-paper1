@@ -1,0 +1,6 @@
+covariate,description,n_A,n_C,median_A,median_C,median_diff_C_minus_A,two_sided_permutation_p_A_vs_C,coverage
+sparc_distance_mpc,SPARC Table1 distance,17,28,13.8,7.83,-5.970000000000001,0.024897510248975102,A=17/17; C=28/28
+sparc_distance_error_mpc,SPARC Table1 distance uncertainty,17,28,2.5,2.19,-0.31000000000000005,0.6154384561543845,A=17/17; C=28/28
+hecate_distance_mpc,HECATE crossmatch distance,14,20,15.455000000000002,7.140000000000001,-8.315000000000001,0.0344965503449655,A=14/17; C=20/28
+hecate_stellar_mass_log,HECATE log stellar mass,10,11,9.956,8.771,-1.1849999999999987,0.0047995200479952005,A=10/17; C=11/28
+hecate_morph_t,HECATE morphology T,14,20,6.0,8.850000000000001,2.8500000000000014,0.011498850114988501,A=14/17; C=20/28

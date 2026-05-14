@@ -1,0 +1,8 @@
+covariate,description,n_A,n_B,n_C,median_A,median_B,median_C,median_diff_C_minus_A,two_sided_permutation_p_A_vs_C
+n_points,rotation curve point count,17,28,28,17.0,15.5,13.0,-4.0,0.5225477452254774
+mean_err_vobs_kms,mean observed velocity error,17,28,28,2.6354545454545457,3.980614973262032,3.5603333333333333,0.9248787878787876,0.036996300369963
+max_radius_kpc,maximum rotation curve radius,17,28,28,14.86,12.465,6.945,-7.914999999999999,0.0018998100189981002
+inclination_deg,inclination,17,28,28,67.0,63.5,56.5,-10.5,0.13938606139386062
+inclination_error_deg,inclination error,17,28,28,3.0,4.5,3.5,0.5,0.5355464453554645
+hubble_type,SPARC Table1 Hubble type code,17,28,28,6.0,8.0,9.0,3.0,0.018698130186981302
+distance_quality,SPARC Table1 distance quality flag,17,28,28,2.0,1.0,2.0,0.0,1.0

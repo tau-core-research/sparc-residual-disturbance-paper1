@@ -1,0 +1,4 @@
+control,n_A,n_C,median_radius_A,median_radius_C,radius_detail,effect,p,ci95_low,ci95_high,detail
+radius_overlap_window,17,26,14.86,6.945,"common radius window [1.79, 53.75] kpc",0.08426859711799034,0.0008999100089991,0.04683820142392678,0.1559404312156677,unpaired C-minus-A after excluding A/C galaxies outside common radius support
+greedy_unique_radius_matched_pairs,17,17,14.86,10.22,median_abs_delta=1.13 kpc; max_abs_delta=29.33 kpc,0.07879720372688487,0.010198980101989802,-0.03834241037956909,0.16584508771479053,paired sign-flip/bootstrap on greedy unique nearest-radius A/C pairs
+radius_matched_pairs_delta_le_2kpc,9,9,9.86,10.15,subset of greedy unique pairs with abs(radius_delta) <= 2 kpc,0.07599389562192892,0.10968903109689031,-0.05815876812202077,0.21560508479924098,strict caliper matched-pair stress check; small-n support only

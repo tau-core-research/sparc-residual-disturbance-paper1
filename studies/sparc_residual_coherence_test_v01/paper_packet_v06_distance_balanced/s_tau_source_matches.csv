@@ -1,0 +1,62 @@
+GalaxyName,Class,Source,Table,MatchedAliases,SourceName,Amap,Avel,Aspec,Aflux,Apeak,WHISP_A,WHISP_Lop,WHISP_Gini,WHISP_M20,WHISP_GM,Af,Ac,Cv,K
+NGC3198,A,reynolds2020_hi_asymmetry,tablea3,NGC3198,NGC3198,0.14,0.014,0.086,1.07,1.03,,,,,,,,,
+NGC4559,A,reynolds2020_hi_asymmetry,tablea3,NGC4559,NGC4559,0.15,0.025,0.136,1.03,1.03,,,,,,,,,
+NGC5055,C,reynolds2020_hi_asymmetry,tablea3,NGC5055,NGC5055,0.27,0.036,0.114,1.03,1.1,,,,,,,,,
+NGC5585,A,reynolds2020_hi_asymmetry,tablea3,NGC5585,NGC5585,0.13,0.044,0.168,1.18,1.41,,,,,,,,,
+UGC00128,A,yu2022_alfalfa_profile_asymmetry,table2,UGC00128,UGC 000128,,,,,,,,,,,1.04,1.15,2.67,-0.066
+UGC00191,A,yu2022_alfalfa_profile_asymmetry,table2,UGC00191,UGC 000191,,,,,,,,,,,1.01,1.02,3.08,-0.026
+UGC00731,C,whisp_hi_morphology,whisp,UGC00731,731,,,,,,0.648,1.414,0.537,-1.06,0.454,,,,
+UGC00731,C,whisp_merger_morphology,tablea1,UGC00731,00731,,,,,,0.789,,0.537,-1.053,0.459,,,,
+UGC02455,C,whisp_hi_morphology,whisp,UGC02455,2455,,,,,,0.673,1.414,0.678,-1.34,0.443,,,,
+UGC02455,C,whisp_merger_morphology,tablea1,UGC02455,02455,,,,,,1.126,,0.678,-1.425,0.431,,,,
+UGC02455,C,yu2022_alfalfa_profile_asymmetry,table2,UGC02455,UGC 002455,,,,,,,,,,,1.13,1.19,4.71,0.078
+UGC03580,C,whisp_hi_morphology,whisp,UGC03580,3580,,,,,,0.968,1.376,0.554,1.485,0.508,,,,
+UGC03580,C,whisp_merger_morphology,tablea1,UGC03580,03580,,,,,,0.968,,0.554,-1.484,0.508,,,,
+UGC04305,C,whisp_hi_morphology,whisp,UGC04305,4305,,,,,,1.092,1.414,0.529,-1.16,0.42,,,,
+UGC04305,C,whisp_merger_morphology,tablea1,UGC04305,04305,,,,,,1.09,,0.529,-1.169,0.42,,,,
+UGC04325,C,whisp_hi_morphology,whisp,UGC04325,4325,,,,,,0.925,1.414,0.536,-1.2,0.402,,,,
+UGC04325,C,whisp_merger_morphology,tablea1,UGC04325,04325,,,,,,0.825,,0.536,-1.236,0.407,,,,
+UGC04483,B,whisp_merger_morphology,tablea1,UGC04483,04483,,,,,,0.749,,0.605,-1.9,0.437,,,,
+UGC04499,C,whisp_hi_morphology,whisp,UGC04499,4499,,,,,,0.714,1.414,0.536,-1.29,0.426,,,,
+UGC04499,C,whisp_merger_morphology,tablea1,UGC04499,04499,,,,,,0.782,,0.536,-1.289,0.426,,,,
+UGC05253,C,whisp_hi_morphology,whisp,UGC05253,5253,,,,,,1.46,1.352,0.455,0.531,0.725,,,,
+UGC05253,C,whisp_merger_morphology,tablea1,UGC05253,05253,,,,,,1.477,,0.455,-0.532,0.725,,,,
+UGC05716,A,yu2022_alfalfa_profile_asymmetry,table2,UGC05716,UGC 005716,,,,,,,,,,,1.01,1.0,3.08,-0.025
+UGC05721,B,whisp_hi_morphology,whisp,UGC05721,5721,,,,,,0.628,1.371,0.634,-1.84,0.473,,,,
+UGC05721,B,whisp_merger_morphology,tablea1,UGC05721,05721,,,,,,0.628,,0.634,-1.847,0.473,,,,
+UGC05721,B,yu2022_alfalfa_profile_asymmetry,table2,UGC05721,UGC 005721,,,,,,,,,,,1.07,1.2,3.16,-0.017
+UGC05764,A,yu2022_alfalfa_profile_asymmetry,table2,UGC05764,UGC 005764,,,,,,,,,,,1.02,1.04,3.16,-0.015
+UGC05829,C,whisp_hi_morphology,whisp,UGC05829,5829,,,,,,1.089,1.414,0.565,-1.0,0.469,,,,
+UGC05829,C,whisp_merger_morphology,tablea1,UGC05829,05829,,,,,,1.196,,0.565,-0.972,0.474,,,,
+UGC05829,C,yu2022_alfalfa_profile_asymmetry,table2,UGC05829,UGC 005829,,,,,,,,,,,1.02,1.07,4.06,0.055
+UGC05918,C,whisp_hi_morphology,whisp,UGC05918,5918,,,,,,1.93,1.397,0.545,-1.18,0.454,,,,
+UGC05918,C,whisp_merger_morphology,tablea1,UGC05918,05918,,,,,,1.946,,0.545,-1.176,0.452,,,,
+UGC06446,C,whisp_hi_morphology,whisp,UGC06446,6446,,,,,,0.703,1.38,0.541,-1.16,0.423,,,,
+UGC06446,C,whisp_merger_morphology,tablea1,UGC06446,06446,,,,,,0.719,,0.541,-1.151,0.424,,,,
+UGC06917,C,whisp_merger_morphology,tablea1,UGC06917,06917,,,,,,,,,,,,,,
+UGC07089,B,whisp_merger_morphology,tablea1,UGC07089,07089,,,,,,1.247,,0.68,-2.507,0.8,,,,
+UGC07323,C,whisp_hi_morphology,whisp,UGC07323,7323,,,,,,0.74,1.414,0.531,-0.94,0.456,,,,
+UGC07323,C,whisp_merger_morphology,tablea1,UGC07323,07323,,,,,,0.74,,0.531,-0.938,0.454,,,,
+UGC07399,C,whisp_hi_morphology,whisp,UGC07399,7399,,,,,,1.084,1.381,0.605,-1.79,0.496,,,,
+UGC07399,C,whisp_merger_morphology,tablea1,UGC07399,07399,,,,,,1.084,,0.605,-1.781,0.495,,,,
+UGC07524,B,whisp_hi_morphology,whisp,UGC07524,7524,,,,,,0.61,1.403,0.465,-1.0,0.438,,,,
+UGC07524,B,whisp_merger_morphology,tablea1,UGC07524,07524,,,,,,0.601,,0.465,-0.999,0.438,,,,
+UGC07524,B,yu2022_alfalfa_profile_asymmetry,table2,UGC07524,UGC 007524,,,,,,,,,,,1.05,1.12,3.4,0.002
+UGC07577,C,whisp_hi_morphology,whisp,UGC07577,7577,,,,,,2.0,1.406,0.562,-0.7,0.566,,,,
+UGC07577,C,whisp_merger_morphology,tablea1,UGC07577,07577,,,,,,2.0,,0.562,-0.696,0.566,,,,
+UGC07603,C,whisp_hi_morphology,whisp,UGC07603,7603,,,,,,0.917,1.414,0.677,-2.56,0.838,,,,
+UGC07603,C,whisp_merger_morphology,tablea1,UGC07603,07603,,,,,,0.917,,0.677,-2.55,0.838,,,,
+UGC07603,C,yu2022_alfalfa_profile_asymmetry,table2,UGC07603,UGC 007603,,,,,,,,,,,1.03,1.05,3.45,0.012
+UGC08490,C,whisp_hi_morphology,whisp,UGC08490,8490,,,,,,0.924,1.414,0.53,-1.63,0.466,,,,
+UGC08490,C,whisp_merger_morphology,tablea1,UGC08490,08490,,,,,,0.911,,0.53,-1.628,0.467,,,,
+UGC08837,C,whisp_hi_morphology,whisp,UGC08837,8837,,,,,,0.976,1.414,0.66,-1.13,0.565,,,,
+UGC08837,C,whisp_merger_morphology,tablea1,UGC08837,08837,,,,,,0.896,,0.66,-1.179,0.547,,,,
+UGC09133,B,whisp_hi_morphology,whisp,UGC09133,9133,,,,,,0.632,1.389,0.517,1.64,0.47,,,,
+UGC09133,B,whisp_merger_morphology,tablea1,UGC09133,09133,,,,,,0.632,,0.517,-1.641,0.469,,,,
+UGC09133,B,yu2022_alfalfa_profile_asymmetry,table2,UGC09133,UGC 009133,,,,,,,,,,,1.09,1.27,2.77,-0.062
+UGC11820,B,yu2022_alfalfa_profile_asymmetry,table2,UGC11820,UGC 011820,,,,,,,,,,,1.07,1.2,3.01,-0.022
+UGC12632,C,whisp_hi_morphology,whisp,UGC12632,12632,,,,,,1.152,1.394,0.489,-1.06,0.419,,,,
+UGC12632,C,whisp_merger_morphology,tablea1,UGC12632,12632,,,,,,1.168,,0.489,-1.057,0.421,,,,
+UGC12732,B,whisp_hi_morphology,whisp,UGC12732,12732,,,,,,0.588,1.414,0.462,-1.03,0.389,,,,
+UGC12732,B,whisp_merger_morphology,tablea1,UGC12732,12732,,,,,,0.575,,0.462,-1.032,0.388,,,,
+UGC12732,B,yu2022_alfalfa_profile_asymmetry,table2,UGC12732,UGC 012732,,,,,,,,,,,1.07,1.2,2.89,-0.033
