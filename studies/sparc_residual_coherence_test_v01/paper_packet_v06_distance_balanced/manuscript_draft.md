@@ -228,7 +228,7 @@ The key supplementary tables are `external_evidence_table.csv` for row-level lab
 
 ## 13. Reproducibility Bundle
 
-The full reproducibility package, including the frozen labels, external evidence table, baseline-score comparisons, control summaries, figures, and regeneration scripts, is archived at doi:10.5281/zenodo.20181556. The analysis can be regenerated with the commands listed in Section 13.
+The full reproducibility package, including the frozen labels, external evidence table, baseline-score comparisons, control summaries, figures, and regeneration scripts, is archived at doi:10.5281/zenodo.20183485. The analysis can be regenerated with the commands listed in Section 13.
 
 The reproducibility bundle contains generated tables, control summaries, matched-pair rows, figures, manifest, and status notes under:
 

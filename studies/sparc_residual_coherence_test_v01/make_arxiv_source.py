@@ -63,7 +63,7 @@ def tex_escape(text: str) -> str:
     text = re.sub(r"`([^`]+)`", code_sub, text)
     text = tex_escape_plain(text)
     text = re.sub(
-        r"doi:([0-9][0-9A-Za-z./-]+)",
+        r"doi:([0-9][0-9A-Za-z./-]*[0-9A-Za-z/-])",
         r"\\href{https://doi.org/\1}{\\nolinkurl{doi:\1}}",
         text,
     )
@@ -325,7 +325,7 @@ def main() -> None:
                 "",
                 "Upload the contents of this directory, or `arxiv_submission_source.zip`, to arXiv.",
                 "The PNG figures are generated from the canonical SVG figures in the manuscript packet.",
-                "The full reproducibility package is archived at doi:10.5281/zenodo.20181556.",
+                "The full reproducibility package is archived at doi:10.5281/zenodo.20183485.",
                 "",
             ]
         ),
