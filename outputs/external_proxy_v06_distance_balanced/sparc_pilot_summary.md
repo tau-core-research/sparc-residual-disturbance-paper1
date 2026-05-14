@@ -3,7 +3,7 @@
 ## Status
 
 This is an exploratory pilot summary generated from local outputs. It is not a final paper result.
-The current strongest claim is that low-coherence / disturbed candidates show larger TPG residual scatter than non-C galaxies.
+The pilot-level observation is that low-coherence / disturbed candidates tend to show larger fixed-score residual scatter than non-C galaxies. The paper-level claim is based on the later residual-blind A/C quality-selected packet, not on this pilot summary.
 
 ## Class Medians
 
@@ -41,7 +41,7 @@ Quality-passed galaxies: 73 / 175.
 
 ## Claim Ladder
 
-1. Strongest current claim: C / low-coherence candidates have larger TPG residual scatter than non-C.
+1. Pilot-level observation: C / low-coherence candidates tend to have larger fixed-score residual scatter than non-C.
 2. Moderate claim: A / high-coherence candidates tend to have lower scatter than non-A.
 3. Weakest claim: strict A < B < C ordering. Do not promote this yet.
 

@@ -76,7 +76,7 @@ Held-out source-family status: current overlap is too small and agreement is wea
 
 ## Alpha-Origin Reference
 
-The TPG alpha-origin material has been copied into `docs/archive/TPG_ALPHA_ORIGIN/`. The useful statement is that `alpha = 0.360` has a suggestive Planck-ratio route, `alpha ~= 2 a0/(c H0_Planck) = 0.366`, with falsifiable implication `H0 = 68.6 km/s/Mpc`; however, the archive also records that the factor of two and the full first-principles derivation remain open. The SPARC paper should therefore treat alpha as a pre-frozen operational constant and point detailed theory discussion to Paper 2.
+The broader alpha-origin audit is not included in this public Paper 1 repository because it is not needed to reproduce the SPARC residual-disturbance result. The useful packet-level statement is narrower: `alpha = 0.360` is a pre-frozen operational constant in this audit. A suggestive Planck-ratio route exists outside this reproducibility package, but the factor of two and a clean first-principles derivation remain open. The SPARC paper should therefore treat `alpha` as fixed before the residual-blind audit, not as a fitted parameter and not as a completed theoretical derivation.
 
 ## Closeout Decision
 

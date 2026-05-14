@@ -57,7 +57,7 @@ baseline comparisons show compatible MOND/RAR-like sensitivity, so do not claim 
 Alpha-origin note:
 
 ```text
-docs/archive/TPG_ALPHA_ORIGIN/ contains the copied TPG alpha-origin audit. It supports a suggestive Planck-ratio route alpha ~= 2a0/(cH0_Planck) = 0.366, but also states that the factor of two and clean first-principles derivation remain open. Keep this as Paper 2 / appendix material, not as the main Step 1 proof.
+The alpha-origin audit is not part of this public Paper 1 reproducibility repository. The manuscript should treat alpha = 0.360 as a pre-frozen operational constant, not as a fitted parameter and not as a completed first-principles derivation. Keep any deeper alpha-origin discussion for a separate model note or Paper 2.
 ```
 
 ## Results Spine

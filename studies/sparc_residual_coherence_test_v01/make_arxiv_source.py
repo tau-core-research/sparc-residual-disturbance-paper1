@@ -307,7 +307,11 @@ def build_zip() -> None:
     with zipfile.ZipFile(ZIP_PATH, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(ARXIV.rglob("*")):
             if path.is_file() and path.suffix not in {".aux", ".log", ".out", ".pdf"}:
-                archive.write(path, path.relative_to(ARXIV))
+                arcname = str(path.relative_to(ARXIV))
+                info = zipfile.ZipInfo(arcname)
+                info.date_time = (2026, 5, 14, 0, 0, 0)
+                info.compress_type = zipfile.ZIP_DEFLATED
+                archive.writestr(info, path.read_bytes())
 
 
 def main() -> None:

@@ -2,6 +2,11 @@
 
 ## Verdict
 
+This note is an exploratory bridge document. It is included to document how the
+fixed residual score relates to later coherence-gated variants, but it is not
+part of the manuscript's primary endpoint and is not evidence for the main Paper
+1 claim.
+
 The current SPARC paper and the baseline/specificity maps still use the old high-coherence fixed projection score:
 
 ```text
@@ -24,16 +29,19 @@ F_tau(a_N, S_tau) = 1 + S_tau alpha ln(1 + a0/a_N)
 
 with `S_tau` interpreted as a collective tau-coherence order parameter rather than a fitted rescue parameter.
 
-## Source Trail
+## Internal Source Trail
 
-Relevant local sources:
+The broader Tau Core working notes that motivated this review are not part of
+this public reproducibility repository. This file therefore records only the
+operational statements needed to understand the packet-level comparison. The
+relevant local packet files are:
 
 ```text
-docs/notation.md
-docs/projection_residual_model_source_map.md
-docs/archive/TAU_CORE/tau_core_accented_document_pack/tau_core_full_work_summary_en.md
-docs/archive/TAU_CORE/tau_elmelet_fejlodese_reszletes.md
-docs/archive/TAU_CORE/tau_core_accented_document_pack/codex_technical_brief_dtl_hdda_to_tau_core.md
+taucore_extended_formula_comparison.md
+continuous_s_tau_protocol.md
+continuous_s_tau_manifest.md
+soft_s_tau_frozen_mapping.md
+soft_s_tau_heldout_source_family_test.md
 ```
 
 The key repeated statements are:
@@ -51,7 +59,7 @@ S_tau is not a switch and not a free per-galaxy fit parameter.
 
 ## What Is Immediately Testable
 
-The only bővített formula that is currently clean enough to code is the coherence-gated operational candidate:
+The only extended formula that is currently clean enough to code is the coherence-gated operational candidate:
 
 ```text
 V_tau(R) = [1 + S_tau(R) alpha ln(1 + a0/a_N(R))] V_bar(R)
@@ -186,4 +194,4 @@ or validate on an independent sample with frozen mapping constants.
 
 ## Plain-Language Meaning
 
-The present work is not yet using the full bővített Tau Core. It is using the high-coherence limit. The next upgrade is not to invent a larger equation inside the paper, but to make `S_tau` real: define it from external, residual-blind coherence evidence and test whether that improves or changes the residual shape relative to MOND/RAR.
+The present work is not yet using a full extended Tau Core model. It is using the high-coherence limit. The next upgrade is not to invent a larger equation inside the paper, but to make `S_tau` operational: define it from external, residual-blind coherence evidence and test whether that changes the residual shape relative to MOND/RAR.
