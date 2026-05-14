@@ -116,7 +116,7 @@ systematics_risk_counts.csv
 Answer:
 
 ```text
-The packet includes generation scripts, tables, figures, labels, copied SPARC rotmod data, and test commands.
+The packet includes generation scripts, tables, figures, labels, and test commands. Raw SPARC rotmod inputs are not redistributed; `studies/sparc_residual_coherence_test_v01/download_sparc_data.py` fetches the public SPARC Zenodo archive into the local paths expected by the regeneration scripts.
 ```
 
 Key commands:
