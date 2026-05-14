@@ -1,4 +1,5 @@
 matplotlib
 numpy
+PyMuPDF
 pytest
 reportlab

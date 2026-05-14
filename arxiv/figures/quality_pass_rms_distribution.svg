@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460">
+<rect width="100%" height="100%" fill="white"/>
+<text x="380.00" y="30.00" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#222">Residual scatter by external class</text>
+<line x1="80" y1="390" x2="720" y2="390" stroke="#333"/>
+<line x1="80" y1="60" x2="80" y2="390" stroke="#333"/>
+<line x1="75" y1="390.00" x2="720" y2="390.00" stroke="#ddd"/>
+<text x="70.00" y="394.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">0.00</text>
+<line x1="75" y1="324.00" x2="720" y2="324.00" stroke="#ddd"/>
+<text x="70.00" y="328.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">0.21</text>
+<line x1="75" y1="258.00" x2="720" y2="258.00" stroke="#ddd"/>
+<text x="70.00" y="262.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">0.42</text>
+<line x1="75" y1="192.00" x2="720" y2="192.00" stroke="#ddd"/>
+<text x="70.00" y="196.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">0.62</text>
+<line x1="75" y1="126.00" x2="720" y2="126.00" stroke="#ddd"/>
+<text x="70.00" y="130.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">0.83</text>
+<line x1="75" y1="60.00" x2="720" y2="60.00" stroke="#ddd"/>
+<text x="70.00" y="64.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">1.04</text>
+<text x="190.00" y="424.00" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#222">A (n=17)</text>
+<line x1="135" y1="350.57" x2="245" y2="350.57" stroke="#111" stroke-width="3.5"/>
+<circle cx="170.00" cy="84.44" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="207.00" cy="345.98" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="203.00" cy="352.97" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="199.00" cy="352.43" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="195.00" cy="363.07" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="191.00" cy="340.46" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="187.00" cy="344.46" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="183.00" cy="357.76" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="179.00" cy="368.50" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="175.00" cy="347.53" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="171.00" cy="334.87" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="208.00" cy="367.01" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="204.00" cy="358.91" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="200.00" cy="346.04" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="196.00" cy="350.57" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="192.00" cy="354.09" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<circle cx="188.00" cy="285.52" r="4.5" fill="#2b8cbe" opacity="0.68"/>
+<text x="380.00" y="424.00" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#222">B (n=28)</text>
+<line x1="325" y1="337.78" x2="435" y2="337.78" stroke="#111" stroke-width="3.5"/>
+<circle cx="360.00" cy="277.28" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="397.00" cy="307.03" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="393.00" cy="296.64" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="389.00" cy="317.81" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="385.00" cy="346.34" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="381.00" cy="251.28" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="377.00" cy="338.08" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="373.00" cy="374.30" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="369.00" cy="273.59" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="365.00" cy="368.94" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="361.00" cy="345.35" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="398.00" cy="351.59" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="394.00" cy="331.21" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="390.00" cy="309.09" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="386.00" cy="368.28" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="382.00" cy="334.97" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="378.00" cy="354.75" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="374.00" cy="304.56" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="370.00" cy="320.47" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="366.00" cy="299.71" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="362.00" cy="357.14" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="399.00" cy="324.19" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="395.00" cy="359.81" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="391.00" cy="365.81" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="387.00" cy="349.26" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="383.00" cy="350.67" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="379.00" cy="356.53" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<circle cx="375.00" cy="337.48" r="4.5" fill="#7bccc4" opacity="0.68"/>
+<text x="570.00" y="424.00" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#222">C (n=28)</text>
+<line x1="515" y1="323.84" x2="625" y2="323.84" stroke="#111" stroke-width="3.5"/>
+<circle cx="550.00" cy="319.83" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="587.00" cy="325.15" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="583.00" cy="277.61" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="579.00" cy="310.45" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="575.00" cy="314.18" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="571.00" cy="334.23" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="567.00" cy="325.18" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="563.00" cy="352.73" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="559.00" cy="282.28" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="555.00" cy="138.51" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="551.00" cy="301.12" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="588.00" cy="201.21" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="584.00" cy="299.86" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="580.00" cy="346.42" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="576.00" cy="364.48" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="572.00" cy="346.08" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="568.00" cy="344.84" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="564.00" cy="328.33" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="560.00" cy="292.23" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="556.00" cy="367.33" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="552.00" cy="322.54" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="589.00" cy="343.55" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="585.00" cy="264.02" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="581.00" cy="182.47" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="577.00" cy="332.68" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="573.00" cy="330.87" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="569.00" cy="250.58" r="4.5" fill="#f03b20" opacity="0.68"/>
+<circle cx="565.00" cy="356.62" r="4.5" fill="#f03b20" opacity="0.68"/>
+<text x="24.00" y="225.00" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#222" transform="rotate(-90 24.00 225.00)">rms-log residual</text>
+</svg>

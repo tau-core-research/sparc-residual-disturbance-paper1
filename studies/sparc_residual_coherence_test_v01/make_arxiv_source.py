@@ -1,0 +1,313 @@
+#!/usr/bin/env python3
+"""Build an arXiv-oriented LaTeX source package from the manuscript packet."""
+
+from __future__ import annotations
+
+import re
+import shutil
+import zipfile
+from pathlib import Path
+
+import fitz
+
+
+ROOT = Path(__file__).resolve().parents[2]
+PACKET = ROOT / "studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced"
+SOURCE = PACKET / "manuscript_draft.md"
+ARXIV = ROOT / "arxiv"
+FIGURES = ARXIV / "figures"
+ZIP_PATH = ROOT / "arxiv_submission_source.zip"
+
+
+FORMULAS = {
+    "V_bar^2(R) = V_gas(R)|V_gas(R)| + Upsilon_d V_disk^2(R) + Upsilon_b V_bulge^2(R)": (
+        r"V_{\rm bar}^2(R)=V_{\rm gas}(R)|V_{\rm gas}(R)|"
+        r"+\Upsilon_d V_{\rm disk}^2(R)+\Upsilon_b V_{\rm bulge}^2(R)"
+    ),
+    "a_N(R) = V_bar^2(R) / R": r"a_N(R)=\frac{V_{\rm bar}^2(R)}{R}",
+    "F_proj(R) = 1 + S_tau alpha ln(1 + a0 / a_N(R))": (
+        r"F_{\rm proj}(R)=1+S_\tau\alpha\ln\!\left(1+\frac{a_0}{a_N(R)}\right)"
+    ),
+    "V_model(R) = F_proj(R) V_bar(R)": r"V_{\rm model}(R)=F_{\rm proj}(R)V_{\rm bar}(R)",
+    "epsilon_i = ln(V_obs,i / V_model,i)": (
+        r"\epsilon_i=\ln\!\left(\frac{V_{{\rm obs},i}}{V_{{\rm model},i}}\right)"
+    ),
+    "rms_log = [(1/N) sum_i epsilon_i^2]^(1/2)": (
+        r"{\rm rms}_{\log}=\left(\frac{1}{N}\sum_i\epsilon_i^2\right)^{1/2}"
+    ),
+    "Delta_AC = median(rms_log | C, selected) - median(rms_log | A, selected)": (
+        r"\Delta_{AC}={\rm median}({\rm rms}_{\log}\mid C,{\rm selected})"
+        r"-{\rm median}({\rm rms}_{\log}\mid A,{\rm selected})"
+    ),
+}
+
+
+FIGURE_MAP = {
+    "figures/quality_pass_rms_distribution.svg": "quality_pass_rms_distribution.png",
+    "figures/control_forest_plot.svg": "control_forest_plot.png",
+    "figures/distance_stratified_effects.svg": "distance_stratified_effects.png",
+}
+
+
+def tex_escape(text: str) -> str:
+    placeholders: list[str] = []
+
+    def code_sub(match: re.Match[str]) -> str:
+        placeholders.append(r"\texttt{" + tex_escape_plain(match.group(1)) + "}")
+        return f"@@CODE{len(placeholders) - 1}@@"
+
+    text = re.sub(r"`([^`]+)`", code_sub, text)
+    text = tex_escape_plain(text)
+    text = text.replace("α", r"$\alpha$")
+    text = text.replace("μ", r"$\mu$")
+    text = text.replace("Δ", r"$\Delta$")
+    text = text.replace("≈", r"$\approx$")
+    text = text.replace("<=", r"$\leq$")
+    text = text.replace(">=", r"$\geq$")
+    text = text.replace("<<", r"$\ll$")
+    text = text.replace(">>", r"$\gg$")
+    text = text.replace("C>A", r"C$>$A")
+    text = text.replace("C-minus-A", r"C-minus-A")
+    text = text.replace("C-A", r"C-A")
+    for idx, value in enumerate(placeholders):
+        text = text.replace(f"@@CODE{idx}@@", value)
+    return text
+
+
+def tex_escape_plain(text: str) -> str:
+    replacements = {
+        "\\": r"\textbackslash{}",
+        "&": r"\&",
+        "%": r"\%",
+        "$": r"\$",
+        "#": r"\#",
+        "_": r"\_",
+        "{": r"\{",
+        "}": r"\}",
+        "~": r"\textasciitilde{}",
+        "^": r"\textasciicircum{}",
+    }
+    return "".join(replacements.get(char, char) for char in text)
+
+
+def table_to_latex(rows: list[str]) -> list[str]:
+    parsed = [[cell.strip() for cell in row.strip().strip("|").split("|")] for row in rows]
+    header = parsed[0]
+    body = parsed[2:]
+    widths = " ".join(["Y"] * len(header))
+    out = [
+        r"\begin{table}[htbp]",
+        r"\centering",
+        r"\small",
+        rf"\begin{{tabularx}}{{\linewidth}}{{{widths}}}",
+        r"\toprule",
+        " & ".join(tex_escape(cell) for cell in header) + r" \\",
+        r"\midrule",
+    ]
+    for row in body:
+        out.append(" & ".join(tex_escape(cell) for cell in row) + r" \\")
+    out.extend([r"\bottomrule", r"\end{tabularx}", r"\end{table}"])
+    return out
+
+
+def image_to_latex(line: str) -> list[str]:
+    match = re.match(r"!\[(.*?)\]\((.*?)\)", line)
+    if not match:
+        return []
+    caption, source_path = match.groups()
+    filename = FIGURE_MAP.get(source_path)
+    if filename is None:
+        return []
+    return [
+        r"\begin{figure}[htbp]",
+        r"\centering",
+        rf"\includegraphics[width=0.86\linewidth]{{figures/{filename}}}",
+        rf"\caption{{{tex_escape(caption)}}}",
+        rf"\label{{fig:{Path(filename).stem}}}",
+        r"\end{figure}",
+    ]
+
+
+def convert_markdown_to_latex(markdown: str) -> str:
+    lines = markdown.splitlines()
+    title = lines[0].lstrip("# ").strip()
+    output: list[str] = []
+    output.extend(
+        [
+            r"\documentclass[11pt]{article}",
+            r"\usepackage[utf8]{inputenc}",
+            r"\usepackage[T1]{fontenc}",
+            r"\usepackage{amsmath}",
+            r"\usepackage{amssymb}",
+            r"\usepackage{booktabs}",
+            r"\usepackage{graphicx}",
+            r"\usepackage{geometry}",
+            r"\usepackage{hyperref}",
+            r"\usepackage{tabularx}",
+            r"\geometry{margin=1in}",
+            r"\newcolumntype{Y}{>{\raggedright\arraybackslash}X}",
+            r"\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}",
+            rf"\title{{{tex_escape(title)}}}",
+            r"\author{Jozsef Olcsak}",
+            r"\date{May 14, 2026}",
+            r"\begin{document}",
+            r"\maketitle",
+        ]
+    )
+
+    index = 1
+    in_abstract = False
+    while index < len(lines):
+        line = lines[index]
+        stripped = line.strip()
+
+        if not stripped:
+            index += 1
+            continue
+
+        if stripped == "## Abstract":
+            output.append(r"\begin{abstract}")
+            in_abstract = True
+            index += 1
+            continue
+
+        if stripped.startswith("## ") and in_abstract:
+            output.append(r"\end{abstract}")
+            in_abstract = False
+
+        if stripped == "$$":
+            formula_lines = []
+            index += 1
+            while index < len(lines) and lines[index].strip() != "$$":
+                formula_lines.append(lines[index].strip())
+                index += 1
+            formula = FORMULAS.get(" ".join(formula_lines), " ".join(formula_lines))
+            output.extend([r"\begin{equation}", formula, r"\end{equation}"])
+            index += 1
+            continue
+
+        if stripped.startswith("```"):
+            block = []
+            index += 1
+            while index < len(lines) and not lines[index].strip().startswith("```"):
+                block.append(lines[index])
+                index += 1
+            output.extend([r"\begin{verbatim}", *block, r"\end{verbatim}"])
+            index += 1
+            continue
+
+        if stripped.startswith("|") and index + 1 < len(lines) and lines[index + 1].strip().startswith("|"):
+            table = []
+            while index < len(lines) and lines[index].strip().startswith("|"):
+                table.append(lines[index])
+                index += 1
+            output.extend(table_to_latex(table))
+            continue
+
+        if stripped.startswith("!["):
+            output.extend(image_to_latex(stripped))
+            index += 1
+            continue
+
+        if stripped.startswith("## "):
+            heading = re.sub(r"^\d+\.\s+", "", stripped[3:])
+            if heading == "References":
+                output.append(r"\section*{References}")
+            else:
+                output.append(rf"\section{{{tex_escape(heading)}}}")
+            index += 1
+            continue
+
+        if stripped.startswith("### "):
+            output.append(rf"\subsection{{{tex_escape(stripped[4:])}}}")
+            index += 1
+            continue
+
+        if re.match(r"^\d+\.\s+", stripped):
+            items = []
+            while index < len(lines) and re.match(r"^\d+\.\s+", lines[index].strip()):
+                items.append(re.sub(r"^\d+\.\s+", "", lines[index].strip()))
+                index += 1
+            output.append(r"\begin{enumerate}")
+            output.extend(rf"\item {tex_escape(item)}" for item in items)
+            output.append(r"\end{enumerate}")
+            continue
+
+        if stripped.startswith("- "):
+            items = []
+            while index < len(lines) and lines[index].strip().startswith("- "):
+                items.append(lines[index].strip()[2:])
+                index += 1
+            output.append(r"\begin{itemize}")
+            output.extend(rf"\item {tex_escape(item)}" for item in items)
+            output.append(r"\end{itemize}")
+            continue
+
+        paragraph = [stripped]
+        index += 1
+        while index < len(lines):
+            nxt = lines[index].strip()
+            if (
+                not nxt
+                or nxt.startswith("#")
+                or nxt.startswith("|")
+                or nxt.startswith("!")
+                or nxt.startswith("```")
+                or nxt == "$$"
+                or nxt.startswith("- ")
+                or re.match(r"^\d+\.\s+", nxt)
+            ):
+                break
+            paragraph.append(nxt)
+            index += 1
+        output.append(tex_escape(" ".join(paragraph)) + "\n")
+
+    if in_abstract:
+        output.append(r"\end{abstract}")
+    output.extend([r"\end{document}", ""])
+    return "\n".join(output)
+
+
+def render_png_figures() -> None:
+    FIGURES.mkdir(parents=True, exist_ok=True)
+    for source, target in FIGURE_MAP.items():
+        svg = PACKET / source
+        doc = fitz.open(str(svg))
+        pix = doc[0].get_pixmap(matrix=fitz.Matrix(2.5, 2.5), alpha=False)
+        pix.save(FIGURES / target)
+        shutil.copy2(svg, FIGURES / Path(source).name)
+
+
+def build_zip() -> None:
+    if ZIP_PATH.exists():
+        ZIP_PATH.unlink()
+    with zipfile.ZipFile(ZIP_PATH, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        for path in sorted(ARXIV.rglob("*")):
+            if path.is_file():
+                archive.write(path, path.relative_to(ARXIV))
+
+
+def main() -> None:
+    ARXIV.mkdir(exist_ok=True)
+    render_png_figures()
+    (ARXIV / "main.tex").write_text(convert_markdown_to_latex(SOURCE.read_text(encoding="utf-8")), encoding="utf-8")
+    (ARXIV / "README.md").write_text(
+        "\n".join(
+            [
+                "# arXiv source package",
+                "",
+                "Upload the contents of this directory, or `arxiv_submission_source.zip`, to arXiv.",
+                "The PNG figures are generated from the canonical SVG figures in the manuscript packet.",
+                "The full reproducibility package is archived at doi:10.5281/zenodo.20181556.",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    build_zip()
+    print(ARXIV / "main.tex")
+    print(ZIP_PATH)
+
+
+if __name__ == "__main__":
+    main()

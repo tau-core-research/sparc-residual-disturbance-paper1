@@ -50,6 +50,23 @@ def test_publication_repo_checklist_files_exist():
     assert missing == []
 
 
+def test_arxiv_source_package_exists():
+    required = [
+        ROOT / "arxiv/main.tex",
+        ROOT / "arxiv/figures/quality_pass_rms_distribution.png",
+        ROOT / "arxiv/figures/control_forest_plot.png",
+        ROOT / "arxiv/figures/distance_stratified_effects.png",
+    ]
+    missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]
+    assert missing == []
+
+    source = (ROOT / "arxiv/main.tex").read_text(encoding="utf-8")
+    assert "\\begin{equation}" in source
+    assert "\\includegraphics" in source
+    assert "[DOI]" not in source
+    assert "mediaimage" not in source
+
+
 def test_raw_sparc_inputs_are_not_tracked():
     if not (ROOT / ".git").exists():
         return

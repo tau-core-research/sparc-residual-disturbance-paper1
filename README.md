@@ -62,6 +62,24 @@ PYTHONPATH=src python -m pytest -q
 
 The commands write regenerated tables, figures, appendices, and the PDF into the same paths cited by the manuscript.
 
+## arXiv Source Package
+
+Build a LaTeX source package for arXiv with:
+
+```bash
+python studies/sparc_residual_coherence_test_v01/make_arxiv_source.py
+```
+
+This writes:
+
+```text
+arxiv/main.tex
+arxiv/figures/
+arxiv_submission_source.zip
+```
+
+The arXiv source package uses PNG figure files generated from the canonical SVG figures. The SVG figures remain in the repository and Zenodo package as vector source artifacts.
+
 ## Publication Hygiene
 
 The repository is intended to be public. It excludes local caches, virtual environments, macOS metadata, raw SPARC downloads, SPARC Table1 metadata, and extracted SPARC rotmod files through `.gitignore`.
