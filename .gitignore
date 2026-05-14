@@ -9,3 +9,7 @@ build/
 data/raw/
 data/external/SPARC_Table1.txt
 data/sparc/Rotmod_LTG/
+arxiv/main.pdf
+arxiv/*.aux
+arxiv/*.log
+arxiv/*.out

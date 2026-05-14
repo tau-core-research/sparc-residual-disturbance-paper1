@@ -7,8 +7,10 @@
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{hyperref}
+\usepackage{xurl}
 \usepackage{tabularx}
 \geometry{margin=1in}
+\emergencystretch=2em
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
 \title{External structural disturbance is associated with increased low-acceleration residual scatter in SPARC galaxies: a residual-blind audit}
@@ -98,7 +100,7 @@ Inference uses count-preserving label permutation for the one-sided p-value and 
 \section{Labeling Protocol And External Evidence}
 Labels encode external structural state rather than residual behavior. Class A denotes externally regular/coherent disks, class C denotes externally disturbed or coherence-poor systems, and class B denotes uncertain or intermediate cases. The A/C evidence rows were expanded to reduce dependence on uncertain labels and to make the distance imbalance testable.
 
-This discipline is central: the result is not that an analyst can separate high- and low-residual galaxies after inspecting residuals, but that residual-blind external evidence predicts the frozen endpoint. The packet records this audit layer in \texttt{labeling\_protocol.md}, which defines the source rules and A/B/C decision logic, and in \texttt{external\_evidence\_table.csv}, which gives row-level evidence summaries, source links, reviewer/date fields, and residual-blind flags.
+This discipline is central: the result is not that an analyst can separate high- and low-residual galaxies after inspecting residuals, but that residual-blind external evidence predicts the frozen endpoint. The packet records this audit layer in \path{labeling_protocol.md}, which defines the source rules and A/B/C decision logic, and in \path{external_evidence_table.csv}, which gives row-level evidence summaries, source links, reviewer/date fields, and residual-blind flags.
 
 The protocol is intentionally conservative. A requires direct regular-disk evidence such as regular HI/Halpha kinematics, low asymmetry, or a well-defined symmetric rotation curve. C requires direct disturbance evidence such as disturbed HI morphology, lopsided velocity fields, tidal or interaction signatures, or warp evidence tied to gas morphology or kinematics. Environment-only, bar-only, or rotation-curve-quality-only information is not enough for an A/C call; ambiguous rows default to B. This makes some classifications less aggressive, but it reduces the risk that the final contrast is created by weak or indirect evidence.
 
@@ -107,7 +109,7 @@ Figure 1 shows the quality-selected residual distribution by external class. Lab
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.86\linewidth]{figures/quality_pass_rms_distribution.png}
-\caption{Figure 1. Residual scatter by external class.}
+\caption{Residual scatter by external class.}
 \label{fig:quality_pass_rms_distribution}
 \end{figure}
 \section{Primary Result}
@@ -115,7 +117,8 @@ The primary result is positive:
 
 \begin{table}[htbp]
 \centering
-\small
+\footnotesize
+\setlength{\tabcolsep}{3pt}
 \begin{tabularx}{\linewidth}{Y Y Y Y Y Y Y Y Y}
 \toprule
 comparison & n A & n C & median A & median C & C-A diff & p & CI low & CI high \\
@@ -135,7 +138,7 @@ Figure 2 summarizes the primary result and main controls on a common effect scal
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.86\linewidth]{figures/control_forest_plot.png}
-\caption{Figure 2. C-minus-A control effects.}
+\caption{C-minus-A control effects.}
 \label{fig:control_forest_plot}
 \end{figure}
 \section{Distance And Scale Controls}
@@ -145,7 +148,8 @@ The important change is that matched and stratified controls no longer collapse 
 
 \begin{table}[htbp]
 \centering
-\small
+\footnotesize
+\setlength{\tabcolsep}{3pt}
 \begin{tabularx}{\linewidth}{Y Y Y}
 \toprule
 control & effect & p \\
@@ -161,7 +165,8 @@ Every distance bin has a positive C-minus-A median difference:
 
 \begin{table}[htbp]
 \centering
-\small
+\footnotesize
+\setlength{\tabcolsep}{3pt}
 \begin{tabularx}{\linewidth}{Y Y Y Y}
 \toprule
 SPARC distance bin & n A & n C & C-A diff \\
@@ -178,7 +183,7 @@ Figure 3 shows the same within-bin result visually.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.86\linewidth]{figures/distance_stratified_effects.png}
-\caption{Figure 3. Distance-bin effects.}
+\caption{Distance-bin effects.}
 \label{fig:distance_stratified_effects}
 \end{figure}
 Radius controls also preserve the predicted direction. The max-radius imbalance remains visible (p = 0.00190), but common-support and greedy radius-matched tests are positive (p = 0.00090 and p = 0.01020); the strict $\leq$2 kpc caliper is positive but underpowered (p = 0.10969). Thus the radius checks support the same direction, while also showing that very strict matching quickly reduces sample support.
@@ -194,7 +199,8 @@ The same residual-blind A/C labels were compared against three alternative basel
 
 \begin{table}[htbp]
 \centering
-\small
+\footnotesize
+\setlength{\tabcolsep}{3pt}
 \begin{tabularx}{\linewidth}{Y Y Y Y Y Y Y Y Y}
 \toprule
 score & n A & n C & median A & median C & C-A diff & p & CI low & CI high \\
@@ -212,7 +218,8 @@ The same point can be summarized as a compact effect-size sanity check:
 
 \begin{table}[htbp]
 \centering
-\small
+\footnotesize
+\setlength{\tabcolsep}{3pt}
 \begin{tabularx}{\linewidth}{Y Y Y Y}
 \toprule
 score & AUC & robust median d & interpretation \\
@@ -247,7 +254,8 @@ These limitations define Phase II. A follow-up should freeze the same endpoint, 
 
 \begin{table}[htbp]
 \centering
-\small
+\footnotesize
+\setlength{\tabcolsep}{3pt}
 \begin{tabularx}{\linewidth}{Y Y Y}
 \toprule
 sample family & main use in Phase II & minimum added metadata \\
@@ -268,53 +276,56 @@ The minimum main-text figure set is:
 
 \begin{table}[htbp]
 \centering
-\small
+\footnotesize
+\setlength{\tabcolsep}{3pt}
 \begin{tabularx}{\linewidth}{Y Y Y}
 \toprule
 figure & file & role \\
 \midrule
-Figure 1 & \texttt{figures/quality\_pass\_rms\_distribution.svg} & quality-selected class-separated primary endpoint \\
-Figure 2 & \texttt{figures/control\_forest\_plot.svg} & primary and control effects on one scale \\
-Figure 3 & \texttt{figures/distance\_stratified\_effects.svg} & distance-bin directionality check \\
+Figure 1 & \path{figures/quality_pass_rms_distribution.svg} & quality-selected class-separated primary endpoint \\
+Figure 2 & \path{figures/control_forest_plot.svg} & primary and control effects on one scale \\
+Figure 3 & \path{figures/distance_stratified_effects.svg} & distance-bin directionality check \\
 \bottomrule
 \end{tabularx}
 \end{table}
 The weighted-residual distribution, threshold-sensitivity heatmap, process diagram, and single-effect summary graphic are supplementary diagnostics. For a short submission, the main-text table focus should be the primary endpoint, baseline/effect-size comparison, and compact control summary; row-level evidence, regression tables, and systematics counts can remain supplementary.
 
-The key supplementary tables are \texttt{external\_evidence\_table.csv} for row-level label evidence, \texttt{baseline\_score\_comparisons.md} for alternative-score checks, \texttt{selection\_observability\_appendix.md} and \texttt{controlled\_regression\_appendix.md} for observability controls, and \texttt{effect\_size\_appendix.md} plus \texttt{inclination\_systematics\_appendix.md} for effect-size and kinematic-systematics summaries.
+The key supplementary tables are \path{external_evidence_table.csv} for row-level label evidence, \path{baseline_score_comparisons.md} for alternative-score checks, \path{selection_observability_appendix.md} and \path{controlled_regression_appendix.md} for observability controls, and \path{effect_size_appendix.md} plus \path{inclination_systematics_appendix.md} for effect-size and kinematic-systematics summaries.
 
 \section{Reproducibility Bundle}
-The full reproducibility package, including the frozen labels, external evidence table, baseline-score comparisons, control summaries, figures, and regeneration scripts, is archived at doi:10.5281/zenodo.20181556. The analysis can be regenerated with the commands listed in Section 13.
+The full reproducibility package, including the frozen labels, external evidence table, baseline-score comparisons, control summaries, figures, and regeneration scripts, is archived at \href{https://doi.org/10.5281/zenodo.20181556.}{\nolinkurl{doi:10.5281/zenodo.20181556.}} The analysis can be regenerated with the commands listed in Section 13.
 
 The reproducibility bundle contains generated tables, control summaries, matched-pair rows, figures, manifest, and status notes under:
 
-\begin{verbatim}
-studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced
-\end{verbatim}
-Key audit files include \texttt{final\_tables.md}, \texttt{external\_evidence\_table.csv}, \texttt{baseline\_score\_comparisons.md}, \texttt{selection\_observability\_appendix.md}, \texttt{controlled\_regression\_appendix.md}, \texttt{effect\_size\_appendix.md}, and \texttt{inclination\_systematics\_appendix.md}.
+\begin{flushleft}
+\footnotesize
+\path{studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced}\\
+\end{flushleft}
+Key audit files include \path{final_tables.md}, \path{external_evidence_table.csv}, \path{baseline_score_comparisons.md}, \path{selection_observability_appendix.md}, \path{controlled_regression_appendix.md}, \path{effect_size_appendix.md}, and \path{inclination_systematics_appendix.md}.
 
 The regeneration commands are:
 
-\begin{verbatim}
-python studies/sparc_residual_coherence_test_v01/download_sparc_data.py
-python studies/sparc_residual_coherence_test_v01/make_labeling_protocol_and_baselines.py
-python studies/sparc_residual_coherence_test_v01/make_selection_and_regression_appendix.py
-python studies/sparc_residual_coherence_test_v01/make_effect_size_and_systematics_appendix.py
-python studies/sparc_residual_coherence_test_v01/make_manuscript_pdf.py
-PYTHONPATH=src python -m pytest -q
-\end{verbatim}
+\begin{flushleft}
+\footnotesize
+\texttt{python} \path{studies/sparc_residual_coherence_test_v01/download_sparc_data.py}\\
+\texttt{python} \path{studies/sparc_residual_coherence_test_v01/make_labeling_protocol_and_baselines.py}\\
+\texttt{python} \path{studies/sparc_residual_coherence_test_v01/make_selection_and_regression_appendix.py}\\
+\texttt{python} \path{studies/sparc_residual_coherence_test_v01/make_effect_size_and_systematics_appendix.py}\\
+\texttt{python} \path{studies/sparc_residual_coherence_test_v01/make_manuscript_pdf.py}\\
+\texttt{PYTHONPATH=src python -m pytest -q}\\
+\end{flushleft}
 Raw SPARC rotmod files are not redistributed. The download script fetches the public SPARC Zenodo archive and places inputs at the paths expected by the regeneration scripts.
 
 \section*{References}
 \begin{itemize}
-\item Lelli, F., McGaugh, S. S., \& Schombert, J. M. 2016, AJ, 152, 157, "SPARC: Mass Models for 175 Disk Galaxies with Spitzer Photometry and Accurate Rotation Curves", doi:10.3847/0004-6256/152/6/157.
-\item McGaugh, S. S., Lelli, F., \& Schombert, J. M. 2016, PRL, 117, 201101, "The Radial Acceleration Relation in Rotationally Supported Galaxies", doi:10.1103/PhysRevLett.117.201101.
-\item Lelli, F., McGaugh, S. S., Schombert, J. M., \& Pawlowski, M. S. 2017, ApJ, 836, 152, "One Law to Rule Them All: The Radial Acceleration Relation of Galaxies", doi:10.3847/1538-4357/836/2/152.
-\item van Eymeren, J., Jutte, E., Jog, C. J., Stein, Y., \& Dettmar, R.-J. 2011, A\&A, 530, A30, "Lopsidedness in WHISP galaxies. II. Morphological lopsidedness", doi:10.1051/0004-6361/201016178.
-\item Di Teodoro, E. M., \& Fraternali, F. 2015, MNRAS, 451, 3021, "3DBarolo: a new 3D algorithm to derive rotation curves of galaxies", doi:10.1093/mnras/stv1213.
-\item Iorio, G., Fraternali, F., Nipoti, C., Di Teodoro, E. M., Read, J. I., \& Battaglia, G. 2017, MNRAS, 466, 4159, "LITTLE THINGS in 3D: robust determination of the circular velocity of dwarf irregular galaxies", doi:10.1093/mnras/stw3285.
+\item Lelli, F., McGaugh, S. S., \& Schombert, J. M. 2016, AJ, 152, 157, "SPARC: Mass Models for 175 Disk Galaxies with Spitzer Photometry and Accurate Rotation Curves", \href{https://doi.org/10.3847/0004-6256/152/6/157.}{\nolinkurl{doi:10.3847/0004-6256/152/6/157.}}
+\item McGaugh, S. S., Lelli, F., \& Schombert, J. M. 2016, PRL, 117, 201101, "The Radial Acceleration Relation in Rotationally Supported Galaxies", \href{https://doi.org/10.1103/PhysRevLett.117.201101.}{\nolinkurl{doi:10.1103/PhysRevLett.117.201101.}}
+\item Lelli, F., McGaugh, S. S., Schombert, J. M., \& Pawlowski, M. S. 2017, ApJ, 836, 152, "One Law to Rule Them All: The Radial Acceleration Relation of Galaxies", \href{https://doi.org/10.3847/1538-4357/836/2/152.}{\nolinkurl{doi:10.3847/1538-4357/836/2/152.}}
+\item van Eymeren, J., Jutte, E., Jog, C. J., Stein, Y., \& Dettmar, R.-J. 2011, A\&A, 530, A30, "Lopsidedness in WHISP galaxies. II. Morphological lopsidedness", \href{https://doi.org/10.1051/0004-6361/201016178.}{\nolinkurl{doi:10.1051/0004-6361/201016178.}}
+\item Di Teodoro, E. M., \& Fraternali, F. 2015, MNRAS, 451, 3021, "3DBarolo: a new 3D algorithm to derive rotation curves of galaxies", \href{https://doi.org/10.1093/mnras/stv1213.}{\nolinkurl{doi:10.1093/mnras/stv1213.}}
+\item Iorio, G., Fraternali, F., Nipoti, C., Di Teodoro, E. M., Read, J. I., \& Battaglia, G. 2017, MNRAS, 466, 4159, "LITTLE THINGS in 3D: robust determination of the circular velocity of dwarf irregular galaxies", \href{https://doi.org/10.1093/mnras/stw3285.}{\nolinkurl{doi:10.1093/mnras/stw3285.}}
 \item Oman, K. A., et al. 2019, MNRAS, 482, 821, "Non-circular motions and the diversity of dwarf galaxy rotation curves".
-\item Oh, S.-H., Hunter, D. A., Brinks, E., et al. 2015, AJ, 149, 180, "High-resolution Mass Models of Dwarf Galaxies from LITTLE THINGS", doi:10.1088/0004-6256/149/6/180.
+\item Oh, S.-H., Hunter, D. A., Brinks, E., et al. 2015, AJ, 149, 180, "High-resolution Mass Models of Dwarf Galaxies from LITTLE THINGS", \href{https://doi.org/10.1088/0004-6256/149/6/180.}{\nolinkurl{doi:10.1088/0004-6256/149/6/180.}}
 \end{itemize}
 \section{Conclusion}
 The distance- and scale-controlled analysis finds a positive association between external structural-disturbance labels and fixed-score residual scatter. Externally disturbed or coherence-poor galaxies show larger scatter than externally regular disks, and the direction persists under matched and stratified controls.

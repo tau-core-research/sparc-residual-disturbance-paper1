@@ -53,11 +53,20 @@ def tex_escape(text: str) -> str:
     placeholders: list[str] = []
 
     def code_sub(match: re.Match[str]) -> str:
-        placeholders.append(r"\texttt{" + tex_escape_plain(match.group(1)) + "}")
+        code = match.group(1)
+        if re.search(r"[/.]", code) and " " not in code:
+            placeholders.append(r"\path{" + code + "}")
+        else:
+            placeholders.append(r"\texttt{" + tex_escape_plain(code) + "}")
         return f"@@CODE{len(placeholders) - 1}@@"
 
     text = re.sub(r"`([^`]+)`", code_sub, text)
     text = tex_escape_plain(text)
+    text = re.sub(
+        r"doi:([0-9][0-9A-Za-z./-]+)",
+        r"\\href{https://doi.org/\1}{\\nolinkurl{doi:\1}}",
+        text,
+    )
     text = text.replace("α", r"$\alpha$")
     text = text.replace("μ", r"$\mu$")
     text = text.replace("Δ", r"$\Delta$")
@@ -98,7 +107,8 @@ def table_to_latex(rows: list[str]) -> list[str]:
     out = [
         r"\begin{table}[htbp]",
         r"\centering",
-        r"\small",
+        r"\footnotesize",
+        r"\setlength{\tabcolsep}{3pt}",
         rf"\begin{{tabularx}}{{\linewidth}}{{{widths}}}",
         r"\toprule",
         " & ".join(tex_escape(cell) for cell in header) + r" \\",
@@ -115,6 +125,7 @@ def image_to_latex(line: str) -> list[str]:
     if not match:
         return []
     caption, source_path = match.groups()
+    caption = re.sub(r"^Figure\s+\d+\.\s*", "", caption)
     filename = FIGURE_MAP.get(source_path)
     if filename is None:
         return []
@@ -126,6 +137,14 @@ def image_to_latex(line: str) -> list[str]:
         rf"\label{{fig:{Path(filename).stem}}}",
         r"\end{figure}",
     ]
+
+
+def code_line_to_latex(line: str) -> str:
+    if line.startswith("python "):
+        return rf"\texttt{{python}} \path{{{line[len('python '):]}}}\\"
+    if "/" in line and " " not in line:
+        return rf"\path{{{line}}}\\"
+    return r"\texttt{" + tex_escape_plain(line) + r"}\\"
 
 
 def convert_markdown_to_latex(markdown: str) -> str:
@@ -143,8 +162,10 @@ def convert_markdown_to_latex(markdown: str) -> str:
             r"\usepackage{graphicx}",
             r"\usepackage{geometry}",
             r"\usepackage{hyperref}",
+            r"\usepackage{xurl}",
             r"\usepackage{tabularx}",
             r"\geometry{margin=1in}",
+            r"\emergencystretch=2em",
             r"\newcolumntype{Y}{>{\raggedright\arraybackslash}X}",
             r"\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}",
             rf"\title{{{tex_escape(title)}}}",
@@ -192,7 +213,9 @@ def convert_markdown_to_latex(markdown: str) -> str:
             while index < len(lines) and not lines[index].strip().startswith("```"):
                 block.append(lines[index])
                 index += 1
-            output.extend([r"\begin{verbatim}", *block, r"\end{verbatim}"])
+            output.extend([r"\begin{flushleft}", r"\footnotesize"])
+            output.extend(code_line_to_latex(line) for line in block)
+            output.append(r"\end{flushleft}")
             index += 1
             continue
 
@@ -283,7 +306,7 @@ def build_zip() -> None:
         ZIP_PATH.unlink()
     with zipfile.ZipFile(ZIP_PATH, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(ARXIV.rglob("*")):
-            if path.is_file():
+            if path.is_file() and path.suffix not in {".aux", ".log", ".out", ".pdf"}:
                 archive.write(path, path.relative_to(ARXIV))
 
 
