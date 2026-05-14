@@ -27,14 +27,12 @@ studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced/inc
 ## Included Data
 
 ```text
-data/sparc/Rotmod_LTG
-data/external/SPARC_Table1.txt
 outputs/external_proxy_v06_distance_balanced
 outputs/hecate_crossmatch_summary.csv
 studies/sparc_residual_coherence_test_v01/coherence_labels_v06_distance_balanced.csv
 ```
 
-The SPARC rotmod files and SPARC Table1 metadata are included so the baseline-score and observability appendices can be regenerated from this repository without depending on the original development workspace.
+The repository includes derived residual, control, and labeling artifacts. Raw SPARC rotmod files and SPARC Table1 metadata are not redistributed here; they can be downloaded into the expected local paths with the script below.
 
 ## Reproduce The Packet
 
@@ -47,6 +45,7 @@ python -m pip install -e .
 Regenerate the public manuscript packet:
 
 ```bash
+python studies/sparc_residual_coherence_test_v01/download_sparc_data.py
 python studies/sparc_residual_coherence_test_v01/make_labeling_protocol_and_baselines.py
 python studies/sparc_residual_coherence_test_v01/make_selection_and_regression_appendix.py
 python studies/sparc_residual_coherence_test_v01/make_effect_size_and_systematics_appendix.py

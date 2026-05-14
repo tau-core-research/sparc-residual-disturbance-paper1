@@ -25,14 +25,21 @@ def test_manuscript_referenced_paths_exist():
         PACKET / "figures/quality_pass_rms_distribution.svg",
         PACKET / "figures/control_forest_plot.svg",
         PACKET / "figures/distance_stratified_effects.svg",
-        ROOT / "data/sparc/Rotmod_LTG",
-        ROOT / "data/external/SPARC_Table1.txt",
         ROOT / "outputs/external_proxy_v06_distance_balanced/sparc_residual_summary.csv",
         ROOT / "outputs/external_proxy_v06_distance_balanced/coherence_label_diagnostics.csv",
         ROOT / "outputs/hecate_crossmatch_summary.csv",
     ]
     missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]
     assert missing == []
+
+
+def test_downloaded_sparc_inputs_when_present():
+    rotmod_dir = ROOT / "data/sparc/Rotmod_LTG"
+    table1 = ROOT / "data/external/SPARC_Table1.txt"
+    if not rotmod_dir.exists() and not table1.exists():
+        return
+    assert table1.exists()
+    assert len(list(rotmod_dir.glob("*_rotmod.dat"))) == 175
 
 
 def test_public_package_is_english_only():

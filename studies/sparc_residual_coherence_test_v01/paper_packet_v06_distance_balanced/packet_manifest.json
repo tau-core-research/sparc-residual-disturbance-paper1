@@ -51,6 +51,7 @@
     "continuous_s_tau_protocol.md",
     "s_tau_source_matches.csv",
     "s_tau_source_coverage.md",
+    "../download_sparc_data.py",
     "../download_s_tau_sources.py",
     "../make_selection_and_regression_appendix.py",
     "../make_effect_size_and_systematics_appendix.py",

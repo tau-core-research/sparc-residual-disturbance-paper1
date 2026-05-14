@@ -230,6 +230,8 @@ For a short submission, the main-text table focus should be the primary endpoint
 
 ## 13. Reproducibility Bundle
 
+The full reproducibility package, including the frozen labels, external evidence table, baseline-score comparisons, control summaries, figures, and regeneration scripts, is archived at [DOI]. The analysis can be regenerated with the commands listed in Section 13.
+
 The reproducibility bundle contains the generated tables, control summaries, matched-pair rows, figures, manifest, and status notes under:
 
 ```text
@@ -261,6 +263,7 @@ paper_status.md
 The regeneration commands are:
 
 ```text
+python studies/sparc_residual_coherence_test_v01/download_sparc_data.py
 python studies/sparc_residual_coherence_test_v01/make_labeling_protocol_and_baselines.py
 python studies/sparc_residual_coherence_test_v01/make_selection_and_regression_appendix.py
 python studies/sparc_residual_coherence_test_v01/make_effect_size_and_systematics_appendix.py
@@ -268,7 +271,7 @@ python studies/sparc_residual_coherence_test_v01/make_manuscript_pdf.py
 PYTHONPATH=src python -m pytest -q
 ```
 
-The packet includes the copied SPARC rotmod data used for baseline recomputation under `data/sparc/Rotmod_LTG`, so the alternative-score comparison can be regenerated without depending on the older TPG workspace.
+The raw SPARC rotmod files are not redistributed in this repository. The included download script fetches the public SPARC Zenodo archive and places the rotmod files under `data/sparc/Rotmod_LTG` and the compact metadata table under `data/external/SPARC_Table1.txt`, the paths expected by the regeneration scripts.
 
 ## 14. References
 
