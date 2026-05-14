@@ -329,11 +329,11 @@ def class_residual_drawing(weighted: bool = False) -> Drawing:
         value = max_value * tick / 4.0
         yy = y(value)
         drawing.add(Line(left - 4, yy, left + width, yy, strokeColor=colors.HexColor("#dddddd"), strokeWidth=0.4))
-        drawing.add(String(left - 9, yy - 3, f"{value:.2f}", fontName="Helvetica", fontSize=7.5, textAnchor="end"))
+        drawing.add(String(left - 9, yy - 3, f"{value:.2f}", fontName="Helvetica", fontSize=8.5, textAnchor="end"))
 
     for label, group in grouped.items():
         x = x_positions[label]
-        drawing.add(String(x, bottom - 18, f"{label} (n={len(group)})", fontName="Helvetica-Bold", fontSize=9, textAnchor="middle"))
+        drawing.add(String(x, bottom - 18, f"{label} (n={len(group)})", fontName="Helvetica-Bold", fontSize=10, textAnchor="middle"))
         if group:
             median = statistics.median(group)
             drawing.add(Line(x - 38, y(median), x + 38, y(median), strokeColor=colors.black, strokeWidth=2.3))
@@ -349,8 +349,8 @@ def class_residual_drawing(weighted: bool = False) -> Drawing:
                 )
             )
     ylabel = "weighted rms-log residual" if weighted else "rms-log residual"
-    drawing.add(String(250, 222, f"Quality-selected {ylabel} distribution by external class", fontName="Helvetica-Bold", fontSize=11, textAnchor="middle"))
-    drawing.add(String(43, 120, "residual scatter", fontName="Helvetica", fontSize=8, textAnchor="middle", transform=[0, 1, -1, 0, 43, 120]))
+    drawing.add(String(250, 222, f"{ylabel.capitalize()} by external class", fontName="Helvetica-Bold", fontSize=12, textAnchor="middle"))
+    drawing.add(String(43, 120, "residual scatter", fontName="Helvetica", fontSize=9, textAnchor="middle", transform=[0, 1, -1, 0, 43, 120]))
     return drawing
 
 
@@ -429,27 +429,27 @@ def control_forest_drawing() -> Drawing:
     def x(value: float) -> float:
         return left + (value - scale_min) / (scale_max - scale_min) * (right - left)
 
-    drawing.add(String(250, 258, "C-minus-A effect across primary and control analyses", fontName="Helvetica-Bold", fontSize=11, textAnchor="middle"))
+    drawing.add(String(250, 258, "C-minus-A control effects", fontName="Helvetica-Bold", fontSize=12, textAnchor="middle"))
     drawing.add(Line(left, 42, right, 42, strokeColor=colors.black))
     drawing.add(Line(x(0), 48, x(0), 238, strokeColor=colors.HexColor("#777777"), strokeWidth=0.7, strokeDashArray=[4, 3]))
     for tick in [-0.1, 0.0, 0.1, 0.2]:
         drawing.add(Line(x(tick), 38, x(tick), 46, strokeColor=colors.black, strokeWidth=0.5))
-        drawing.add(String(x(tick), 25, f"{tick:.1f}", fontName="Helvetica", fontSize=7, textAnchor="middle"))
+        drawing.add(String(x(tick), 25, f"{tick:.1f}", fontName="Helvetica", fontSize=8, textAnchor="middle"))
     for idx, row in enumerate(rows):
         y = top - idx * row_gap
         effect = float(row["effect"])
         ci_low = row["ci_low"]
         ci_high = row["ci_high"]
-        drawing.add(String(18, y - 3, str(row["label"]), fontName="Helvetica", fontSize=8.2, textAnchor="start"))
-        drawing.add(String(470, y - 3, f"p={float(row['p']):.4f}", fontName="Helvetica", fontSize=7.6, textAnchor="end"))
+        drawing.add(String(18, y - 3, str(row["label"]), fontName="Helvetica", fontSize=8.8, textAnchor="start"))
+        drawing.add(String(470, y - 3, f"p={float(row['p']):.4f}", fontName="Helvetica", fontSize=8.2, textAnchor="end"))
         if ci_low is not None and ci_high is not None:
             drawing.add(Line(x(float(ci_low)), y, x(float(ci_high)), y, strokeColor=colors.HexColor("#116466"), strokeWidth=3.4))
         else:
             drawing.add(Line(x(effect) - 7, y, x(effect) + 7, y, strokeColor=colors.HexColor("#116466"), strokeWidth=3.4))
         drawing.add(Circle(x(effect), y, 3.8, fillColor=colors.HexColor("#d1495b"), strokeColor=None))
-        drawing.add(String(x(effect), y + 10, fmt(effect, 3), fontName="Helvetica", fontSize=7, textAnchor="middle"))
-        drawing.add(String(18, y - 14, str(row["detail"]), fontName="Helvetica", fontSize=6.8, fillColor=colors.HexColor("#555555")))
-    drawing.add(String(250, 8, "median residual difference; positive values support the predicted C>A direction", fontName="Helvetica", fontSize=7, textAnchor="middle"))
+        drawing.add(String(x(effect), y + 10, fmt(effect, 3), fontName="Helvetica", fontSize=7.5, textAnchor="middle"))
+        drawing.add(String(18, y - 14, str(row["detail"]), fontName="Helvetica", fontSize=7.2, fillColor=colors.HexColor("#555555")))
+    drawing.add(String(250, 8, "median residual difference; positive supports C>A", fontName="Helvetica", fontSize=7.8, textAnchor="middle"))
     return drawing
 
 
@@ -467,23 +467,23 @@ def distance_strata_drawing() -> Drawing:
     drawing = Drawing(500, 225)
     left, bottom, width, height = 75, 50, 350, 125
     max_value = max(value for _, _, _, value in values) * 1.35
-    drawing.add(String(250, 203, "Within-distance-bin C-minus-A effects", fontName="Helvetica-Bold", fontSize=11, textAnchor="middle"))
+    drawing.add(String(250, 203, "Distance-bin C-minus-A effects", fontName="Helvetica-Bold", fontSize=12, textAnchor="middle"))
     drawing.add(Line(left, bottom, left, bottom + height, strokeColor=colors.black))
     drawing.add(Line(left, bottom, left + width, bottom, strokeColor=colors.black))
     for tick in range(4):
         value = max_value * tick / 3.0
         y = bottom + value / max_value * height
         drawing.add(Line(left - 4, y, left + width, y, strokeColor=colors.HexColor("#dddddd"), strokeWidth=0.4))
-        drawing.add(String(left - 9, y - 3, f"{value:.2f}", fontName="Helvetica", fontSize=7, textAnchor="end"))
+        drawing.add(String(left - 9, y - 3, f"{value:.2f}", fontName="Helvetica", fontSize=8, textAnchor="end"))
     bar_w = 46
     for idx, (label, n_a, n_c, value) in enumerate(values):
         x = left + 27 + idx * 82
         h = height * value / max_value
         drawing.add(Rect(x, bottom, bar_w, h, fillColor=colors.HexColor("#6a994e"), strokeColor=None))
-        drawing.add(String(x + bar_w / 2, bottom - 15, label, fontName="Helvetica", fontSize=8, textAnchor="middle"))
-        drawing.add(String(x + bar_w / 2, bottom - 27, f"A={n_a}, C={n_c}", fontName="Helvetica", fontSize=6.5, textAnchor="middle"))
-        drawing.add(String(x + bar_w / 2, bottom + h + 7, f"{value:.3f}", fontName="Helvetica", fontSize=8, textAnchor="middle"))
-    drawing.add(String(250, 11, "all SPARC distance bins retain positive C-minus-A direction", fontName="Helvetica", fontSize=7, textAnchor="middle"))
+        drawing.add(String(x + bar_w / 2, bottom - 15, label, fontName="Helvetica", fontSize=8.8, textAnchor="middle"))
+        drawing.add(String(x + bar_w / 2, bottom - 27, f"A={n_a}, C={n_c}", fontName="Helvetica", fontSize=7.2, textAnchor="middle"))
+        drawing.add(String(x + bar_w / 2, bottom + h + 7, f"{value:.3f}", fontName="Helvetica", fontSize=8.8, textAnchor="middle"))
+    drawing.add(String(250, 11, "positive C-minus-A direction in every distance bin", fontName="Helvetica", fontSize=7.8, textAnchor="middle"))
     return drawing
 
 
@@ -570,7 +570,7 @@ def write_quality_pass_svg_artifacts() -> None:
             residual_rows,
             label_rows,
             metric="rms_log_tpg",
-            title="Quality-selected residual scatter by external class",
+            title="Residual scatter by external class",
             ylabel="rms-log residual",
         ),
         PACKET / "figures/quality_pass_rms_distribution.svg",
@@ -580,7 +580,7 @@ def write_quality_pass_svg_artifacts() -> None:
             residual_rows,
             label_rows,
             metric="weighted_rms_log_tpg",
-            title="Quality-selected weighted residual scatter by external class",
+            title="Weighted residual scatter by external class",
             ylabel="weighted rms-log residual",
         ),
         PACKET / "figures/quality_pass_weighted_rms_distribution.svg",
@@ -607,21 +607,21 @@ def render_control_forest_svg() -> str:
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<rect width="100%" height="100%" fill="white"/>',
-        svg_text(width / 2, 32, "C-minus-A effect across primary and control analyses", size=18),
+        svg_text(width / 2, 32, "C-minus-A control effects", size=20),
         f'<line x1="{left}" y1="370" x2="{right}" y2="370" stroke="#333"/>',
         f'<line x1="{x(0):.2f}" y1="62" x2="{x(0):.2f}" y2="370" stroke="#777" stroke-dasharray="5,5"/>',
     ]
     for tick in [-0.1, 0.0, 0.1, 0.2]:
         parts.append(f'<line x1="{x(tick):.2f}" y1="365" x2="{x(tick):.2f}" y2="376" stroke="#333"/>')
-        parts.append(svg_text(x(tick), 394, f"{tick:.1f}", size=11))
+        parts.append(svg_text(x(tick), 394, f"{tick:.1f}", size=12))
     for idx, row in enumerate(rows):
         y = top + idx * row_gap
         effect = float(row["effect"])
         ci_low = row["ci_low"]
         ci_high = row["ci_high"]
-        parts.append(svg_text(36, y + 4, str(row["label"]), size=12, anchor="start"))
-        parts.append(svg_text(36, y + 21, str(row["detail"]), size=10, anchor="start"))
-        parts.append(svg_text(725, y + 4, f"p={float(row['p']):.4f}", size=11, anchor="end"))
+        parts.append(svg_text(36, y + 4, str(row["label"]), size=13, anchor="start"))
+        parts.append(svg_text(36, y + 22, str(row["detail"]), size=11, anchor="start"))
+        parts.append(svg_text(725, y + 4, f"p={float(row['p']):.4f}", size=12, anchor="end"))
         if ci_low is not None and ci_high is not None:
             parts.append(
                 f'<line x1="{x(float(ci_low)):.2f}" y1="{y:.2f}" x2="{x(float(ci_high)):.2f}" y2="{y:.2f}" '
@@ -633,8 +633,8 @@ def render_control_forest_svg() -> str:
                 'stroke="#116466" stroke-width="7" stroke-linecap="round"/>'
             )
         parts.append(f'<circle cx="{x(effect):.2f}" cy="{y:.2f}" r="6" fill="#d1495b"/>')
-        parts.append(svg_text(x(effect), y - 13, fmt(effect, 3), size=10))
-    parts.append(svg_text(width / 2, 418, "median residual difference; positive values support the predicted C>A direction", size=11))
+        parts.append(svg_text(x(effect), y - 14, fmt(effect, 3), size=11))
+    parts.append(svg_text(width / 2, 418, "median residual difference; positive supports C>A", size=12))
     parts.append("</svg>")
     return "\n".join(parts)
 
@@ -661,7 +661,7 @@ def render_distance_strata_svg() -> str:
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<rect width="100%" height="100%" fill="white"/>',
-        svg_text(width / 2, 32, "Within-distance-bin C-minus-A effects", size=18),
+        svg_text(width / 2, 32, "Distance-bin C-minus-A effects", size=20),
         f'<line x1="{left}" y1="{bottom}" x2="{left + plot_w}" y2="{bottom}" stroke="#333"/>',
         f'<line x1="{left}" y1="{bottom - plot_h}" x2="{left}" y2="{bottom}" stroke="#333"/>',
     ]
@@ -669,16 +669,16 @@ def render_distance_strata_svg() -> str:
         value = max_value * tick / 4.0
         yy = y(value)
         parts.append(f'<line x1="{left - 5}" y1="{yy:.2f}" x2="{left + plot_w}" y2="{yy:.2f}" stroke="#ddd"/>')
-        parts.append(svg_text(left - 12, yy + 4, f"{value:.2f}", size=11, anchor="end"))
+        parts.append(svg_text(left - 12, yy + 4, f"{value:.2f}", size=12, anchor="end"))
     for idx, (label, n_a, n_c, value) in enumerate(values):
         x0 = left + 65 + idx * 135
         yy = y(value)
         parts.append(f'<rect x="{x0:.2f}" y="{yy:.2f}" width="{bar_w}" height="{bottom - yy:.2f}" fill="#6a994e"/>')
-        parts.append(svg_text(x0 + bar_w / 2, yy - 9, f"{value:.3f}", size=12))
-        parts.append(svg_text(x0 + bar_w / 2, bottom + 25, label, size=12))
-        parts.append(svg_text(x0 + bar_w / 2, bottom + 43, f"A={n_a}, C={n_c}", size=10))
-    parts.append(svg_text(27, 205, "C-A diff", size=12))
-    parts.append(svg_text(width / 2, 382, "all SPARC distance bins retain positive C-minus-A direction", size=11))
+        parts.append(svg_text(x0 + bar_w / 2, yy - 9, f"{value:.3f}", size=13))
+        parts.append(svg_text(x0 + bar_w / 2, bottom + 25, label, size=13))
+        parts.append(svg_text(x0 + bar_w / 2, bottom + 44, f"A={n_a}, C={n_c}", size=11))
+    parts.append(svg_text(27, 205, "C-A diff", size=13))
+    parts.append(svg_text(width / 2, 382, "positive C-minus-A direction in every distance bin", size=12))
     parts.append("</svg>")
     return "\n".join(parts)
 

@@ -23,7 +23,7 @@ This appendix collects geometry and measurement-systematics risks that are not f
 - Edge-on systems can suffer from line-of-sight integration, dust, and vertical structure effects even when they pass the inclination quality gate.
 - Lower-inclination systems can amplify deprojection uncertainty, especially when non-circular motions are present.
 - Beam smearing is not directly controlled because homogeneous beam-size or physical HI-resolution measurements are not yet in the packet.
-- Asymmetric drift and pressure support can matter in low-mass or gas-rich galaxies and may increase residual scatter independently of the projection score.
+- Asymmetric drift and pressure support can matter in low-mass or gas-rich galaxies and may increase residual scatter independently of the fixed low-acceleration residual score.
 - Non-circular motions, bars, tidal disturbances, and warps are partly the phenomenon being labeled, but they also make any smooth axisymmetric rotation-curve score less appropriate.
 
 Interpretation: the current quality gate removes the most extreme inclination failures, but it does not eliminate geometry or kinematic-systematics concerns. These risks should remain limitations until a follow-up sample includes homogeneous resolution, beam, and velocity-field quality metadata.

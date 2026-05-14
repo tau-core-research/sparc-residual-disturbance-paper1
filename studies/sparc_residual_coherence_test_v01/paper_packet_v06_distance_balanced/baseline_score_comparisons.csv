@@ -1,5 +1,5 @@
 Score,Description,N_A,N_C,Median_A,Median_C,C_minus_A,PermutationP_C_greater_A,BootstrapCI95Low,BootstrapCI95High
-projection_fixed,Fixed projection score,17,28,0.124355,0.208624,0.0842686,0.00209979,0.0443983,0.157918
+projection_fixed,Fixed low-acceleration residual score,17,28,0.124355,0.208624,0.0842686,0.00209979,0.0443983,0.157918
 tau_core_s_class,Tau Core S_tau class-gated,17,28,0.124355,0.616147,0.491792,9.999e-05,0.325978,0.73573
 tau_core_s_evidence,Tau Core S_tau evidence-gated,17,28,0.124355,0.616147,0.491792,9.999e-05,0.325307,0.73573
 tau_core_s_continuous,Tau Core S_tau continuous external,17,28,0.132534,0.473177,0.340643,9.999e-05,0.186878,0.544119

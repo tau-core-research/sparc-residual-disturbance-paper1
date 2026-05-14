@@ -9,7 +9,7 @@ delta_abs = abs(residual_projection_fixed) - abs(residual_comparator)
 interaction = median(delta_abs | C, bin) - median(delta_abs | A, bin)
 ```
 
-Negative `delta_abs` means the fixed projection score has smaller absolute residuals than the comparator in that bin. Positive `interaction` means projection loses more ground in disturbed C rows than in regular A rows.
+Negative `delta_abs` means the fixed low-acceleration residual score has smaller absolute residuals than the comparator in that bin. Positive `interaction` means the fixed score loses more ground in disturbed C rows than in regular A rows.
 
 | Bin type | Bin | Comparator | n A pts | n C pts | median delta A | median delta C | interaction C-A | median delta all |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |

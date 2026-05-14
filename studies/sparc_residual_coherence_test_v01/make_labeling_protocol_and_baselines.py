@@ -823,7 +823,7 @@ def make_baseline_comparisons(rotmod_dir: Path) -> None:
 
     comparison_rows: list[dict[str, object]] = []
     labels_for_scores = {
-        "projection_fixed": "Fixed projection score",
+        "projection_fixed": "Fixed low-acceleration residual score",
         "tau_core_s_class": "Tau Core S_tau class-gated",
         "tau_core_s_evidence": "Tau Core S_tau evidence-gated",
         "tau_core_s_continuous": "Tau Core S_tau continuous external",
@@ -877,7 +877,7 @@ def make_baseline_comparisons(rotmod_dir: Path) -> None:
         "",
         "Same quality-pass A/C sample and same median C-minus-A statistic. Positive values mean disturbed C galaxies have larger residual scatter.",
         "",
-        "`Fixed projection score` is the old high-coherence TPG limit (`S_tau=1`). The two Tau Core rows are operational extended candidates with external, residual-blind `S_tau` mappings; they are sensitivity tests, not primary Paper 1 endpoints.",
+        "`Fixed low-acceleration residual score` is the old high-coherence TPG limit (`S_tau=1`). The two Tau Core rows are operational extended candidates with external, residual-blind `S_tau` mappings; they are sensitivity tests, not primary Paper 1 endpoints.",
         "",
         "| Score | n_A | n_C | median A | median C | C-A | one-sided p | 95% bootstrap CI |",
         "| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
@@ -891,7 +891,7 @@ def make_baseline_comparisons(rotmod_dir: Path) -> None:
     lines.extend(
         [
             "",
-            "Interpretation: these are baseline-score stress tests, not replacement primary endpoints. If several smooth residual scores show the same direction, the paper should phrase the result as a residual-disturbance association rather than uniqueness of the fixed projection prescription. If the `S_tau`-gated variants mechanically increase A/C separation, that is expected: the same external labels are being used to gate the response and should not be reused as independent proof.",
+            "Interpretation: these are baseline-score stress tests, not replacement primary endpoints. If several smooth low-acceleration residual scores show the same direction, the paper should phrase the result as a residual-disturbance association rather than uniqueness of the fixed projection prescription. If the `S_tau`-gated variants mechanically increase A/C separation, that is expected: the same external labels are being used to gate the response and should not be reused as independent proof.",
         ]
     )
     (PACKET / "baseline_score_comparisons.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -945,10 +945,10 @@ def make_baseline_comparisons(rotmod_dir: Path) -> None:
         "",
         "```text",
         "1. Does a score separate A and C labels?",
-        "2. Does a score improve residual scatter relative to the old fixed projection score?",
+        "2. Does a score improve residual scatter relative to the old fixed low-acceleration residual score?",
         "```",
         "",
-        "The old fixed projection score is the `S_tau=1` high-coherence TPG limit. The operational extended candidates use externally assigned `S_tau` mappings. Negative `delta vs old` means the candidate has lower median rms-log residual than the old fixed projection score for that class.",
+        "The old fixed low-acceleration residual score is the `S_tau=1` high-coherence TPG limit. The operational extended candidates use externally assigned `S_tau` mappings. Negative `delta vs old` means the candidate has lower median rms-log residual than the old fixed low-acceleration residual score for that class.",
         "",
         "| Score | Class | n | median rms-log | old fixed-projection median | delta vs old |",
         "| --- | --- | ---: | ---: | ---: | ---: |",
@@ -1391,7 +1391,7 @@ def make_taucore_specificity_map(rotmod_dir: Path) -> None:
         "interaction = median(delta_abs | C, bin) - median(delta_abs | A, bin)",
         "```",
         "",
-        "Negative `delta_abs` means the fixed projection score has smaller absolute residuals than the comparator in that bin. Positive `interaction` means projection loses more ground in disturbed C rows than in regular A rows.",
+        "Negative `delta_abs` means the fixed low-acceleration residual score has smaller absolute residuals than the comparator in that bin. Positive `interaction` means the fixed score loses more ground in disturbed C rows than in regular A rows.",
         "",
         "| Bin type | Bin | Comparator | n A pts | n C pts | median delta A | median delta C | interaction C-A | median delta all |",
         "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |",

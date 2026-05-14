@@ -1,8 +1,8 @@
 Score,Description,Class,N,MedianRmsLog,MedianDeltaVsFixedProjection,MedianOldFixedProjection
-projection_fixed,Fixed projection score,A,17,0.124355,0,0.124355
-projection_fixed,Fixed projection score,B,28,0.16468,0,0.16468
-projection_fixed,Fixed projection score,C,28,0.208624,0,0.208624
-projection_fixed,Fixed projection score,all,73,0.165637,0,0.165637
+projection_fixed,Fixed low-acceleration residual score,A,17,0.124355,0,0.124355
+projection_fixed,Fixed low-acceleration residual score,B,28,0.16468,0,0.16468
+projection_fixed,Fixed low-acceleration residual score,C,28,0.208624,0,0.208624
+projection_fixed,Fixed low-acceleration residual score,all,73,0.165637,0,0.165637
 tau_core_s_class,Tau Core S_tau class-gated,A,17,0.124355,0,0.124355
 tau_core_s_class,Tau Core S_tau class-gated,B,28,0.313989,0.185949,0.16468
 tau_core_s_class,Tau Core S_tau class-gated,C,28,0.616147,0.451798,0.208624

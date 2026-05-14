@@ -103,7 +103,7 @@ def score_values() -> dict[str, dict[str, list[float]]]:
 
 def make_effect_size_appendix() -> None:
     labels = {
-        "projection_fixed": "Fixed projection score",
+        "projection_fixed": "Fixed low-acceleration residual score",
         "newtonian_baryonic": "Newtonian baryonic",
         "mond_simple_mu": "MOND simple-mu",
         "rar_mcgaugh": "Empirical RAR",
@@ -187,7 +187,7 @@ def make_effect_size_appendix() -> None:
     lines.extend(
         [
             "",
-            "Interpretation: the fixed projection, MOND-like, and empirical RAR scores show moderate A/C separation by common-language AUC, while the Newtonian baryonic baseline is close to weak/non-informative in this sample. This supports the paper's restrained reading: the signal is tied to low-acceleration residual regularity, not uniquely to the projection formula.",
+            "Interpretation: the fixed low-acceleration residual score, MOND-like, and empirical RAR scores show moderate A/C separation by common-language AUC, while the Newtonian baryonic baseline is close to weak/non-informative in this sample. This supports the paper's restrained reading: the signal is tied to low-acceleration residual regularity, not uniquely to the projection formula.",
         ]
     )
     (PACKET / "effect_size_appendix.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -311,7 +311,7 @@ def make_systematics_appendix() -> None:
             "- Edge-on systems can suffer from line-of-sight integration, dust, and vertical structure effects even when they pass the inclination quality gate.",
             "- Lower-inclination systems can amplify deprojection uncertainty, especially when non-circular motions are present.",
             "- Beam smearing is not directly controlled because homogeneous beam-size or physical HI-resolution measurements are not yet in the packet.",
-            "- Asymmetric drift and pressure support can matter in low-mass or gas-rich galaxies and may increase residual scatter independently of the projection score.",
+            "- Asymmetric drift and pressure support can matter in low-mass or gas-rich galaxies and may increase residual scatter independently of the fixed low-acceleration residual score.",
             "- Non-circular motions, bars, tidal disturbances, and warps are partly the phenomenon being labeled, but they also make any smooth axisymmetric rotation-curve score less appropriate.",
             "",
             "Interpretation: the current quality gate removes the most extreme inclination failures, but it does not eliminate geometry or kinematic-systematics concerns. These risks should remain limitations until a follow-up sample includes homogeneous resolution, beam, and velocity-field quality metadata.",

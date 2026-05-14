@@ -4,17 +4,17 @@ This table separates two questions:
 
 ```text
 1. Does a score separate A and C labels?
-2. Does a score improve residual scatter relative to the old fixed projection score?
+2. Does a score improve residual scatter relative to the old fixed low-acceleration residual score?
 ```
 
-The old fixed projection score is the `S_tau=1` high-coherence TPG limit. The operational extended candidates use externally assigned `S_tau` mappings. Negative `delta vs old` means the candidate has lower median rms-log residual than the old fixed projection score for that class.
+The old fixed low-acceleration residual score is the `S_tau=1` high-coherence TPG limit. The operational extended candidates use externally assigned `S_tau` mappings. Negative `delta vs old` means the candidate has lower median rms-log residual than the old fixed low-acceleration residual score for that class.
 
 | Score | Class | n | median rms-log | old fixed-projection median | delta vs old |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Fixed projection score | A | 17 | 0.124355 | 0.124355 | 0 |
-| Fixed projection score | B | 28 | 0.16468 | 0.16468 | 0 |
-| Fixed projection score | C | 28 | 0.208624 | 0.208624 | 0 |
-| Fixed projection score | all | 73 | 0.165637 | 0.165637 | 0 |
+| Fixed low-acceleration residual score | A | 17 | 0.124355 | 0.124355 | 0 |
+| Fixed low-acceleration residual score | B | 28 | 0.16468 | 0.16468 | 0 |
+| Fixed low-acceleration residual score | C | 28 | 0.208624 | 0.208624 | 0 |
+| Fixed low-acceleration residual score | all | 73 | 0.165637 | 0.165637 | 0 |
 | Tau Core S_tau class-gated | A | 17 | 0.124355 | 0.124355 | 0 |
 | Tau Core S_tau class-gated | B | 28 | 0.313989 | 0.16468 | 0.185949 |
 | Tau Core S_tau class-gated | C | 28 | 0.616147 | 0.208624 | 0.451798 |

@@ -2,7 +2,7 @@
 
 ## Abstract
 
-We test whether residual-blind external galaxy-coherence labels predict scatter in low-acceleration SPARC rotation-curve residual scores. The endpoint asks whether galaxies classified from external evidence as disturbed or coherence-poor show larger fixed-score residual scatter than externally regular disks. Coherence labels were assigned from source-backed external evidence without using residual outputs, then frozen before residual audit. In the quality-selected sample, the primary C-minus-A median rms-log residual difference for the fixed projection score is 0.08427, with one-sided permutation p = 0.00100 and bootstrap 95% CI [0.04481, 0.15990]. The signal remains positive in leave-one-out, radius common-support, greedy radius-matched, distance-matched, and distance-stratified controls. Effect-size checks show moderate A/C separation for the fixed projection score (AUC = 0.771) and for MOND/RAR-like low-acceleration baselines (AUC = 0.721-0.731), but not for the Newtonian baryonic baseline (AUC = 0.506). Residual distance/radius imbalance and observability systematics remain; the result is therefore a residual-disturbance phenomenology audit rather than a unique model-selection result.
+We test whether residual-blind external galaxy-coherence labels predict scatter in low-acceleration SPARC rotation-curve residual scores. The endpoint asks whether galaxies classified from external evidence as disturbed or coherence-poor show larger fixed-score residual scatter than externally regular disks. Coherence labels were assigned from source-backed external evidence without using residual outputs, then frozen before residual audit. In the quality-selected sample, the primary C-minus-A median rms-log residual difference for the fixed low-acceleration residual score is 0.08427, with one-sided permutation p = 0.00100 and bootstrap 95% CI [0.04481, 0.15990]. The signal remains positive in leave-one-out, radius common-support, greedy radius-matched, distance-matched, and distance-stratified controls. Effect-size checks show moderate A/C separation for the fixed low-acceleration residual score (AUC = 0.771) and for MOND/RAR-like low-acceleration baselines (AUC = 0.721-0.731), but not for the Newtonian baryonic baseline (AUC = 0.506). Residual distance/radius imbalance and observability systematics remain; the result is therefore a residual-disturbance phenomenology audit rather than a unique model-selection result.
 
 ## 1. Motivation
 
@@ -18,7 +18,7 @@ SPARC provides a widely used rotation-curve and mass-model data set for nearby d
 
 The present study is closest in spirit to residual auditing and data-quality phenomenology. It asks whether external structure information separates residual scatter after the score and labels are frozen. It is not a dark-matter halo fit, a full MOND test, or a derivation of a new gravitational law. It is also distinct from morphology-assisted model tuning: the labels are residual-blind and the main endpoint is fixed before the A/C contrast is computed.
 
-Several observational issues are directly relevant. HI asymmetry and lopsidedness are common in disk galaxies and have been quantified in WHISP-family work. Dwarf-galaxy and low-mass rotation curves can also be affected by non-circular motions, pressure support, asymmetric drift, beam smearing, and line-of-sight integration. For that reason, the paper reports distance, radius, inclination, velocity-error, Hubble-type, effect-size, and controlled-regression stress checks, and it treats unresolved observability as a limitation rather than as a solved nuisance.
+Several observational issues are directly relevant. HI asymmetry and lopsidedness are common in disk galaxies and have been quantified in WHISP-family work. Dwarf-galaxy and low-mass rotation curves can also be affected by non-circular motions, pressure support, asymmetric drift, beam smearing, and line-of-sight integration. Three-dimensional tilted-ring modelling and LITTLE THINGS analyses make clear that beam smearing, velocity dispersion, and asymmetric-drift corrections can materially affect recovered circular speeds in low-mass systems. For that reason, the paper reports distance, radius, inclination, velocity-error, Hubble-type, effect-size, and controlled-regression stress checks, and it treats unresolved observability as a limitation rather than as a solved nuisance.
 
 ## 3. Fixed Residual Model
 
@@ -80,14 +80,14 @@ The test is conditional: if the residual endpoint is sensitive to structural dis
 
 The analysis has four fixed steps:
 
-1. Compute SPARC residual summaries under the fixed projection-based prescription.
+1. Compute SPARC residual summaries under the fixed low-acceleration prescription.
 2. Assign external coherence labels without inspecting those residual summaries.
 3. Freeze the quality selection, labels, endpoint, and primary contrast.
 4. Test whether quality-selected C galaxies have higher rms-log residual scatter than quality-selected A galaxies.
 
 ## 4. Data And Endpoint
 
-The residual source is the SPARC residual summary for the fixed projection-based run. The fixed endpoint is rms-log residual scatter, evaluated after the study quality gate. Inclusion in the analysis sample requires sufficient rotation-curve support and diagnostic quality under the existing study thresholds. The quality-selected sample contains 73 galaxies: 17 A, 28 B, and 28 C.
+The residual source is the SPARC residual summary for the fixed low-acceleration score. The fixed endpoint is rms-log residual scatter, evaluated after the study quality gate. Inclusion in the analysis sample requires sufficient rotation-curve support and diagnostic quality under the existing study thresholds. The quality-selected sample contains 73 galaxies: 17 A, 28 B, and 28 C.
 
 The primary statistic is the median difference:
 
@@ -107,7 +107,7 @@ The protocol is intentionally conservative. A requires direct regular-disk evide
 
 Figure 1 shows the quality-selected residual distribution by external class. The result is not driven by a hidden residual-derived relabeling step: class labels are external, while the plotted residuals enter only after the labels are frozen.
 
-![Figure 1. Quality-selected rms-log residual distribution by external coherence class.](figures/quality_pass_rms_distribution.svg)
+![Figure 1. Residual scatter by external class.](figures/quality_pass_rms_distribution.svg)
 
 ## 6. Primary Result
 
@@ -119,13 +119,13 @@ The primary result is positive. In the quality-selected A/C sample:
 
 The direction is the predicted one: externally disturbed/coherence-poor galaxies have larger fixed-score residual scatter than externally regular galaxies. The bootstrap interval is fully positive and the one-sided permutation p-value is 0.00100.
 
-The effect is not only a p-value result. A descriptive effect-size appendix gives a common-language AUC of 0.771 for the fixed projection score, meaning that a randomly selected C galaxy has larger fixed-score rms-log scatter than a randomly selected A galaxy in about 77% of A/C pairs. The robust median-scaled effect is 0.938. These are moderate-to-large descriptive separations for an observational audit, not precision estimates of a universal physical effect size.
+The effect is not only a p-value result. A descriptive effect-size appendix gives a common-language AUC of 0.771 for the fixed low-acceleration residual score, meaning that a randomly selected C galaxy has larger fixed-score rms-log scatter than a randomly selected A galaxy in about 77% of A/C pairs. The robust median-scaled effect is 0.938. These are moderate-to-large descriptive separations for an observational audit, not precision estimates of a universal physical effect size.
 
 Secondary quality-selected checks support the same ordering. The C-minus-nonC contrast is positive (p = 0.0173), and the ordered A-to-B-to-C trend is positive (rho = 0.3620, p = 0.00110). The A/C leave-one-out check produces no sign flips.
 
 Figure 2 summarizes the primary result and the main controls on a common effect scale. This is the main visual check that the signal is not confined to the unadjusted primary contrast.
 
-![Figure 2. C-minus-A effect across primary and control analyses.](figures/control_forest_plot.svg)
+![Figure 2. C-minus-A control effects.](figures/control_forest_plot.svg)
 
 ## 7. Distance And Scale Controls
 
@@ -151,7 +151,7 @@ Every distance bin has a positive C-minus-A median difference:
 
 Figure 3 shows the same within-bin result visually. The raw distance distributions are still not identical, but the C-minus-A direction is positive inside every SPARC distance bin.
 
-![Figure 3. Within-distance-bin C-minus-A effects.](figures/distance_stratified_effects.svg)
+![Figure 3. Distance-bin effects.](figures/distance_stratified_effects.svg)
 
 Radius controls also preserve the predicted direction. The max-radius imbalance remains statistically visible (p = 0.00190), but the radius common-support test is positive (p = 0.00090), greedy radius-matched pairs are positive (p = 0.01020), and the strict <=2 kpc radius caliper remains positive but underpowered (p = 0.10969).
 
@@ -163,18 +163,18 @@ The threshold-sensitivity and weighted-residual distribution figures remain usef
 
 ## 8. Alternative Baseline Scores
 
-The same residual-blind A/C labels were also compared against three alternative baseline scores computed from the same SPARC rotmod rows and the same fixed mass-to-light factors. These are not replacement primary endpoints; they test whether the class separation is specific to the frozen projection score or reflects a broader sensitivity of smooth rotation-curve residual scores to external disturbance.
+The same residual-blind A/C labels were also compared against three alternative baseline scores computed from the same SPARC rotmod rows and the same fixed mass-to-light factors. These are not replacement primary endpoints; they test whether the class separation is specific to the frozen low-acceleration score or reflects a broader sensitivity of smooth rotation-curve residual scores to external disturbance.
 
 | score | n A | n C | median A | median C | C-A diff | p | CI low | CI high |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| fixed projection score | 17 | 28 | 0.12436 | 0.20862 | 0.08427 | 0.00210 | 0.04440 | 0.15792 |
+| fixed low-acceleration residual score | 17 | 28 | 0.12436 | 0.20862 | 0.08427 | 0.00210 | 0.04440 | 0.15792 |
 | Newtonian baryonic | 17 | 28 | 0.57056 | 0.61615 | 0.04559 | 0.39546 | -0.20123 | 0.31376 |
 | MOND simple-mu | 17 | 28 | 0.11366 | 0.23238 | 0.11872 | 0.00190 | 0.00305 | 0.17644 |
 | empirical RAR | 17 | 28 | 0.11360 | 0.22442 | 0.11082 | 0.00210 | 0.00583 | 0.17395 |
 
-The Newtonian baryonic baseline is not a significant separator in this sample. The MOND-like and empirical RAR baselines show a positive A/C separation, so the present result should not be described as uniqueness evidence for the projection formula. It is stronger and cleaner to state that external structural disturbance predicts larger scatter in a pre-frozen projection residual score, while related low-acceleration residual scores show compatible disturbance sensitivity.
+The Newtonian baryonic baseline is not a significant separator in this sample. The MOND-like and empirical RAR baselines show a positive A/C separation, so the present result should not be described as uniqueness evidence for the projection formula. It is stronger and cleaner to state that external structural disturbance predicts larger scatter in a pre-frozen low-acceleration residual score, while related low-acceleration residual scores show compatible disturbance sensitivity.
 
-The effect-size comparison makes this point more physical. The fixed projection score has AUC = 0.771, MOND simple-mu has AUC = 0.721, empirical RAR has AUC = 0.731, and the Newtonian baryonic baseline has AUC = 0.506. Thus the A/C separation is not a generic property of every residual score; it appears mainly in low-acceleration residual scores.
+The effect-size comparison makes this point more physical. The fixed low-acceleration residual score has AUC = 0.771, MOND simple-mu has AUC = 0.721, empirical RAR has AUC = 0.731, and the Newtonian baryonic baseline has AUC = 0.506. Thus the A/C separation is not a generic property of every residual score; it appears mainly in low-acceleration residual scores.
 
 ## 9. Interpretation
 
@@ -182,7 +182,7 @@ The result shows that an externally assigned, residual-blind structural label se
 
 The conservative interpretation is that the result identifies a reproducible residual-disturbance association in this audited SPARC sample. In the residual-blind, quality-selected audit, externally disturbed galaxies show larger fixed-score residual scatter than externally regular disks, and the direction persists under the current distance-matched and distance-stratified controls.
 
-The physical interpretation is not that the projection score is uniquely selected. Larger scatter in the C class may instead mark the presence of non-equilibrium structure, non-circular motions, lopsided gas kinematics, warps, or interaction-driven asymmetries. Such systems are intrinsically harder for any smooth axisymmetric rotation-curve prescription to describe, regardless of whether that prescription is Newtonian, MOND/RAR-like, or projection-based. In this sense, the C>A residual scatter is best read as a disturbance-sensitive residual phenomenology, not as a model-specific proof.
+The physical interpretation is not that one projection-motivated score is uniquely selected. Larger scatter in the C class may instead mark the presence of non-equilibrium structure, non-circular motions, lopsided gas kinematics, warps, or interaction-driven asymmetries. Such systems are intrinsically harder for any smooth axisymmetric rotation-curve prescription to describe, regardless of whether that prescription is Newtonian, MOND/RAR-like, or projection-based. In this sense, the C>A residual scatter is best read as a disturbance-sensitive residual phenomenology, not as a model-specific proof.
 
 ## 10. Limitations
 
@@ -190,7 +190,7 @@ Residual distance and radius imbalance remains the main methodological limitatio
 
 The current packet also lacks homogeneous beam-size or physical HI-resolution measurements. Distance, radius, point count, and velocity-error controls are therefore proxies for observability rather than a direct beam-smearing correction. The controlled-regression appendix should be read in that spirit: it supports the direction of the effect in simpler robust specifications, but it also shows that the class coefficient is sensitive to joint observability controls.
 
-Inclination and kinematic systematics are also not fully exhausted. The quality gate removes the most extreme inclination failures, but edge-on line-of-sight integration, low-inclination deprojection uncertainty, asymmetric drift, beam smearing, pressure support, and non-circular motions can still affect galaxy-level scatter. The inclination/systematics appendix shows that C remains larger than A in the populated 45-60, 60-75, and 75-85 degree inclination bins, but this is a descriptive check with small bin counts, not a replacement for homogeneous velocity-field quality metadata.
+Inclination and kinematic systematics are also not fully exhausted. The quality gate removes the most extreme inclination failures, but edge-on line-of-sight integration, low-inclination deprojection uncertainty, asymmetric drift, beam smearing, pressure support, and non-circular motions can still affect galaxy-level scatter. These are not merely formal nuisances: modern HI analyses often use three-dimensional tilted-ring or cube-level modelling specifically to control beam smearing and recover robust circular velocities. The inclination/systematics appendix shows that C remains larger than A in the populated 45-60, 60-75, and 75-85 degree inclination bins, but this is a descriptive check with small bin counts, not a replacement for homogeneous velocity-field quality metadata.
 
 The result should therefore be read as a residual-disturbance audit, not as a unique model-selection result. A central physical caveat is that the C class likely contains more non-equilibrium or non-circular systems, for which any smooth axisymmetric rotation-curve score would be expected to perform worse. This is not a nuisance detail; it is one plausible astrophysical origin of the observed excess scatter.
 
@@ -287,6 +287,8 @@ The raw SPARC rotmod files are not redistributed in this repository. The include
 - McGaugh, S. S., Lelli, F., & Schombert, J. M. 2016, PRL, 117, 201101, "The Radial Acceleration Relation in Rotationally Supported Galaxies", doi:10.1103/PhysRevLett.117.201101.
 - Lelli, F., McGaugh, S. S., Schombert, J. M., & Pawlowski, M. S. 2017, ApJ, 836, 152, "One Law to Rule Them All: The Radial Acceleration Relation of Galaxies", doi:10.3847/1538-4357/836/2/152.
 - van Eymeren, J., Jutte, E., Jog, C. J., Stein, Y., & Dettmar, R.-J. 2011, A&A, 530, A30, "Lopsidedness in WHISP galaxies. II. Morphological lopsidedness", doi:10.1051/0004-6361/201016178.
+- Di Teodoro, E. M., & Fraternali, F. 2015, MNRAS, 451, 3021, "3DBarolo: a new 3D algorithm to derive rotation curves of galaxies", doi:10.1093/mnras/stv1213.
+- Iorio, G., Fraternali, F., Nipoti, C., Di Teodoro, E. M., Read, J. I., & Battaglia, G. 2017, MNRAS, 466, 4159, "LITTLE THINGS in 3D: robust determination of the circular velocity of dwarf irregular galaxies", doi:10.1093/mnras/stw3285.
 - Oman, K. A., et al. 2019, MNRAS, 482, 821, "Non-circular motions and the diversity of dwarf galaxy rotation curves".
 - Oh, S.-H., Hunter, D. A., Brinks, E., et al. 2015, AJ, 149, 180, "High-resolution Mass Models of Dwarf Galaxies from LITTLE THINGS", doi:10.1088/0004-6256/149/6/180.
 

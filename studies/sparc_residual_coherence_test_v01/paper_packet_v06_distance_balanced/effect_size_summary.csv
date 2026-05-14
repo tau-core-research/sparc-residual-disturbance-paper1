@@ -1,5 +1,5 @@
 Score,Description,N_A,N_C,Median_A,Median_C,MedianDiff_C_minus_A,CohenLikeD,RobustMedianD,CommonLanguageAUC,AUC_CI95Low,AUC_CI95High,CliffsDelta
-projection_fixed,Fixed projection score,17,28,0.124355,0.208624,0.0842686,0.447033,0.93756,0.771008,0.621849,0.915966,0.542017
+projection_fixed,Fixed low-acceleration residual score,17,28,0.124355,0.208624,0.0842686,0.447033,0.93756,0.771008,0.621849,0.915966,0.542017
 newtonian_baryonic,Newtonian baryonic,17,28,0.57056,0.616147,0.0455866,0.174072,0.136256,0.506303,0.342437,0.672269,0.012605
 mond_simple_mu,MOND simple-mu,17,28,0.113658,0.232381,0.118723,0.565345,1.23381,0.720588,0.556723,0.867647,0.441176
 rar_mcgaugh,Empirical RAR,17,28,0.113603,0.22442,0.110816,0.528266,1.22378,0.731092,0.565126,0.871849,0.462185

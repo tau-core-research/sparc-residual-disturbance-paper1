@@ -59,7 +59,7 @@ def render_class_scatter_svg(
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<rect width="100%" height="100%" fill="white"/>',
-        _svg_text(width / 2, 30, title, size=18),
+        _svg_text(width / 2, 30, title, size=20),
         f'<line x1="{left}" y1="{bottom}" x2="{right}" y2="{bottom}" stroke="#333"/>',
         f'<line x1="{left}" y1="{top}" x2="{left}" y2="{bottom}" stroke="#333"/>',
     ]
@@ -67,27 +67,27 @@ def render_class_scatter_svg(
         value = min_value + (max_value - min_value) * tick / 5.0
         y = _scale(value, min_value, max_value, bottom, top)
         parts.append(f'<line x1="{left-5}" y1="{y:.2f}" x2="{right}" y2="{y:.2f}" stroke="#ddd"/>')
-        parts.append(_svg_text(left - 10, y + 4, f"{value:.2f}", size=11, anchor="end"))
+        parts.append(_svg_text(left - 10, y + 4, f"{value:.2f}", size=12, anchor="end"))
 
     for label, rows in grouped.items():
         x = x_positions[label]
-        parts.append(_svg_text(x, bottom + 32, f"{label} (n={len(rows)})", size=13))
+        parts.append(_svg_text(x, bottom + 34, f"{label} (n={len(rows)})", size=15))
         if rows:
             median = statistics.median(value for _, value in rows)
             y_med = _scale(median, min_value, max_value, bottom, top)
             parts.append(
                 f'<line x1="{x-55}" y1="{y_med:.2f}" x2="{x+55}" y2="{y_med:.2f}" '
-                f'stroke="#111" stroke-width="3"/>'
+                f'stroke="#111" stroke-width="3.5"/>'
             )
         for idx, (_, value) in enumerate(sorted(rows)):
             jitter = ((idx * 37) % 41) - 20
             y = _scale(value, min_value, max_value, bottom, top)
             parts.append(
-                f'<circle cx="{x + jitter:.2f}" cy="{y:.2f}" r="4" '
+                f'<circle cx="{x + jitter:.2f}" cy="{y:.2f}" r="4.5" '
                 f'fill="{colors[label]}" opacity="0.68"/>'
             )
 
-    parts.append(_svg_text(22, (top + bottom) / 2, ylabel or metric, size=12, anchor="middle"))
+    parts.append(_svg_text(22, (top + bottom) / 2, ylabel or metric, size=14, anchor="middle"))
     parts.append("</svg>")
     return "\n".join(parts)
 
