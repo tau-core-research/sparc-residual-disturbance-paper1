@@ -6,6 +6,7 @@ authors:
   - family-names: "Olcsak"
     given-names: "Jozsef"
 repository-code: "https://github.com/jolcsak/sparc-residual-disturbance-paper1"
+doi: "10.5281/zenodo.20181556"
 abstract: "Public reproducibility package for a residual-blind SPARC residual-disturbance audit."
 keywords:
   - SPARC
