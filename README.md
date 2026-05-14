@@ -2,7 +2,7 @@
 
 This repository is the public reproducibility package for:
 
-**External structural disturbance predicts low-acceleration rotation-curve residual scatter in SPARC**
+**External structural disturbance is associated with increased low-acceleration residual scatter in SPARC galaxies: a residual-blind audit**
 
 The package preserves the relative paths cited by the manuscript. The main paper packet is:
 

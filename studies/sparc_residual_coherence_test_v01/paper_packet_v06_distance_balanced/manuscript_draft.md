@@ -1,8 +1,8 @@
-# External structural disturbance predicts low-acceleration rotation-curve residual scatter in SPARC
+# External structural disturbance is associated with increased low-acceleration residual scatter in SPARC galaxies: a residual-blind audit
 
 ## Abstract
 
-We test whether residual-blind external galaxy-coherence labels predict scatter in low-acceleration SPARC rotation-curve residual scores. Coherence labels were assigned from source-backed external evidence, frozen before residual audit, and compared against a fixed rms-log endpoint. In the quality-selected sample, the primary C-minus-A median difference for the fixed low-acceleration residual score is 0.08427, with one-sided permutation p = 0.00100 and bootstrap 95% CI [0.04481, 0.15990]. The signal remains positive in leave-one-out, radius common-support, radius-matched, distance-matched, and distance-stratified controls. Effect-size checks show moderate A/C separation for the fixed score (AUC = 0.771) and for MOND/RAR-like baselines (AUC = 0.721-0.731), but not for the Newtonian baryonic baseline (AUC = 0.506). Residual distance/radius imbalance and observability systematics remain; the result is therefore a residual-disturbance phenomenology audit rather than a unique model-selection result.
+We present a residual-blind phenomenological audit of low-acceleration SPARC rotation-curve residual scores. Coherence labels were assigned from source-backed external evidence, frozen before residual audit, and compared against a fixed rms-log endpoint. In the quality-selected sample, the primary C-minus-A median difference for the fixed low-acceleration residual score is 0.08427, with one-sided permutation p = 0.00100 and bootstrap 95% CI [0.04481, 0.15990]. The signal remains positive in leave-one-out, radius common-support, radius-matched, distance-matched, and distance-stratified controls. Effect-size checks show moderate A/C separation for the fixed score (AUC = 0.771) and for MOND/RAR-like baselines (AUC = 0.721-0.731), but not for the Newtonian baryonic baseline (AUC = 0.506). Residual distance/radius imbalance and observability systematics remain important caveats. The result is therefore a residual-disturbance phenomenology audit, not a unique model-selection result.
 
 ## 1. Motivation
 
@@ -14,13 +14,13 @@ The study avoids optimizing labels against residuals. The primary contrast is se
 
 SPARC is a widely used rotation-curve and mass-model data set for nearby disk galaxies, combining 3.6 micron photometry with HI/Halpha rotation curves. It is also central to radial-acceleration-relation work, where observed centripetal acceleration correlates tightly with the baryonic acceleration inferred from the observed mass distribution. These results motivate low-acceleration residual scores as meaningful phenomenological objects, but they do not remove the need for disturbance and systematics checks.
 
-The present study is closest to residual auditing and data-quality phenomenology. It is not a dark-matter halo fit, a full MOND test, or a derivation of a new gravitational law; it asks whether external structure information separates residual scatter after the score and labels are frozen. This framing is deliberately conservative, but it makes the result easier to compare with other residual scores and future resolved-HI samples.
+The present study is closest to residual auditing and data-quality phenomenology. It is not a dark-matter halo fit, a full MOND test, or a derivation of a new gravitational law; it asks whether external structure information separates residual scatter after the score and labels are frozen. This framing is deliberately conservative, but it makes the result easier to compare with other residual scores and future resolved-HI samples. It also separates the present phenomenological audit from the broader projection program that originally motivated the fixed score.
 
 Relevant observational issues include HI asymmetry, lopsidedness, non-circular motions, pressure support, asymmetric drift, beam smearing, and line-of-sight integration. HI asymmetry and lopsidedness are common enough in disk samples that they cannot be treated as rare pathologies. Three-dimensional tilted-ring modelling and LITTLE THINGS analyses show that such effects can materially affect recovered circular speeds in low-mass systems. The paper therefore reports distance, radius, inclination, velocity-error, Hubble-type, effect-size, and controlled-regression stress checks, treating unresolved observability as a limitation rather than as a solved nuisance.
 
 ## 3. Fixed Residual Model
 
-The residual prescription is treated as a fixed model, not as a fitted galaxy-by-galaxy discovery model. It was originally motivated by a broader projection-based program, but the present paper evaluates only the frozen, reproducible residual score. A reader does not need to accept the broader theory to evaluate the audit below, because the operational question is simply whether this fixed score carries external structural information.
+The residual prescription is treated as a fixed model, not as a fitted galaxy-by-galaxy discovery model. It was originally motivated by a broader projection-based program, but the present paper evaluates only the frozen, reproducible residual score. A reader does not need to accept the broader theory to evaluate the audit below, because the operational question is simply whether this fixed score carries external structural information. The coefficient α = 0.360 is therefore not re-estimated here and should be read as part of the frozen score definition, not as a fitted claim of this paper.
 
 For each SPARC radius point, the baryonic Newtonian speed scale is computed from the gas, disk, and bulge terms using fixed mass-to-light factors:
 
@@ -168,6 +168,15 @@ The same residual-blind A/C labels were compared against three alternative basel
 
 The Newtonian baryonic baseline is not a significant separator. MOND-like and empirical RAR baselines show positive A/C separation, so the result should not be described as uniqueness evidence for the projection formula. The effect-size comparison sharpens this: fixed score AUC = 0.771, MOND simple-mu AUC = 0.721, empirical RAR AUC = 0.731, and Newtonian baryonic AUC = 0.506. Thus the A/C separation appears mainly in low-acceleration residual scores rather than in every residual construction. This is a useful physical constraint: the signal is not simply that disturbed galaxies look worse under any arbitrary score.
 
+The same point can be summarized as a compact effect-size sanity check:
+
+| score | AUC | robust median d | interpretation |
+| --- | ---: | ---: | --- |
+| fixed low-acceleration score | 0.771 | 0.938 | moderate A/C separation |
+| Newtonian baryonic | 0.506 | 0.136 | near non-informative |
+| MOND simple-mu | 0.721 | 1.234 | compatible low-acceleration separation |
+| empirical RAR | 0.731 | 1.224 | compatible low-acceleration separation |
+
 ## 9. Interpretation
 
 An externally assigned, residual-blind structural label separates the fixed endpoint in the predicted direction. The signal does not depend on B labels, survives leave-one-out checks, and remains positive under distance/radius/mass controls.
@@ -178,11 +187,11 @@ The physical interpretation is not that one projection-motivated score is unique
 
 ## 10. Limitations
 
-Residual distance and radius imbalance remains the main methodological limitation. Controls mitigate the risk, but raw A/C distance and radius distributions are still not exchangeable. Closer galaxies may reveal disturbances and rotation-curve substructure more readily. Strict caliper tests are positive but have limited support, and HECATE mass controls are incomplete.
+Residual distance and radius imbalance remains the main methodological limitation. Controls mitigate the risk, but raw A/C distance and radius distributions are still not exchangeable. Closer galaxies may reveal disturbances and rotation-curve substructure more readily. Strict caliper tests are positive but have limited support, and HECATE mass controls are incomplete. This remains an important caveat even though the matched and stratified controls preserve the sign of the effect.
 
 The packet lacks homogeneous beam-size or physical HI-resolution measurements. Distance, radius, point count, and velocity-error controls are therefore observability proxies rather than a direct beam-smearing correction. The controlled-regression appendix supports the direction of the effect in simpler robust specifications but shows sensitivity to joint observability controls. This matters physically because closer or better-resolved galaxies may reveal disturbance and rotation-curve substructure more readily than more distant systems.
 
-Inclination and kinematic systematics are not exhausted. The quality gate removes the most extreme inclination failures, but edge-on integration, low-inclination deprojection uncertainty, asymmetric drift, beam smearing, pressure support, and non-circular motions can still affect galaxy-level scatter. Modern HI analyses often use three-dimensional tilted-ring or cube-level modelling to control these effects. The inclination/systematics appendix shows C>A in populated inclination bins, but with small counts.
+Inclination and kinematic systematics are not exhausted. The quality gate removes the most extreme inclination failures, but edge-on integration, low-inclination deprojection uncertainty, asymmetric drift, beam smearing, pressure support, and non-circular motions can still affect galaxy-level scatter. Modern HI analyses often use three-dimensional tilted-ring or cube-level modelling to control these effects because beam smearing and pressure-supported gas can change the recovered circular speed, especially in low-mass systems. The inclination/systematics appendix shows C>A in populated inclination bins, but with small counts.
 
 The result should therefore be read as a residual-disturbance audit, not as unique model selection. A central caveat is that C likely contains more non-equilibrium or non-circular systems, for which any smooth axisymmetric score may perform worse. This is not merely a nuisance detail; it is one plausible astrophysical origin of the observed excess scatter. Baseline comparisons sharpen the interpretation: Newtonian baryonic residuals do not reproduce the sharp A/C separation, while MOND-like and empirical RAR scores show compatible positive separation. Independent validation is the main remaining data requirement.
 
@@ -190,7 +199,16 @@ The result should therefore be read as a residual-disturbance audit, not as uniq
 
 The remaining weaknesses are mainly data-side limitations. The primary A/C sample is modest (`n_A = 17`, `n_C = 28`), observability degeneracy is not fully removed, and the result is still internal to SPARC.
 
-These limitations define Phase II. A follow-up should freeze the same endpoint, labeling rule, and effect-size summaries before applying them to independent resolved-HI samples such as WHISP, LITTLE THINGS, THINGS, and LVHIS. Those samples can provide better leverage on HI asymmetry, non-circular motions, beam/resolution metadata, and dwarf-galaxy systematics. The goal is not to tune the score, but to ask whether residual-disturbance separation reproduces under independent observability conditions.
+These limitations define Phase II. A follow-up should freeze the same endpoint, labeling rule, and effect-size summaries before applying them to independent resolved-HI samples. The target samples and observability fields should be specified before the external test:
+
+| sample family | main use in Phase II | minimum added metadata |
+| --- | --- | --- |
+| WHISP | HI asymmetry and morphology stress test | beam size, distance, HI asymmetry flag |
+| LITTLE THINGS | dwarf-galaxy and pressure-support stress test | beam size, inclination, asymmetric-drift treatment |
+| THINGS | high-quality nearby disk comparison | velocity-field quality, non-circular motion flags |
+| LVHIS | local-volume resolution/selection check | beam-to-disk scale, distance, inclination |
+
+The goal is not to tune the score, but to ask whether residual-disturbance separation reproduces under independent observability conditions.
 
 If the separation reproduces after endpoint and labeling rules are frozen, the result would move from a SPARC audit signal to broader galaxy-dynamics phenomenology. If not, it should be treated as SPARC-specific or observability-driven.
 
