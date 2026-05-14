@@ -6,10 +6,11 @@ build-backend = "setuptools.build_meta"
 name = "sparc-residual-disturbance-paper1"
 version = "0.1.0"
 description = "Reproducibility package for the SPARC residual-disturbance Paper 1 audit"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 dependencies = [
     "matplotlib",
     "numpy",
+    "pytest",
     "reportlab",
 ]
 

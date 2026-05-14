@@ -1,6 +1,6 @@
 # SPARC Residual-Disturbance Paper 1
 
-This repository is the public, English-only reproducibility package for:
+This repository is the public reproducibility package for:
 
 **External structural disturbance predicts low-acceleration rotation-curve residual scatter in SPARC**
 
@@ -38,7 +38,7 @@ The SPARC rotmod files and SPARC Table1 metadata are included so the baseline-sc
 
 ## Reproduce The Packet
 
-Create an environment with Python 3.11 or newer, then install the package in editable mode:
+Create an environment with Python 3.10 or newer, then install the package in editable mode:
 
 ```bash
 python -m pip install -e .
@@ -58,4 +58,4 @@ The commands write regenerated tables, figures, appendices, and the PDF into the
 
 ## Scope
 
-This repository is a reproducibility package for Paper 1 only. It does not include private development notes, non-English drafts, or broader Tau Core theory work that is not required to reproduce the SPARC residual-disturbance audit.
+This repository is a reproducibility package for Paper 1 only. It does not include private development notes or broader Tau Core theory work that is not required to reproduce the SPARC residual-disturbance audit.

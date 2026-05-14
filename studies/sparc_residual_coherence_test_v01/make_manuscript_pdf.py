@@ -12,6 +12,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 from reportlab.graphics.shapes import Circle, Drawing, Line, Rect, String
+from reportlab import rl_config
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER, TA_LEFT
 from reportlab.lib.pagesizes import letter
@@ -34,6 +35,8 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
+
+rl_config.invariant = 1
 
 from taucore.coherence import read_coherence_labels, read_residual_summary
 from taucore.controls import QualityThresholds, join_control_rows, passes_quality, read_diagnostics
