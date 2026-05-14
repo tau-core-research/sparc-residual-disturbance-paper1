@@ -64,7 +64,13 @@ This formula is a fixed working prescription set in the project code before the 
 
 The model starts from the standard SPARC baryonic decomposition rather than from the observed residuals. The gas, disk, and bulge terms define the Newtonian baryonic baseline shown above, and the only additional model ingredient is a fixed multiplicative correction that depends on the local baryonic acceleration scale.
 
-The logarithmic factor is chosen as a conservative low-acceleration correction. In the high-acceleration regime, where the Newtonian acceleration is much larger than the reference scale, the logarithmic correction tends toward zero and the model approaches the baryonic baseline. In the low-acceleration regime, where the Newtonian acceleration is much smaller than the reference scale, the correction grows only logarithmically, avoiding the much faster divergence of a simple power-law boost.
+### Rationale For The Logarithmic Ansatz
+
+The logarithmic form of `F_proj` is not used as an arbitrary curve-fitting convenience. It was chosen instead of a power-law boost because it gives stable behavior in the ultra-low-acceleration regime: the correction can continue to grow where `a_N << a0`, but only logarithmically. This keeps the residual score sensitive to low-acceleration structure without introducing the rapid divergence that would follow from a simple power law.
+
+The same choice is also motivated by the broader projection picture behind the fixed score. Scale-free geometric projection effects naturally suggest dependence on ratios of acceleration scales rather than on an added absolute acceleration term. A logarithm of `1 + a0/a_N` is a minimal way to encode such a ratio while preserving a smooth baryonic limit at high acceleration. In this paper that motivation is used only to define a fixed dynamical score, not to claim a complete derivation of the underlying theory.
+
+In the high-acceleration regime, where the Newtonian acceleration is much larger than the reference scale, the logarithmic correction tends toward zero and the model approaches the baryonic baseline.
 
 The acceleration scale is fixed at the familiar low-acceleration value used in galaxy-dynamics phenomenology, and α = 0.360 is treated here as a fixed model constant. Neither the acceleration scale nor α is fitted in the residual-blind label audit. The coherence factor is set to its full fixed value for the present endpoint, so the study does not tune a galaxy-specific coherence parameter to improve individual fits.
 
