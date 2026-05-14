@@ -6,6 +6,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import re
+import shutil
 import statistics
 import sys
 from pathlib import Path
@@ -49,6 +50,7 @@ LABELS = ROOT / "studies/sparc_residual_coherence_test_v01/coherence_labels_v06_
 SOURCE = PACKET / "manuscript_draft.md"
 PDF = PACKET / "manuscript_draft.pdf"
 FORMULA_DIR = PACKET / "figures/formulas"
+PUBLIC_FIGURES = ROOT / "figures"
 FORMULA_DPI = 240
 FORMULA_FONT_SIZE = 11
 FONT_DIR = Path("/System/Library/Fonts/Supplemental")
@@ -688,6 +690,16 @@ def write_control_svg_artifacts() -> None:
     write_svg(render_distance_strata_svg(), PACKET / "figures/distance_stratified_effects.svg")
 
 
+def sync_public_figures() -> None:
+    PUBLIC_FIGURES.mkdir(exist_ok=True)
+    for name in [
+        "quality_pass_rms_distribution.svg",
+        "control_forest_plot.svg",
+        "distance_stratified_effects.svg",
+    ]:
+        shutil.copy2(PACKET / "figures" / name, PUBLIC_FIGURES / name)
+
+
 def markdown_table(headers: list[str], rows: list[list[str]]) -> Table:
     data = [[Paragraph(para_text(cell), styles["PaperSmall"]) for cell in headers]]
     data.extend([[Paragraph(para_text(cell), styles["PaperSmall"]) for cell in row] for row in rows])
@@ -832,6 +844,7 @@ def footer(label: str):
 def render_pdf(source: Path, pdf: Path, title: str, footer_label: str) -> None:
     write_quality_pass_svg_artifacts()
     write_control_svg_artifacts()
+    sync_public_figures()
     doc = SimpleDocTemplate(
         str(pdf),
         pagesize=letter,

@@ -13,6 +13,11 @@ studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced
 ## Main Files
 
 ```text
+LICENSE
+CITATION.cff
+requirements.txt
+tests/
+figures/
 studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced/manuscript_draft.md
 studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced/manuscript_draft.pdf
 studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced/labeling_protocol.md
@@ -54,6 +59,12 @@ PYTHONPATH=src python -m pytest -q
 ```
 
 The commands write regenerated tables, figures, appendices, and the PDF into the same paths cited by the manuscript.
+
+## Publication Hygiene
+
+The repository is intended to be public. It excludes local caches, virtual environments, macOS metadata, raw SPARC downloads, SPARC Table1 metadata, and extracted SPARC rotmod files through `.gitignore`.
+
+The tracked `outputs/` files are derived reproducibility artifacts used by the packet. Raw SPARC inputs are fetched on demand by `download_sparc_data.py` and should remain untracked.
 
 ## Scope
 

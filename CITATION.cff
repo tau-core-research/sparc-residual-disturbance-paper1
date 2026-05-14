@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this reproducibility package, please cite the archived release and the manuscript."
+title: "SPARC Residual-Disturbance Paper 1 Reproducibility Package"
+type: software
+authors:
+  - family-names: "Olcsak"
+    given-names: "Jozsef"
+repository-code: "https://github.com/jolcsak/sparc-residual-disturbance-paper1"
+abstract: "Public reproducibility package for a residual-blind SPARC residual-disturbance audit."
+keywords:
+  - SPARC
+  - galaxy rotation curves
+  - residual audit
+  - low-acceleration dynamics
+  - reproducibility
+license: MIT
+version: "0.1.0"
+date-released: "2026-05-14"
+preferred-citation:
+  type: article
+  title: "External structural disturbance predicts low-acceleration rotation-curve residual scatter in SPARC"
+  authors:
+    - family-names: "Olcsak"
+      given-names: "Jozsef"
+  year: 2026
+  notes: "Pre-submission manuscript; replace with journal DOI when available."

@@ -1,3 +1,4 @@
+import subprocess
 from pathlib import Path
 
 
@@ -31,6 +32,41 @@ def test_manuscript_referenced_paths_exist():
     ]
     missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]
     assert missing == []
+
+
+def test_publication_repo_checklist_files_exist():
+    required = [
+        ROOT / "README.md",
+        ROOT / "LICENSE",
+        ROOT / "CITATION.cff",
+        ROOT / "requirements.txt",
+        ROOT / "studies/sparc_residual_coherence_test_v01",
+        ROOT / "figures/quality_pass_rms_distribution.svg",
+        ROOT / "figures/control_forest_plot.svg",
+        ROOT / "figures/distance_stratified_effects.svg",
+        ROOT / "tests",
+    ]
+    missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]
+    assert missing == []
+
+
+def test_raw_sparc_inputs_are_not_tracked():
+    if not (ROOT / ".git").exists():
+        return
+    result = subprocess.run(
+        ["git", "ls-files"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    tracked_paths = set(result.stdout.splitlines())
+    forbidden = [
+        "data/external/SPARC_Table1.txt",
+        "data/raw/sparc_zenodo_16284118/Rotmod_LTG.zip",
+    ]
+    assert not any(path in tracked_paths for path in forbidden)
+    assert not any(path.startswith("data/sparc/Rotmod_LTG/") for path in tracked_paths)
 
 
 def test_downloaded_sparc_inputs_when_present():

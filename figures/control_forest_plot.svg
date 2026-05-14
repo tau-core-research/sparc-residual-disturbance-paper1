@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="405" viewBox="0 0 760 405">
+<rect width="100%" height="100%" fill="white"/>
+<text x="380.00" y="32.00" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#222">C-minus-A control effects</text>
+<line x1="335" y1="350" x2="665" y2="350" stroke="#333"/>
+<line x1="448.14" y1="58" x2="448.14" y2="350" stroke="#777" stroke-dasharray="5,5"/>
+<line x1="353.86" y1="345" x2="353.86" y2="356" stroke="#333"/>
+<text x="353.86" y="374.00" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#222">-0.10</text>
+<line x1="448.14" y1="345" x2="448.14" y2="356" stroke="#333"/>
+<text x="448.14" y="374.00" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#222">0.00</text>
+<line x1="542.43" y1="345" x2="542.43" y2="356" stroke="#333"/>
+<text x="542.43" y="374.00" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#222">0.10</text>
+<line x1="636.71" y1="345" x2="636.71" y2="356" stroke="#333"/>
+<text x="636.71" y="374.00" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#222">0.20</text>
+<text x="42.00" y="92.00" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#222">Primary selected C-A</text>
+<text x="710.00" y="92.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">p=0.0010</text>
+<line x1="490.40" y1="88.00" x2="598.90" y2="88.00" stroke="#116466" stroke-width="7" stroke-linecap="round"/>
+<circle cx="527.60" cy="88.00" r="6" fill="#d1495b"/>
+<text x="527.60" y="74.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">0.084</text>
+<text x="42.00" y="135.00" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#222">Distance matched pairs</text>
+<text x="710.00" y="135.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">p=0.0336</text>
+<line x1="419.69" y1="131.00" x2="603.47" y2="131.00" stroke="#116466" stroke-width="7" stroke-linecap="round"/>
+<circle cx="525.90" cy="131.00" r="6" fill="#d1495b"/>
+<text x="525.90" y="117.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">0.082</text>
+<text x="42.00" y="178.00" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#222">Distance-stratified bins</text>
+<text x="710.00" y="178.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">p=0.0094</text>
+<line x1="503.67" y1="174.00" x2="531.67" y2="174.00" stroke="#116466" stroke-width="7" stroke-linecap="round"/>
+<circle cx="517.67" cy="174.00" r="6" fill="#d1495b"/>
+<text x="517.67" y="160.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">0.074</text>
+<text x="42.00" y="221.00" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#222">Radius common support</text>
+<text x="710.00" y="221.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">p=0.0009</text>
+<line x1="492.30" y1="217.00" x2="595.17" y2="217.00" stroke="#116466" stroke-width="7" stroke-linecap="round"/>
+<circle cx="527.60" cy="217.00" r="6" fill="#d1495b"/>
+<text x="527.60" y="203.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">0.084</text>
+<text x="42.00" y="264.00" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#222">Radius matched pairs</text>
+<text x="710.00" y="264.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">p=0.0102</text>
+<line x1="411.99" y1="260.00" x2="604.51" y2="260.00" stroke="#116466" stroke-width="7" stroke-linecap="round"/>
+<circle cx="522.44" cy="260.00" r="6" fill="#d1495b"/>
+<text x="522.44" y="246.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">0.079</text>
+<text x="42.00" y="307.00" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#222">HECATE mass matched</text>
+<text x="710.00" y="307.00" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#222">p=0.0122</text>
+<line x1="498.51" y1="303.00" x2="648.06" y2="303.00" stroke="#116466" stroke-width="7" stroke-linecap="round"/>
+<circle cx="579.48" cy="303.00" r="6" fill="#d1495b"/>
+<text x="579.48" y="289.00" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#222">0.139</text>
+<text x="380.00" y="397.00" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#222">C-A median rms-log residual difference</text>
+</svg>
