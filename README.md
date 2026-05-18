@@ -12,6 +12,16 @@ studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced
 
 Archived reproducibility package DOI: [10.5281/zenodo.20183485](https://doi.org/10.5281/zenodo.20183485)
 
+## Theory Context
+
+The broader Tau Core / projection-theory background is maintained separately at:
+
+```text
+https://github.com/jolcsak/tau-core-theory
+```
+
+This Paper 1 repository is a standalone reproducibility package. It does not require accepting the Tau Core theory hub; the manuscript should be read as a residual-blind SPARC residual-disturbance audit.
+
 ## Main Files
 
 ```text
