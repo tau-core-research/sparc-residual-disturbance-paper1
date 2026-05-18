@@ -97,6 +97,14 @@ The primary statistic is the median difference:
 \end{equation}
 Inference uses count-preserving label permutation for the one-sided p-value and bootstrap resampling for the confidence interval. This keeps the test aligned with the frozen A/C class sizes and avoids model-fitting degrees of freedom. The statistic is intentionally simple, because the sample is modest and the main risk is not underfitting but over-interpreting a flexible analysis.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.94\linewidth]{figures/illustrative_rotation_curves.png}
+\caption{Illustrative rotation-curve diagnostics for DDO126 as a positive anchor and DDO50 as a control object. The panels show how the residual-score families appear in actual rotation-curve space. This visualization is not a primary endpoint and is not used for labeling, threshold selection, or model tuning.}
+\label{fig:illustrative_rotation_curves}
+\end{figure}
+
+
 \section{Labeling Protocol And External Evidence}
 Labels encode external structural state rather than residual behavior. Class A denotes externally regular/coherent disks, class C denotes externally disturbed or coherence-poor systems, and class B denotes uncertain or intermediate cases. The A/C evidence rows were expanded to reduce dependence on uncertain labels and to make the distance imbalance testable.
 

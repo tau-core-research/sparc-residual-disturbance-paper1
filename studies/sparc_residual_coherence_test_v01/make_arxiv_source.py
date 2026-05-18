@@ -3,12 +3,15 @@
 
 from __future__ import annotations
 
+import csv
+import math
 import re
 import shutil
 import zipfile
 from pathlib import Path
 
 import fitz
+import matplotlib.pyplot as plt
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -17,6 +20,7 @@ SOURCE = PACKET / "manuscript_draft.md"
 ARXIV = ROOT / "arxiv"
 FIGURES = ARXIV / "figures"
 ZIP_PATH = ROOT / "arxiv_submission_source.zip"
+ILLUSTRATIVE_CURVES = ROOT / "studies/illustrative_rotation_curves"
 
 
 FORMULAS = {
@@ -47,6 +51,124 @@ FIGURE_MAP = {
     "figures/control_forest_plot.svg": "control_forest_plot.png",
     "figures/distance_stratified_effects.svg": "distance_stratified_effects.png",
 }
+
+
+def read_csv(path: Path) -> list[dict[str, str]]:
+    with path.open(newline="", encoding="utf-8") as handle:
+        return list(csv.DictReader(handle))
+
+
+def illustrative_rotation_rows() -> dict[str, list[dict[str, str]]]:
+    sources = {
+        "DDO126": ILLUSTRATIVE_CURVES / "ddo126_points.csv",
+        "DDO50": ILLUSTRATIVE_CURVES / "ddo50_points.csv",
+    }
+    return {galaxy: read_csv(path) for galaxy, path in sources.items() if path.exists()}
+
+
+def render_illustrative_rotation_figure() -> None:
+    model_rows = illustrative_rotation_rows()
+    if not {"DDO126", "DDO50"} <= set(model_rows):
+        return
+
+    model_styles = {
+        "NewtonianBaryonic": ("Newtonian baryonic", "#6b7280", "--"),
+        "MONDSimpleMu": ("MOND simple-$\\mu$", "#2563eb", "-."),
+        "EmpiricalRARLike": ("RAR-like", "#0891b2", ":"),
+        "FixedTPG_S1": ("fixed projection", "#b91c1c", "-"),
+    }
+    plt.rcParams.update(
+        {
+            "font.size": 11,
+            "axes.titlesize": 12,
+            "axes.labelsize": 11,
+            "xtick.labelsize": 10,
+            "ytick.labelsize": 10,
+            "legend.fontsize": 8,
+            "figure.dpi": 180,
+            "savefig.dpi": 300,
+            "axes.spines.top": False,
+            "axes.spines.right": False,
+        }
+    )
+    fig, axes = plt.subplots(2, 2, figsize=(9.0, 6.5), sharex="col")
+    for col, galaxy in enumerate(["DDO126", "DDO50"]):
+        grouped: dict[float, dict[str, object]] = {}
+        for row in model_rows[galaxy]:
+            radius = float(row["RadiusKpc"])
+            grouped.setdefault(
+                radius,
+                {
+                    "RadiusKpc": radius,
+                    "VobsKms": float(row["VobsKms"]),
+                    "ErrVobsKms": float(row["ErrVobsKms"]),
+                    "RequiredS_tauDiagnostic": float(row["RequiredS_tauDiagnostic"]),
+                },
+            )
+            grouped[radius][row["Model"]] = float(row["VmodelKms"])
+
+        points = [grouped[key] for key in sorted(grouped)]
+        radii = [float(point["RadiusKpc"]) for point in points]
+        vobs = [float(point["VobsKms"]) for point in points]
+        verr = [float(point["ErrVobsKms"]) for point in points]
+        req_s = [float(point["RequiredS_tauDiagnostic"]) for point in points]
+
+        ax_curve = axes[0][col]
+        ax_curve.errorbar(
+            radii,
+            vobs,
+            yerr=verr,
+            fmt="o",
+            ms=3.3,
+            lw=0.8,
+            color="#111827",
+            ecolor="#9ca3af",
+            capsize=1.4,
+            label="$V_{\\rm obs}$",
+            zorder=5,
+        )
+        for model, (label, color, linestyle) in model_styles.items():
+            xs = [float(point["RadiusKpc"]) for point in points if model in point]
+            values = [float(point[model]) for point in points if model in point]
+            ax_curve.plot(xs, values, linestyle=linestyle, color=color, lw=1.35, label=label)
+        ax_curve.set_title(f"{galaxy} rotation curve", fontsize=11)
+        ax_curve.set_ylabel("velocity [km s$^{-1}$]")
+        ax_curve.grid(True, alpha=0.22)
+        if col == 1:
+            ax_curve.legend(frameon=False, fontsize=7.5, loc="best")
+
+        ax_diag = axes[1][col]
+        fixed_points = [point for point in points if "FixedTPG_S1" in point]
+        fixed_x = [float(point["RadiusKpc"]) for point in fixed_points]
+        fixed_residual = [
+            math.log(float(point["VobsKms"]) / float(point["FixedTPG_S1"]))
+            for point in fixed_points
+            if float(point["FixedTPG_S1"]) > 0
+        ]
+        ax_diag.axhline(0.0, color="#111827", lw=0.7, alpha=0.5)
+        ax_diag.plot(
+            fixed_x[: len(fixed_residual)],
+            fixed_residual,
+            color="#b91c1c",
+            lw=1.2,
+            label="fixed-projection log residual",
+        )
+        ax_diag.set_ylabel("log residual")
+        ax_diag.set_xlabel("radius [kpc]")
+        ax_diag.grid(True, alpha=0.22)
+        twin = ax_diag.twinx()
+        twin.plot(radii, req_s, color="#047857", lw=1.1, alpha=0.85, label="required $S_\\tau$")
+        twin.set_ylabel("required $S_\\tau$")
+        if col == 1:
+            lines, labels = ax_diag.get_legend_handles_labels()
+            lines2, labels2 = twin.get_legend_handles_labels()
+            ax_diag.legend(lines + lines2, labels + labels2, frameon=False, fontsize=7.5, loc="best")
+
+    fig.suptitle("Illustrative rotation-curve diagnostics", fontsize=12)
+    fig.tight_layout(rect=(0, 0, 1, 0.96))
+    FIGURES.mkdir(parents=True, exist_ok=True)
+    fig.savefig(FIGURES / "illustrative_rotation_curves.png", bbox_inches="tight", metadata={"CreationDate": None})
+    plt.close(fig)
 
 
 def tex_escape(text: str) -> str:
@@ -287,8 +409,23 @@ def convert_markdown_to_latex(markdown: str) -> str:
 
     if in_abstract:
         output.append(r"\end{abstract}")
+    latex = "\n".join(output)
+    data_anchor = (
+        "The statistic is intentionally simple, because the sample is modest and the main risk is not underfitting "
+        "but over-interpreting a flexible analysis.\n"
+    )
+    illustrative_block = r"""
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.94\linewidth]{figures/illustrative_rotation_curves.png}
+\caption{Illustrative rotation-curve diagnostics for DDO126 as a positive anchor and DDO50 as a control object. The panels show how the residual-score families appear in actual rotation-curve space. This visualization is not a primary endpoint and is not used for labeling, threshold selection, or model tuning.}
+\label{fig:illustrative_rotation_curves}
+\end{figure}
+"""
+    if data_anchor in latex:
+        latex = latex.replace(data_anchor, data_anchor + illustrative_block + "\n", 1)
     output.extend([r"\end{document}", ""])
-    return "\n".join(output)
+    return latex + "\n" + "\n".join([r"\end{document}", ""])
 
 
 def render_png_figures() -> None:
@@ -299,6 +436,7 @@ def render_png_figures() -> None:
         pix = doc[0].get_pixmap(matrix=fitz.Matrix(2.5, 2.5), alpha=False)
         pix.save(FIGURES / target)
         shutil.copy2(svg, FIGURES / Path(source).name)
+    render_illustrative_rotation_figure()
 
 
 def build_zip() -> None:
