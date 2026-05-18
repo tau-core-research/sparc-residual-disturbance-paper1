@@ -17,7 +17,7 @@ Archived reproducibility package DOI: [10.5281/zenodo.20183485](https://doi.org/
 The broader Tau Core / projection-theory background is maintained separately at:
 
 ```text
-https://github.com/jolcsak/tau-core-theory
+https://github.com/tau-core-research/tau-core-theory
 ```
 
 This Paper 1 repository is a standalone reproducibility package. It does not require accepting the Tau Core theory hub; the manuscript should be read as a residual-blind SPARC residual-disturbance audit.
