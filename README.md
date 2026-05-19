@@ -30,6 +30,9 @@ CITATION.cff
 requirements.txt
 tests/
 figures/
+paper1_submission_source/main.tex
+paper1_submission_source/main.pdf
+paper1_submission_source/figures/
 studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced/manuscript_draft.md
 studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced/manuscript_draft.pdf
 studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced/labeling_protocol.md
@@ -83,12 +86,13 @@ python studies/sparc_residual_coherence_test_v01/make_arxiv_source.py
 This writes:
 
 ```text
-arxiv/main.tex
-arxiv/figures/
+paper1_submission_source/main.tex
+paper1_submission_source/main.pdf
+paper1_submission_source/figures/
 arxiv_submission_source.zip
 ```
 
-The arXiv source package uses PNG figure files generated from the canonical SVG figures. The SVG figures remain in the repository and Zenodo package as vector source artifacts.
+The arXiv ZIP is built from `paper1_submission_source/` and excludes the compiled PDF and temporary LaTeX build files. The source directory keeps the same publication layout used by the Paper 2 and Paper 3 repositories. The PNG figure files are generated from the canonical SVG figures; the SVG figures remain in the repository and Zenodo package as vector source artifacts.
 
 ## Publication Hygiene
 

@@ -7,6 +7,7 @@ import csv
 import math
 import re
 import shutil
+import subprocess
 import zipfile
 from pathlib import Path
 
@@ -17,8 +18,8 @@ import matplotlib.pyplot as plt
 ROOT = Path(__file__).resolve().parents[2]
 PACKET = ROOT / "studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced"
 SOURCE = PACKET / "manuscript_draft.md"
-ARXIV = ROOT / "arxiv"
-FIGURES = ARXIV / "figures"
+SUBMISSION_SOURCE = ROOT / "paper1_submission_source"
+FIGURES = SUBMISSION_SOURCE / "figures"
 ZIP_PATH = ROOT / "arxiv_submission_source.zip"
 ILLUSTRATIVE_CURVES = ROOT / "studies/illustrative_rotation_curves"
 PUBLIC_FIGURES = ROOT / "figures"
@@ -676,34 +677,37 @@ def build_zip() -> None:
     if ZIP_PATH.exists():
         ZIP_PATH.unlink()
     with zipfile.ZipFile(ZIP_PATH, "w", compression=zipfile.ZIP_DEFLATED) as archive:
-        for path in sorted(ARXIV.rglob("*")):
+        for path in sorted(SUBMISSION_SOURCE.rglob("*")):
             if path.is_file() and path.suffix not in {".aux", ".log", ".out", ".pdf"}:
-                arcname = str(path.relative_to(ARXIV))
+                arcname = str(path.relative_to(SUBMISSION_SOURCE))
                 info = zipfile.ZipInfo(arcname)
                 info.date_time = (2026, 5, 14, 0, 0, 0)
                 info.compress_type = zipfile.ZIP_DEFLATED
                 archive.writestr(info, path.read_bytes())
 
 
-def main() -> None:
-    ARXIV.mkdir(exist_ok=True)
-    render_png_figures()
-    (ARXIV / "main.tex").write_text(convert_markdown_to_latex(SOURCE.read_text(encoding="utf-8")), encoding="utf-8")
-    (ARXIV / "README.md").write_text(
-        "\n".join(
-            [
-                "# arXiv source package",
-                "",
-                "Upload the contents of this directory, or `arxiv_submission_source.zip`, to arXiv.",
-                "The PNG figures are generated from the canonical SVG figures in the manuscript packet.",
-                "The full reproducibility package is archived at doi:10.5281/zenodo.20183485.",
-                "",
-            ]
-        ),
-        encoding="utf-8",
+def compile_pdf() -> None:
+    log_path = SUBMISSION_SOURCE / "tectonic_build.log"
+    result = subprocess.run(
+        ["tectonic", "-X", "compile", "main.tex"],
+        cwd=SUBMISSION_SOURCE,
+        check=False,
+        capture_output=True,
+        text=True,
     )
+    log_path.write_text(result.stdout + result.stderr, encoding="utf-8")
+    if result.returncode != 0:
+        raise RuntimeError(f"tectonic failed; see {log_path}")
+
+
+def main() -> None:
+    SUBMISSION_SOURCE.mkdir(exist_ok=True)
+    render_png_figures()
+    (SUBMISSION_SOURCE / "main.tex").write_text(convert_markdown_to_latex(SOURCE.read_text(encoding="utf-8")), encoding="utf-8")
+    compile_pdf()
     build_zip()
-    print(ARXIV / "main.tex")
+    print(SUBMISSION_SOURCE / "main.tex")
+    print(SUBMISSION_SOURCE / "main.pdf")
     print(ZIP_PATH)
 
 

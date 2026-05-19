@@ -1,4 +1,5 @@
 import subprocess
+import zipfile
 from pathlib import Path
 
 
@@ -44,6 +45,9 @@ def test_publication_repo_checklist_files_exist():
         ROOT / "figures/quality_pass_rms_distribution.svg",
         ROOT / "figures/control_forest_plot.svg",
         ROOT / "figures/distance_stratified_effects.svg",
+        ROOT / "paper1_submission_source/main.tex",
+        ROOT / "paper1_submission_source/main.pdf",
+        ROOT / "paper1_submission_source/figures",
         ROOT / "tests",
     ]
     missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]
@@ -52,19 +56,27 @@ def test_publication_repo_checklist_files_exist():
 
 def test_arxiv_source_package_exists():
     required = [
-        ROOT / "arxiv/main.tex",
-        ROOT / "arxiv/figures/quality_pass_rms_distribution.png",
-        ROOT / "arxiv/figures/control_forest_plot.png",
-        ROOT / "arxiv/figures/distance_stratified_effects.png",
+        ROOT / "paper1_submission_source/main.tex",
+        ROOT / "paper1_submission_source/main.pdf",
+        ROOT / "paper1_submission_source/figures/quality_pass_rms_distribution.png",
+        ROOT / "paper1_submission_source/figures/control_forest_plot.png",
+        ROOT / "paper1_submission_source/figures/distance_stratified_effects.png",
+        ROOT / "arxiv_submission_source.zip",
     ]
     missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]
     assert missing == []
 
-    source = (ROOT / "arxiv/main.tex").read_text(encoding="utf-8")
+    source = (ROOT / "paper1_submission_source/main.tex").read_text(encoding="utf-8")
     assert "\\begin{equation}" in source
     assert "\\includegraphics" in source
     assert "[DOI]" not in source
     assert "mediaimage" not in source
+
+    with zipfile.ZipFile(ROOT / "arxiv_submission_source.zip") as archive:
+        names = set(archive.namelist())
+    assert "main.tex" in names
+    assert "main.pdf" not in names
+    assert not any(name.endswith((".aux", ".log", ".out")) for name in names)
 
 
 def test_raw_sparc_inputs_are_not_tracked():
