@@ -12,6 +12,12 @@ studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced
 
 Archived reproducibility package DOI: [10.5281/zenodo.20183485](https://doi.org/10.5281/zenodo.20183485)
 
+## Author And Research Workflow
+
+I am an independent researcher using an AI-assisted workflow to develop reproducible diagnostic tests around projection-sensitive residual hypotheses. I am not claiming expert-level validation. I would value criticism on whether the proposed gate/falsification structure is scientifically meaningful.
+
+AI systems are used for drafting, mathematical organization, code generation, literature triage, and internal consistency checks. Numerical and symbolic audits can support reproducibility and error-finding, but they do not replace independent expert review or physical validation.
+
 ## Theory Context
 
 The broader Tau Core / projection-theory background is maintained separately at:
