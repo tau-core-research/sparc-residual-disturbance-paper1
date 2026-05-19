@@ -21,6 +21,13 @@ ARXIV = ROOT / "arxiv"
 FIGURES = ARXIV / "figures"
 ZIP_PATH = ROOT / "arxiv_submission_source.zip"
 ILLUSTRATIVE_CURVES = ROOT / "studies/illustrative_rotation_curves"
+PUBLIC_FIGURES = ROOT / "figures"
+ROTMOD_DIR = ROOT / "data/sparc/Rotmod_LTG"
+KPC_IN_METERS = 3.085677581e19
+DEFAULT_ALPHA = 0.360
+DEFAULT_A0_M_S2 = 1.2e-10
+DEFAULT_UPSILON_DISK = 0.5
+DEFAULT_UPSILON_BULGE = 0.7
 
 
 FORMULAS = {
@@ -56,6 +63,178 @@ FIGURE_MAP = {
 def read_csv(path: Path) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as handle:
         return list(csv.DictReader(handle))
+
+
+def rotmod_rows(galaxy: str) -> list[dict[str, float]]:
+    rows = []
+    path = ROTMOD_DIR / f"{galaxy}_rotmod.dat"
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.strip() or line.startswith("#"):
+            continue
+        radius, vobs, err_v, vgas, vdisk, vbul, *_ = [float(part) for part in line.split()]
+        rows.append(
+            {
+                "radius": radius,
+                "vobs": vobs,
+                "err_v": err_v,
+                "vgas": vgas,
+                "vdisk": vdisk,
+                "vbul": vbul,
+            }
+        )
+    return rows
+
+
+def baryonic_speed_squared(row: dict[str, float]) -> float:
+    return (
+        row["vgas"] * abs(row["vgas"])
+        + DEFAULT_UPSILON_DISK * row["vdisk"] ** 2
+        + DEFAULT_UPSILON_BULGE * row["vbul"] ** 2
+    )
+
+
+def acceleration_m_s2(vn2_kms2: float, radius_kpc: float) -> float:
+    if radius_kpc <= 0 or vn2_kms2 <= 0:
+        return math.nan
+    return vn2_kms2 * 1_000_000.0 / (radius_kpc * KPC_IN_METERS)
+
+
+def speed_factor(score: str, a_n: float) -> float:
+    if not math.isfinite(a_n) or a_n <= 0:
+        return math.nan
+    if score == "projection_fixed":
+        return 1.0 + DEFAULT_ALPHA * math.log1p(DEFAULT_A0_M_S2 / a_n)
+    if score == "mond_simple_mu":
+        g_ratio = 0.5 * (1.0 + math.sqrt(1.0 + 4.0 * DEFAULT_A0_M_S2 / a_n))
+        return math.sqrt(g_ratio)
+    if score == "rar_mcgaugh":
+        denom = 1.0 - math.exp(-math.sqrt(a_n / DEFAULT_A0_M_S2))
+        if denom <= 0:
+            return math.nan
+        return math.sqrt(1.0 / denom)
+    raise ValueError(score)
+
+
+def model_points(galaxy: str) -> list[dict[str, float]]:
+    points = []
+    for row in rotmod_rows(galaxy):
+        vn2 = baryonic_speed_squared(row)
+        if vn2 <= 0:
+            continue
+        vn = math.sqrt(vn2)
+        a_n = acceleration_m_s2(vn2, row["radius"])
+        values = {
+            "radius": row["radius"],
+            "vobs": row["vobs"],
+            "err_v": row["err_v"],
+            "vbar": vn,
+            "projection_fixed": vn * speed_factor("projection_fixed", a_n),
+            "mond_simple_mu": vn * speed_factor("mond_simple_mu", a_n),
+            "rar_mcgaugh": vn * speed_factor("rar_mcgaugh", a_n),
+        }
+        if all(math.isfinite(values[key]) and values[key] > 0 for key in ["projection_fixed", "mond_simple_mu", "rar_mcgaugh"]):
+            values["projection_residual"] = math.log(row["vobs"] / values["projection_fixed"])
+            values["mond_residual"] = math.log(row["vobs"] / values["mond_simple_mu"])
+            values["rar_residual"] = math.log(row["vobs"] / values["rar_mcgaugh"])
+            points.append(values)
+    return points
+
+
+def rms(values: list[float]) -> float:
+    return math.sqrt(sum(value * value for value in values) / len(values))
+
+
+def render_projection_vs_mond_examples() -> None:
+    examples = [
+        ("IC2574", "projection lower RMS than MOND/RAR"),
+        ("NGC1705", "projection higher RMS than MOND/RAR"),
+        ("NGC3972", "projection and MOND/RAR similar"),
+    ]
+    model_styles = {
+        "projection_fixed": ("fixed projection", "#b91c1c", "-"),
+        "mond_simple_mu": ("MOND simple-$\\mu$", "#2563eb", "-."),
+        "rar_mcgaugh": ("empirical RAR-like", "#0891b2", ":"),
+    }
+    plt.rcParams.update(
+        {
+            "font.size": 10.5,
+            "axes.titlesize": 11,
+            "axes.labelsize": 10.5,
+            "xtick.labelsize": 9.5,
+            "ytick.labelsize": 9.5,
+            "legend.fontsize": 7.8,
+            "figure.dpi": 180,
+            "savefig.dpi": 300,
+            "axes.spines.top": False,
+            "axes.spines.right": False,
+        }
+    )
+    fig, axes = plt.subplots(2, 3, figsize=(11.2, 6.5), sharex="col")
+    for col, (galaxy, role) in enumerate(examples):
+        points = model_points(galaxy)
+        radii = [point["radius"] for point in points]
+        vobs = [point["vobs"] for point in points]
+        err_v = [point["err_v"] for point in points]
+        ax_curve = axes[0][col]
+        ax_curve.errorbar(
+            radii,
+            vobs,
+            yerr=err_v,
+            fmt="o",
+            ms=3.0,
+            lw=0.75,
+            color="#111827",
+            ecolor="#9ca3af",
+            capsize=1.2,
+            label="$V_{\\rm obs}$",
+            zorder=5,
+        )
+        ax_curve.plot(radii, [point["vbar"] for point in points], color="#6b7280", lw=1.05, linestyle="--", label="$V_{\\rm bar}$")
+        for score, (label, color, linestyle) in model_styles.items():
+            ax_curve.plot(radii, [point[score] for point in points], color=color, linestyle=linestyle, lw=1.25, label=label)
+        ax_curve.set_title(f"{galaxy}: {role}")
+        ax_curve.set_ylabel("velocity [km s$^{-1}$]")
+        ax_curve.grid(True, alpha=0.22)
+        if col == 2:
+            ax_curve.legend(frameon=False, loc="best")
+
+        ax_residual = axes[1][col]
+        ax_residual.axhline(0.0, color="#111827", lw=0.75, alpha=0.55)
+        residual_keys = {
+            "projection_residual": ("fixed projection", "#b91c1c", "-"),
+            "mond_residual": ("MOND simple-$\\mu$", "#2563eb", "-."),
+            "rar_residual": ("empirical RAR-like", "#0891b2", ":"),
+        }
+        rms_text = []
+        for key, (label, color, linestyle) in residual_keys.items():
+            vals = [point[key] for point in points]
+            ax_residual.plot(radii, vals, color=color, linestyle=linestyle, lw=1.15, label=label)
+            rms_text.append(f"{label.split()[0]}={rms(vals):.3f}")
+        ax_residual.text(
+            0.03,
+            0.94,
+            "\n".join(rms_text),
+            transform=ax_residual.transAxes,
+            fontsize=7.8,
+            va="top",
+            bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.78, "pad": 1.4},
+        )
+        ax_residual.set_xlabel("radius [kpc]")
+        ax_residual.set_ylabel("log residual")
+        ax_residual.grid(True, alpha=0.22)
+        if col == 2:
+            ax_residual.legend(frameon=False, loc="best")
+
+    fig.suptitle("Fixed logarithmic projection formula versus MOND/RAR-family baselines", fontsize=12)
+    fig.tight_layout(rect=(0, 0, 1, 0.96))
+    PUBLIC_FIGURES.mkdir(parents=True, exist_ok=True)
+    FIGURES.mkdir(parents=True, exist_ok=True)
+    for target in [
+        PUBLIC_FIGURES / "projection_vs_mond_rotation_examples.png",
+        FIGURES / "projection_vs_mond_rotation_examples.png",
+    ]:
+        fig.savefig(target, bbox_inches="tight", metadata={"CreationDate": None})
+    plt.close(fig)
 
 
 def illustrative_rotation_rows() -> dict[str, list[dict[str, str]]]:
@@ -392,6 +571,15 @@ def convert_markdown_to_latex(markdown: str) -> str:
 """
     if data_anchor in latex:
         latex = latex.replace(data_anchor, data_anchor + illustrative_block + "\n", 1)
+    model_context_block = r"""
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.98\linewidth]{figures/projection_vs_mond_rotation_examples.png}
+\caption{Fixed logarithmic projection formula compared with MOND/RAR-family baselines on representative SPARC rotation curves. IC2574 illustrates a case where the fixed projection score has lower rms-log residual than the MOND/RAR-like baselines; NGC1705 illustrates the opposite; NGC3972 illustrates a near-tie. These examples are selected only to show model behavior around the logarithmic ansatz introduced above. They are not used as endpoints, tuning targets, or evidence for uniqueness over MOND/RAR-family scores. No separate numerical RMOND model is evaluated in this packet.}
+\label{fig:projection_vs_mond_rotation_examples}
+\end{figure}
+"""
+    latex = latex.replace(r"\section{Data And Endpoint}", model_context_block + "\n" + r"\section{Data And Endpoint}", 1)
     output.extend([r"\end{document}", ""])
     return latex + "\n" + "\n".join([r"\end{document}", ""])
 
@@ -405,6 +593,7 @@ def render_png_figures() -> None:
         pix.save(FIGURES / target)
         shutil.copy2(svg, FIGURES / Path(source).name)
     render_illustrative_rotation_figure()
+    render_projection_vs_mond_examples()
 
 
 def build_zip() -> None:
