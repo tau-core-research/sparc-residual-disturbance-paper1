@@ -10,7 +10,7 @@ The package preserves the relative paths cited by the manuscript. The main paper
 studies/sparc_residual_coherence_test_v01/paper_packet_v06_distance_balanced
 ```
 
-Archived reproducibility package DOI: [10.5281/zenodo.20183485](https://doi.org/10.5281/zenodo.20183485)
+Archived reproducibility package DOI: [10.5281/zenodo.20285859](https://doi.org/10.5281/zenodo.20285859)
 
 ## Author And Research Workflow
 

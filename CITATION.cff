@@ -6,7 +6,7 @@ authors:
   - family-names: "Olcsak"
     given-names: "Jozsef"
 repository-code: "https://github.com/tau-core-research/sparc-residual-disturbance-paper1"
-doi: "10.5281/zenodo.20183485"
+doi: "10.5281/zenodo.20285859"
 abstract: "Public reproducibility package for a residual-blind SPARC residual-disturbance audit."
 keywords:
   - SPARC
@@ -15,8 +15,8 @@ keywords:
   - low-acceleration dynamics
   - reproducibility
 license: MIT
-version: "1.0.2"
-date-released: "2026-05-14"
+version: "1.0.3"
+date-released: "2026-05-19"
 preferred-citation:
   type: article
   title: "External structural disturbance is associated with increased low-acceleration residual scatter in SPARC galaxies: a residual-blind audit"
