@@ -148,7 +148,6 @@ def render_projection_vs_mond_examples() -> None:
     examples = [
         ("IC2574", "projection better"),
         ("NGC1705", "projection worse"),
-        ("NGC3972", "near tie"),
     ]
     model_styles = {
         "projection_fixed": ("fixed projection", "#b91c1c", "-"),
@@ -169,7 +168,7 @@ def render_projection_vs_mond_examples() -> None:
             "axes.spines.right": False,
         }
     )
-    fig, axes = plt.subplots(2, 3, figsize=(11.2, 6.5), sharex="col")
+    fig, axes = plt.subplots(2, 2, figsize=(8.4, 6.1), sharex="col")
     for col, (galaxy, role) in enumerate(examples):
         points = model_points(galaxy)
         radii = [point["radius"] for point in points]
@@ -225,13 +224,82 @@ def render_projection_vs_mond_examples() -> None:
         if col == 2:
             ax_residual.legend(frameon=False, loc="best")
 
-    fig.suptitle("Fixed logarithmic projection formula versus MOND/RAR-family baselines", fontsize=12)
+    fig.suptitle("Fixed logarithmic projection formula: two contrasting cases", fontsize=12)
     fig.tight_layout(rect=(0, 0, 1, 0.96))
     PUBLIC_FIGURES.mkdir(parents=True, exist_ok=True)
     FIGURES.mkdir(parents=True, exist_ok=True)
     for target in [
         PUBLIC_FIGURES / "projection_vs_mond_rotation_examples.png",
         FIGURES / "projection_vs_mond_rotation_examples.png",
+    ]:
+        fig.savefig(target, bbox_inches="tight", metadata={"CreationDate": None})
+    plt.close(fig)
+
+    render_projection_near_tie_example(model_styles)
+
+
+def render_projection_near_tie_example(model_styles: dict[str, tuple[str, str, str]]) -> None:
+    galaxy = "NGC3972"
+    points = model_points(galaxy)
+    radii = [point["radius"] for point in points]
+    vobs = [point["vobs"] for point in points]
+    err_v = [point["err_v"] for point in points]
+
+    fig, axes = plt.subplots(1, 2, figsize=(8.4, 3.0))
+    ax_curve, ax_residual = axes
+    ax_curve.errorbar(
+        radii,
+        vobs,
+        yerr=err_v,
+        fmt="o",
+        ms=3.0,
+        lw=0.75,
+        color="#111827",
+        ecolor="#9ca3af",
+        capsize=1.2,
+        label="$V_{\\rm obs}$",
+        zorder=5,
+    )
+    ax_curve.plot(radii, [point["vbar"] for point in points], color="#6b7280", lw=1.05, linestyle="--", label="$V_{\\rm bar}$")
+    for score, (label, color, linestyle) in model_styles.items():
+        ax_curve.plot(radii, [point[score] for point in points], color=color, linestyle=linestyle, lw=1.25, label=label)
+    ax_curve.set_title("NGC3972: near tie")
+    ax_curve.set_xlabel("radius [kpc]")
+    ax_curve.set_ylabel("velocity [km s$^{-1}$]")
+    ax_curve.grid(True, alpha=0.22)
+    ax_curve.legend(frameon=False, fontsize=7.5, loc="best")
+
+    residual_keys = {
+        "projection_residual": ("fixed projection", "#b91c1c", "-"),
+        "mond_residual": ("MOND simple-$\\mu$", "#2563eb", "-."),
+        "rar_residual": ("empirical RAR-like", "#0891b2", ":"),
+    }
+    ax_residual.axhline(0.0, color="#111827", lw=0.75, alpha=0.55)
+    rms_text = []
+    for key, (label, color, linestyle) in residual_keys.items():
+        vals = [point[key] for point in points]
+        ax_residual.plot(radii, vals, color=color, linestyle=linestyle, lw=1.15, label=label)
+        rms_text.append(f"{label.split()[0]}={rms(vals):.3f}")
+    ax_residual.text(
+        0.03,
+        0.94,
+        "\n".join(rms_text),
+        transform=ax_residual.transAxes,
+        fontsize=7.8,
+        va="top",
+        bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.78, "pad": 1.4},
+    )
+    ax_residual.set_title("residual comparison")
+    ax_residual.set_xlabel("radius [kpc]")
+    ax_residual.set_ylabel("log residual")
+    ax_residual.grid(True, alpha=0.22)
+    ax_residual.legend(frameon=False, fontsize=7.5, loc="best")
+
+    fig.suptitle("Near-tie behavior for the fixed logarithmic projection formula", fontsize=12)
+    fig.tight_layout(rect=(0, 0, 1, 0.92))
+    for target in [
+        PUBLIC_FIGURES / "projection_vs_mond_near_tie_example.png",
+        FIGURES / "projection_vs_mond_near_tie_example.png",
     ]:
         fig.savefig(target, bbox_inches="tight", metadata={"CreationDate": None})
     plt.close(fig)
@@ -575,9 +643,16 @@ def convert_markdown_to_latex(markdown: str) -> str:
     model_context_block = r"""
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.98\linewidth]{figures/projection_vs_mond_rotation_examples.png}
-\caption{Fixed logarithmic projection formula compared with MOND/RAR-family baselines on representative SPARC rotation curves. IC2574 illustrates a case where the fixed projection score has lower rms-log residual than the MOND/RAR-like baselines; NGC1705 illustrates the opposite; NGC3972 illustrates a near-tie. These examples are selected only to show model behavior around the logarithmic ansatz introduced above. They are not used as endpoints, tuning targets, or evidence for uniqueness over MOND/RAR-family scores. No separate numerical RMOND model is evaluated in this packet.}
+\includegraphics[width=0.88\linewidth]{figures/projection_vs_mond_rotation_examples.png}
+\caption{Fixed logarithmic projection formula compared with MOND/RAR-family baselines on two contrasting SPARC rotation curves. IC2574 illustrates a case where the fixed projection score has lower rms-log residual than the MOND/RAR-like baselines; NGC1705 illustrates the opposite. These examples are selected only to show model behavior around the logarithmic ansatz introduced above. They are not used as endpoints, tuning targets, or evidence for uniqueness over MOND/RAR-family scores. No separate numerical RMOND model is evaluated in this packet.}
 \label{fig:projection_vs_mond_rotation_examples}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.82\linewidth]{figures/projection_vs_mond_near_tie_example.png}
+\caption{Near-tie behavior for NGC3972. In this case the fixed projection, MOND simple-$\mu$, and empirical RAR-like curves give very similar residual scales, illustrating why the paper treats the fixed logarithmic prescription as an operational score rather than as a unique model-selection result.}
+\label{fig:projection_vs_mond_near_tie_example}
 \end{figure}
 """
     latex = latex.replace(r"\section{Data And Endpoint}", model_context_block + "\n" + r"\section{Data And Endpoint}", 1)

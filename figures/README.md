@@ -6,6 +6,7 @@ This directory mirrors manuscript figures and generated visual diagnostics used 
 - `control_forest_plot.svg`
 - `distance_stratified_effects.svg`
 - `projection_vs_mond_rotation_examples.png`
+- `projection_vs_mond_near_tie_example.png`
 
 The three SVG figures are mirrored from the canonical packet copies under:
 
