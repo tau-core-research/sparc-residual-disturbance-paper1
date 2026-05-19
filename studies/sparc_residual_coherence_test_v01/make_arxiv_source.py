@@ -146,9 +146,9 @@ def rms(values: list[float]) -> float:
 
 def render_projection_vs_mond_examples() -> None:
     examples = [
-        ("IC2574", "projection lower RMS than MOND/RAR"),
-        ("NGC1705", "projection higher RMS than MOND/RAR"),
-        ("NGC3972", "projection and MOND/RAR similar"),
+        ("IC2574", "projection better"),
+        ("NGC1705", "projection worse"),
+        ("NGC3972", "near tie"),
     ]
     model_styles = {
         "projection_fixed": ("fixed projection", "#b91c1c", "-"),
@@ -434,6 +434,7 @@ def convert_markdown_to_latex(markdown: str) -> str:
             r"\usepackage{xurl}",
             r"\usepackage{tabularx}",
             r"\geometry{margin=1in}",
+            r"\makeatletter\setlength{\@fptop}{0pt}\makeatother",
             r"\emergencystretch=2em",
             r"\newcolumntype{Y}{>{\raggedright\arraybackslash}X}",
             r"\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}",
