@@ -34,6 +34,37 @@ upstream explanations of a terminal residual. No nonzero radial Tau coframe is
 derived here, so the existing packet is not retrospectively reinterpreted or
 rescored as a 4D-distortion detection.
 
+Later negative routes constrain the finite morphology representations that
+were actually frozen; they do not directly test a source-complete parent body.
+This does not permit same-packet repair. Any refined representation must be
+source-only, frozen before endpoint access, and tested on a new untouched
+packet.
+
+## Downstream Claim-Boundary Update
+
+The original Paper 1 numbers remain a marginal or unconditional within-SPARC
+association. A later Paper 3 repeated-cross-fitting audit found no stable
+projection-specific predictive increment after endpoint-residual-free
+observability/baryonic covariates and MOND/RAR-common residual structure were
+supplied. This is a conditional predictive-increment result, not a literal
+conditional-mutual-information estimate.
+
+A separate source-frozen seven-galaxy EDGE-CALIFA rotation-morphology proxy
+stress test also failed its directional gate: mean
+`D=-0.058679293503004035`, exact one-sided `p=0.6015625`, median
+`D=+0.11020194395988532`, and `4/7` positive values. It is an external
+morphology-proxy stress test, not an independent Tau-specific test and not a
+direct replication of the Paper 1 A/C endpoint. Conditional projection
+specificity and independent matched-tracer replication therefore remain open.
+
+Later Paper 8 public-data routes do not change that boundary. LITTLE THINGS
+provides mixed one-family transfer in 14 galaxies; the PHANGS low-order routes
+either satisfy the morphology-orthogonal null or fail wrong-family/source-label
+specificity; and the higher-dimensional PHANGS confirmatory packet fails its
+predeclared spatial-support gate without releasing a score. These are useful
+negative or caveated transfer results, not a replication of the Paper 1 A/C
+endpoint.
+
 ## Main Files
 
 ```text
@@ -122,3 +153,14 @@ The tracked `outputs/` files are derived reproducibility artifacts used by the p
 ## Scope
 
 This repository is a reproducibility package for Paper 1 only. It does not include private development notes or broader Tau Core theory work that is not required to reproduce the SPARC residual-disturbance audit.
+
+<!-- BEGIN OBSERVER UPDATE 20260914 -->
+## Observer realization update (2026-09-14)
+
+For galactic inference, these observer constructions do not derive a rotation-curve correction or identify a measured residual as a parent effect. Existing endpoint freezes and scores are unchanged.
+
+The manuscript distinguishes inherited BRAC contact, conditional coherent-state
+selection and interacting local covariance from physical observer identification,
+preparation and stable resolution. Those physical claims remain open. No
+empirical score was changed. The [dependency and source-result ledger](data/derived/observer_update_2026_09_14.json) records the assumptions and controls.
+<!-- END OBSERVER UPDATE 20260914 -->

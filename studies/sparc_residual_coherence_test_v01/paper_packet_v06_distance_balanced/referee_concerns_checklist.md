@@ -13,6 +13,8 @@ Claims not made:
 ```text
 The projection model is physically proven.
 The projection score is uniquely selected over MOND/RAR-like baselines.
+The marginal A/C association establishes conditional projection-specific information.
+The result has been independently replicated.
 Distance, radius, and observability confounding are fully eliminated.
 Dark matter, MOND, or RAR phenomenology is falsified.
 Tau Core is proven.
@@ -137,6 +139,8 @@ Answer:
 Independent validation is not claimed in Paper 1. It is the explicit Phase II requirement.
 ```
 
+A source-frozen seven-galaxy EDGE-CALIFA morphology-proxy stress test was subsequently run, but it failed its directional gate (mean D=-0.058679293503004035; exact one-sided p=0.6015625; median D=+0.11020194395988532; 4/7 positive). It is an external morphology-proxy stress test, not an independent Tau-specific test or a direct replication of the Paper 1 A/C endpoint.
+
 Best next samples:
 
 ```text
@@ -151,6 +155,16 @@ Validation rule:
 ```text
 freeze endpoint + freeze labels/proxies + freeze effect-size summaries before evaluating the external sample
 ```
+
+## Likely Referee Concern: Later Conditional Audit
+
+Answer:
+
+```text
+The Paper 1 marginal association is preserved, but a later Paper 3 cross-fitted conditional predictive-increment audit found no stable projection-contrast increment after endpoint-residual-free observability/baryonic covariates and MOND/RAR-common residual structure were supplied. Paper 1 therefore does not establish conditional projection-specific information.
+```
+
+This was an operational fixed-model predictive-increment audit, not a literal conditional-mutual-information estimate and not proof that every possible rotation-curve signal is absent.
 
 ## Submission Readiness
 

@@ -509,7 +509,7 @@ def convert_markdown_to_latex(markdown: str) -> str:
             r"\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}",
             rf"\title{{{tex_escape(title)}}}",
             r"\author{Jozsef Olcsak}",
-            r"\date{May 14, 2026\\Last revised: August 26, 2026}",
+            r"\date{May 14, 2026\\Last revised: August 30, 2026}",
             r"\begin{document}",
             r"\maketitle",
         ]

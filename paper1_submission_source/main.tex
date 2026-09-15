@@ -16,15 +16,15 @@
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
 \title{External structural disturbance is associated with increased low-acceleration residual scatter in SPARC galaxies: a residual-blind audit}
 \author{Jozsef Olcsak}
-\date{May 14, 2026\\Last revised: August 26, 2026}
+\date{May 14, 2026\\Last revised: August 30, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-We present a residual-blind phenomenological audit of low-acceleration SPARC rotation-curve residual scores. Coherence labels were assigned from source-backed external evidence, frozen before residual audit, and compared against a fixed rms-log endpoint. In the quality-selected sample, the primary C-minus-A median difference for the fixed low-acceleration residual score is 0.08427, with one-sided permutation p = 0.00100 and bootstrap 95\% CI [0.04481, 0.15990]. The signal remains positive in leave-one-out, radius common-support, radius-matched, distance-matched, and distance-stratified controls. Effect-size checks show moderate A/C separation for the fixed score (AUC = 0.771) and for MOND/RAR-like baselines (AUC = 0.721-0.731), but not for the Newtonian baryonic baseline (AUC = 0.506). Residual distance/radius imbalance and observability systematics remain important caveats. The result is therefore a residual-disturbance phenomenology audit, not a unique model-selection result.
+We present a residual-blind phenomenological audit of low-acceleration SPARC rotation-curve residual scores. Coherence labels were assigned from source-backed external evidence, frozen before residual audit, and compared against a fixed rms-log endpoint. In the quality-selected sample, the primary C-minus-A median difference for the fixed low-acceleration residual score is 0.08427, with one-sided permutation p = 0.00100 and bootstrap 95\% CI [0.04481, 0.15990]. The signal remains positive in leave-one-out, radius common-support, radius-matched, distance-matched, and distance-stratified controls. Effect-size checks show moderate A/C separation for the fixed score (AUC = 0.771) and for MOND/RAR-like baselines (AUC = 0.721-0.731), but not for the Newtonian baryonic baseline (AUC = 0.506). Residual distance/radius imbalance and observability systematics remain important caveats. A later conditional predictive-increment audit found no stable projection-specific increment in the same frozen A/C packet, and a source-frozen seven-galaxy EDGE-CALIFA morphology-proxy stress test failed its directional endpoint. These later results leave the marginal association intact but prevent interpreting it as conditional projection-specific information or independent external validation.
 
 \end{abstract}
 \section{Motivation}
-The central question is whether external, residual-blind structural disturbance carries information about a fixed SPARC residual-scatter endpoint. If the endpoint is sensitive to real astrophysical disturbance rather than only fitting noise or post-hoc grouping, externally disturbed galaxies should show larger scatter than externally regular disks.
+The central question is whether external, residual-blind structural disturbance is marginally associated with a fixed SPARC residual-scatter endpoint. If the endpoint is sensitive to real astrophysical disturbance rather than only fitting noise or post-hoc grouping, externally disturbed galaxies should show larger scatter than externally regular disks.
 
 The study avoids optimizing labels against residuals. The primary contrast is set before the audit: quality-selected C galaxies minus quality-selected A galaxies, measured by median rms-log residual with a one-sided greater alternative. B-labeled galaxies remain useful for trend and secondary checks, but the primary endpoint is the clean A/C separation. This design keeps the study closer to a residual-blind audit than to a morphology-assisted refit, and it makes a null result possible in the usual statistical sense.
 
@@ -36,7 +36,7 @@ The present study is closest to residual auditing and data-quality phenomenology
 Relevant observational issues include HI asymmetry, lopsidedness, non-circular motions, pressure support, asymmetric drift, beam smearing, and line-of-sight integration. HI asymmetry and lopsidedness are common enough in disk samples that they cannot be treated as rare pathologies. Three-dimensional tilted-ring modelling and LITTLE THINGS analyses show that such effects can materially affect recovered circular speeds in low-mass systems. The paper therefore reports distance, radius, inclination, velocity-error, Hubble-type, effect-size, and controlled-regression stress checks, treating unresolved observability as a limitation rather than as a solved nuisance.
 
 \section{Fixed Residual Model}
-The residual prescription is treated as a fixed model, not as a fitted galaxy-by-galaxy discovery model. It was originally motivated by a broader projection-based program, but the present paper evaluates only the frozen, reproducible residual score. A reader does not need to accept the broader theory to evaluate the audit below, because the operational question is simply whether this fixed score carries external structural information. The coefficient $\alpha$ = 0.360 is therefore not re-estimated here and should be read as part of the frozen score definition, not as a fitted claim of this paper.
+The residual prescription is treated as a fixed model, not as a fitted galaxy-by-galaxy discovery model. It was originally motivated by a broader projection-based program, but the present paper evaluates only the frozen, reproducible residual score. A reader does not need to accept the broader theory to evaluate the audit below, because the operational question is simply whether this fixed score shows a marginal association with an external structural label. The coefficient $\alpha$ = 0.360 is therefore not re-estimated here and should be read as part of the frozen score definition, not as a fitted claim of this paper.
 
 For each SPARC radius point, the baryonic Newtonian speed scale is computed from the gas, disk, and bulge terms using fixed mass-to-light factors:
 
@@ -124,7 +124,7 @@ Inference uses count-preserving label permutation for the one-sided p-value and 
 \section{Labeling Protocol And External Evidence}
 Labels encode external structural state rather than residual behavior. Class A denotes externally regular/coherent disks, class C denotes externally disturbed or coherence-poor systems, and class B denotes uncertain or intermediate cases. The A/C evidence rows were expanded to reduce dependence on uncertain labels and to make the distance imbalance testable.
 
-This discipline is central: the result is not that an analyst can separate high- and low-residual galaxies after inspecting residuals, but that residual-blind external evidence predicts the frozen endpoint. The packet records this audit layer in \path{labeling_protocol.md}, which defines the source rules and A/B/C decision logic, and in \path{external_evidence_table.csv}, which gives row-level evidence summaries, source links, reviewer/date fields, and residual-blind flags.
+This discipline is central: the result is not that an analyst can separate high- and low-residual galaxies after inspecting residuals, but that a residual-blind external label is marginally associated with the frozen endpoint. The packet records this audit layer in \path{labeling_protocol.md}, which defines the source rules and A/B/C decision logic, and in \path{external_evidence_table.csv}, which gives row-level evidence summaries, source links, reviewer/date fields, and residual-blind flags.
 
 The protocol is intentionally conservative. A requires direct regular-disk evidence such as regular HI/Halpha kinematics, low asymmetry, or a well-defined symmetric rotation curve. C requires direct disturbance evidence such as disturbed HI morphology, lopsided velocity fields, tidal or interaction signatures, or warp evidence tied to gas morphology or kinematics. Environment-only, bar-only, or rotation-curve-quality-only information is not enough for an A/C call; ambiguous rows default to B. This makes some classifications less aggressive, but it reduces the risk that the final contrast is created by weak or indirect evidence.
 
@@ -262,6 +262,16 @@ The conservative interpretation is a reproducible residual-disturbance associati
 
 The physical interpretation is not that one projection-motivated score is uniquely selected. Larger C-class scatter may mark non-equilibrium structure, non-circular motions, lopsided gas kinematics, warps, or interaction-driven asymmetries. Such systems are harder for any smooth axisymmetric rotation-curve prescription to describe. The C$>$A residual scatter is therefore best read as disturbance-sensitive residual phenomenology, not model-specific proof.
 
+Two downstream audits narrow this interpretation without changing any Paper 1 statistic. First, a retrospective Paper 3 fixed-model conditional predictive-increment audit used the same frozen 45-galaxy A/C sample, repeated stratified five-fold cross-fitting with 20 repetitions, endpoint-residual-free observability/baryonic covariates, and residual structure common to MOND/RAR-like baselines. The unique projection contrast supplied no stable held-out proper-score increment under either declared baseline and any of the three declared regularization values. At the primary O7B7, C=0.3 setting, the AUC change was -0.01890756, the log-loss improvement was -0.03994321, and the Brier-score improvement was -0.01188683; negative improvement means worse performance. This is an operational conditional predictive-increment result, not a literal conditional-mutual-information estimate and not a theorem that all additional rotation information is absent.
+
+Second, a source-frozen seven-galaxy EDGE-CALIFA rotation-morphology proxy endpoint returned mean D=-0.058679293503004035, exact one-sided p=0.6015625, median D=+0.11020194395988532, and 4/7 positive galaxy-level values. It therefore failed its directional prevalidation gate. This is an external morphology-proxy stress test, not an independent Tau-specific test and not a direct replication of the Paper 1 A/C endpoint.
+
+The subsequent public-data ladder also remains below claim-raising status. A prospective LITTLE THINGS replay transfers one frozen scale-tail family to 14 galaxies and 313 points, but gives only a 0.101 km/s mean RMSE advantage over TPG/v6, is 0.649 km/s worse than MOND, and cannot test multi-family attribution. In PHANGS, a three-galaxy morphology-orthogonal low-order CO--Halpha statistic is consistent with zero (p=0.8082); a separate two-galaxy m=2 statistic is numerically non-null but its m=1 control is also non-null and its source-label integrity audit fails. A higher-dimensional four-galaxy PHANGS confirmatory packet stops at its predeclared azimuth-sector occupancy gate and releases no score. These results constrain different proxy endpoints rather than directly repeating the Paper 1 A/C statistic.
+
+The claim boundary after these audits is consequently an unconditional or marginal within-SPARC association. Paper 1 does not establish conditional projection-specific information, an independently replicated morphology law, or a physical Tau mechanism. The additional public-data routes strengthen the falsification record, not the physical claim.
+
+These failures must also be read at the resolution actually tested. Each audit freezes a finite morphology representation Phi\_k, not a source-complete parent body. A terminal law can descend through Phi\_k only if two body states with the same Phi\_k value always have the same terminal image. Failure therefore constrains the declared representation and descent, not every possible richer morphology. This distinction is not a license for post-hoc rescue: once terminal vector y is known, appending y to a source span makes its projected residual zero by construction. Any richer representation must be built from source-only information, frozen, and tested on a new untouched packet.
+
 The later Tau Core full-4D descent does not alter any statistic reported here. It only widens the possible upstream interpretation of a terminal residual: body structure, lapse, shift, spatial geometry, source-observer photon transfer, and ordinary astrophysical or observational effects may contribute. Because no nonzero radial Tau coframe law has been derived or frozen, this audit does not identify any of those origins and must not be retrospectively rescored with a fitted 4D correction. The exact later scoring compiler strengthens this prohibition: a mixed parent Hessian is not itself a signal, and the scoreable source object would be
 
 \begin{equation}
@@ -276,7 +286,7 @@ The packet lacks homogeneous beam-size or physical HI-resolution measurements. D
 
 Inclination and kinematic systematics are not exhausted. The quality gate removes the most extreme inclination failures, but edge-on integration, low-inclination deprojection uncertainty, asymmetric drift, beam smearing, pressure support, and non-circular motions can still affect galaxy-level scatter. Modern HI analyses often use three-dimensional tilted-ring or cube-level modelling to control these effects because beam smearing and pressure-supported gas can change the recovered circular speed, especially in low-mass systems. The inclination/systematics appendix shows C$>$A in populated inclination bins, but with small counts.
 
-The result should therefore be read as a residual-disturbance audit, not as unique model selection. A central caveat is that C likely contains more non-equilibrium or non-circular systems, for which any smooth axisymmetric score may perform worse. This is not merely a nuisance detail; it is one plausible astrophysical origin of the observed excess scatter. Baseline comparisons sharpen the interpretation: Newtonian baryonic residuals do not reproduce the sharp A/C separation, while MOND-like and empirical RAR scores show compatible positive separation. Independent validation is the main remaining data requirement.
+The result should therefore be read as a residual-disturbance audit, not as unique model selection. A central caveat is that C likely contains more non-equilibrium or non-circular systems, for which any smooth axisymmetric score may perform worse. This is not merely a nuisance detail; it is one plausible astrophysical origin of the observed excess scatter. Baseline comparisons sharpen the interpretation: Newtonian baryonic residuals do not reproduce the sharp A/C separation, while MOND-like and empirical RAR scores show compatible positive separation. The later conditional projection-contrast audit and the small EDGE-CALIFA proxy stress test are both negative; independent matched-tracer validation therefore remains open.
 
 \section{Known Limitations And Phase II Validation Plan}
 The remaining weaknesses are mainly data-side limitations. The primary A/C sample is modest (\texttt{n\_A = 17}, \texttt{n\_C = 28}), observability degeneracy is not fully removed, and the result is still internal to SPARC.
@@ -299,6 +309,8 @@ LVHIS & local-volume resolution/selection check & beam-to-disk scale, distance, 
 \end{tabularx}
 \end{table}
 The goal is not to tune the score, but to ask whether residual-disturbance separation reproduces under independent observability conditions.
+
+The seven-galaxy EDGE-CALIFA morphology-proxy stress test does not satisfy this Phase II requirement: it used a different proxy endpoint, failed its directional gate, and was not an independent Tau-specific test. A claim-raising replication still requires a new source-frozen matched-tracer cohort with the nuisance and comparator structure fixed before endpoint inspection.
 
 If the separation reproduces after endpoint and labeling rules are frozen, the result would move from a SPARC audit signal to broader galaxy-dynamics phenomenology. If not, it should be treated as SPARC-specific or observability-driven.
 
@@ -358,9 +370,54 @@ Raw SPARC rotmod files are not redistributed. The download script fetches the pu
 \item Oman, K. A., et al. 2019, MNRAS, 482, 821, "Non-circular motions and the diversity of dwarf galaxy rotation curves".
 \item Oh, S.-H., Hunter, D. A., Brinks, E., et al. 2015, AJ, 149, 180, "High-resolution Mass Models of Dwarf Galaxies from LITTLE THINGS", \href{https://doi.org/10.1088/0004-6256/149/6/180}{\nolinkurl{doi:10.1088/0004-6256/149/6/180}}.
 \end{itemize}
+% BEGIN OBSERVER UPDATE 20260914
+\section{Observer realization: inherited results and physical boundary}
+\label{sec:observer-update-20260914}
+The current observer programme distinguishes a conditional mathematical
+construction from an occupied physical measuring system. The source order
+remains base plus one universal seed, stabilized morphological response,
+observer--source restriction, shared descriptor, and resolved terminal
+readouts. Neither a detector nor an empirical residual constructs the parent
+body backwards. Dynamics below concern downstream subsystems only.
+
+The canonical observer-origin derivation, Sections 22--26, owns the following
+results. The existing joint source action fixes static and frequency-dependent
+response together. Variation of the BRAC potential couples to the field
+square; a linear field coupling is a distinct comparator unless derived by
+expansion about an occupied background. Fixed canonical means select a unique
+coherent state in a finite positive harmonic packet only if there is no excess
+fluctuation energy. This is a free/asymptotic preparation statement, not the
+ground state of an interacting detector. For the existing coupled harmonic
+pair, the joint ground is pure but either local subsystem is mixed, with its
+covariance fixed by the complete joint Hamiltonian.
+
+These are conditional derivations and internal numerical checks. The actual
+observer--source context, physical preparation process, kinetic/energy
+calibration and stable operational resolution remain unproved. The existing
+ORA-T1 selector conditionally chooses stable quantizers when the occupied
+context, admissible partition family and positive closure barrier are supplied;
+it does not establish those physical premises. A computed ground state is not
+a preparation mechanism, and a covariance or optimal abstract measurement is
+not an implemented stable quantizer $Q_{OS}$.
+
+\paragraph{Ownership and use.}
+The central observer-origin note owns the new contact, state and covariance
+derivations; the body-readout technical companion carries the consolidated
+mathematics. Foundation Papers IV, V and VI retain physical-selection,
+clock-descent and quantum-readout ownership, respectively. This paper imports
+only the consequences within its scope. No observational dataset, baseline,
+frozen coefficient, score or empirical conclusion is revised by this update.
+The reproducibility supplement records the source hashes and the exact
+conditional/physical distinction.
+
+
+\paragraph{Consequence for this paper.}
+For galactic inference, these observer constructions do not derive a rotation-curve correction or identify a measured residual as a parent effect. Existing endpoint freezes and scores are unchanged.
+% END OBSERVER UPDATE 20260914
+
 \section{Conclusion}
 The distance- and scale-controlled analysis finds a positive association between external structural-disturbance labels and fixed-score residual scatter. Externally disturbed or coherence-poor galaxies show larger scatter than externally regular disks, and the direction persists under matched and stratified controls.
 
-The result indicates a reproducible residual-disturbance association in the audited SPARC sample. A natural interpretation is that C-class systems contain more non-equilibrium or non-circular motion, increasing scatter for smooth axisymmetric models. Because distance/radius imbalance remains and MOND/RAR-like baselines show compatible disturbance sensitivity, this is not standalone proof of the projection model. The supported statement is narrower but still useful: the frozen residual score carries external, residual-blind structural information in this sample, and the main controls do not explain the signal away.
+The result indicates a reproducible marginal residual-disturbance association in the audited SPARC sample. A natural interpretation is that C-class systems contain more non-equilibrium or non-circular motion, increasing scatter for smooth axisymmetric models. Because distance/radius imbalance remains, MOND/RAR-like baselines show compatible disturbance sensitivity, the later conditional projection-contrast audit is negative, and the seven-galaxy EDGE-CALIFA morphology-proxy stress test failed, this is not standalone proof of the projection model. The supported statement is narrower: the frozen residual score is unconditionally associated with residual-blind external labels in this SPARC sample; conditional projection-specific information and independent external replication remain unestablished.
 
 \end{document}

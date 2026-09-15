@@ -2,7 +2,7 @@
 
 ## Current Status
 
-Paper 1 is closed as a statistical/methodological short paper candidate. The frozen claim is a reproducible residual-disturbance audit in SPARC, not a physical-theory proof and not a unique validation of the projection formula. The exploratory `S_tau` extensions remain packet material for follow-up work only.
+Paper 1 is closed as a statistical/methodological short paper candidate. The frozen claim is a reproducible marginal residual-disturbance association in SPARC, not a physical-theory proof and not a unique validation of the projection formula. A later Paper 3 conditional predictive-increment audit found no stable projection-specific increment in the same 45-galaxy A/C packet, and a source-frozen seven-galaxy EDGE-CALIFA morphology-proxy stress test failed its directional endpoint. These negative downstream audits do not erase the marginal Paper 1 result, but they block conditional, projection-specific, and independently replicated interpretations. The exploratory `S_tau` extensions remain packet material for follow-up work only.
 
 ## What Is Strong
 
@@ -15,7 +15,7 @@ Paper 1 is closed as a statistical/methodological short paper candidate. The fro
 - Radius common-support and greedy radius-matched controls preserve the signal.
 - Separate `labeling_protocol.md` and row-level `external_evidence_table.csv` are now in the packet.
 - Alternative baseline-score checks are now in the packet: Newtonian baryonic is not significant, while MOND simple-mu and empirical RAR show compatible positive disturbance sensitivity.
-- A Tau Core specificity-map scaffold is now in the packet. It compares projection-vs-MOND/RAR absolute residual differences by acceleration bin, radius bin, and A/C class, both pointwise and galaxy-aggregated.
+- A historical Tau Core specificity-map scaffold remains in the packet. It compares projection-vs-MOND/RAR absolute residual differences by acceleration bin, radius bin, and A/C class, both pointwise and galaxy-aggregated; the later conditional gate failed, so the map is diagnostic only.
 - `taucore_extended_formula_review.md` now separates the current high-coherence TPG/projection score from the only currently code-ready extended Tau Core candidate, the externally defined `S_tau`-gated formula.
 - `taucore_extended_formula_comparison.md` now compares old high-coherence TPG against naive class/evidence-gated `S_tau` variants. The naive variants increase A/C separation but worsen global residual scatter, so they are not a paper-grade improvement.
 - `download_s_tau_sources.py` downloads WHISP, Reynolds+2020, Yu+2022/ALFALFA, and WHISP merger morphology tables from VizieR. Current coverage is 33/73 quality-pass galaxies with direct source matches.
@@ -40,16 +40,18 @@ Paper 1 is closed as a statistical/methodological short paper candidate. The fro
 - MOND/RAR-like baselines also separate A/C, so the paper should not claim the projection formula is uniquely selected by this audit.
 - The specificity map is exploratory until frozen as a separate endpoint with galaxy-level uncertainty and an explicit independent validation rule.
 - The held-out source-family test is not yet validating: WHISP/global overlap is only seven galaxies and cross-family `S_tau` agreement is weak.
+- The later Paper 3 audit found no stable conditional projection-contrast increment after endpoint-residual-free observability/baryonic and MOND/RAR-common structure were supplied.
+- The source-frozen EDGE-CALIFA proxy stress test failed: mean `D=-0.058679293503004035`, exact one-sided `p=0.6015625`, median `D=+0.11020194395988532`, and `4/7` positive values. It is not an independent Tau-specific test.
 
 ## Recommended Claim
 
-Externally disturbed SPARC galaxies show larger fixed-score residual scatter than externally regular disks under residual-blind labeling, and the direction persists under distance-matched and distance-stratified controls. Baseline comparisons should be reported transparently: the result is a residual-disturbance association, not a uniqueness proof for the projection formula.
+Externally disturbed SPARC galaxies show larger fixed-score residual scatter than externally regular disks under residual-blind labeling, and the direction persists under distance-matched and distance-stratified controls. This is an unconditional or marginal within-SPARC association. Baseline comparisons and the later negative conditional/proxy audits must be reported transparently: the result is not conditional projection-specific information, independent replication, or a uniqueness proof for the projection formula.
 
 ## Claim To Avoid
 
-Do not claim that the projection model is physically proven or uniquely correct. Do not claim that distance and radius confounding are fully eliminated. The right wording is mitigated, stress-tested, direction-preserving, and statistically/methodologically positive.
+Do not claim that the projection model is physically proven or uniquely correct. Do not claim that distance and radius confounding are fully eliminated. Do not describe the marginal A/C separation as stable conditional projection-specific information or as independently replicated. The right wording is unconditional within-SPARC association with negative downstream conditional and proxy stress tests.
 
-## Tau Core Specificity Lead
+## Historical Tau Core Specificity Map
 
 The strongest next discriminator is not another raw A/C residual test. It is a residual-shape test:
 
@@ -58,7 +60,7 @@ delta_abs = abs(residual_projection_fixed) - abs(residual_MOND_or_RAR)
 interaction = median(delta_abs | C, bin) - median(delta_abs | A, bin)
 ```
 
-The current exploratory map points to low-acceleration and outer-radius bins as promising places to freeze a Tau Core-vs-MOND/RAR comparison. Negative C-class deltas mean the projection score has smaller absolute residuals than the comparator in disturbed rows. This should be handled as Paper 2 / preregistered validation material, not as a new primary claim in Paper 1.
+The exploratory map pointed to low-acceleration and outer-radius bins as places to freeze a Tau Core-vs-MOND/RAR comparison. Negative C-class deltas mean the projection score has smaller absolute residuals than the comparator in disturbed rows. The later Paper 3 conditional predictive-increment gate failed on the same 45 labels, so this is now a historical diagnostic map, not a promising specificity lead and not a route for same-sample claim raising.
 
 ## Extended Formula Status
 
@@ -98,4 +100,4 @@ The `S_tau` material stays in the packet as an exploratory bridge to Paper 2. It
 
 Paper 1 is ready to freeze for handoff/review in its current scope. Do not add new Paper 1 endpoints. Further work should move to the Paper 1 companion model note or to the separate SPARC follow-up pilot for radial `S_tau(R)`.
 
-The Phase II validation plan is now part of the paper framing: reproduce the residual-disturbance separation in independent resolved-HI samples or treat the present result as SPARC-specific / observability-driven.
+The Phase II validation plan is now part of the paper framing. The seven-galaxy EDGE-CALIFA morphology-proxy stress test was source-frozen but negative and is not a direct Paper 1 replication. Claim raising requires a new source-frozen independent matched-tracer cohort; otherwise the present result remains SPARC-specific or potentially observability-driven.

@@ -27,6 +27,7 @@ def test_manuscript_referenced_paths_exist():
         PACKET / "figures/quality_pass_rms_distribution.svg",
         PACKET / "figures/control_forest_plot.svg",
         PACKET / "figures/distance_stratified_effects.svg",
+        PACKET / "figures/formulas/formula_249ce088cdc77032.png",
         ROOT / "outputs/external_proxy_v06_distance_balanced/sparc_residual_summary.csv",
         ROOT / "outputs/external_proxy_v06_distance_balanced/coherence_label_diagnostics.csv",
         ROOT / "outputs/hecate_crossmatch_summary.csv",
@@ -128,3 +129,18 @@ def test_core_scripts_are_importable():
     import taucore.galaxy_activation  # noqa: F401
     import taucore.metadata  # noqa: F401
     import taucore.sparc  # noqa: F401
+
+
+def test_downstream_negative_audits_narrow_but_do_not_erase_claim():
+    manuscript = (PACKET / "manuscript_draft.md").read_text(encoding="utf-8")
+    tex = (ROOT / "paper1_submission_source/main.tex").read_text(encoding="utf-8")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    status = (PACKET / "paper_status.md").read_text(encoding="utf-8")
+
+    for text in [manuscript, tex, readme, status]:
+        assert "conditional predictive-increment" in text
+        assert "0.6015625" in text
+
+    assert "unconditional or marginal within-SPARC association" in manuscript
+    assert "not an independent Tau-specific test" in manuscript
+    assert "no stable conditional projection-contrast increment" in status
