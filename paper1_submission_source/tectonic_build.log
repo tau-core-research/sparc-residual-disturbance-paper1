@@ -2,5 +2,8 @@ note: "version 2" Tectonic command-line interface activated
 note: Running TeX ...
 note: Rerunning TeX because "main.out" changed ...
 note: Running xdvipdfmx ...
-note: Writing `main.pdf` (1.0388689041137695 MiB)
+note: Writing `main.pdf` (1.0428733825683594 MiB)
 note: Skipped writing 2 intermediate files (use --keep-intermediates to keep them)
+warning: main.tex:268: Overfull \hbox (34.52275pt too wide) in paragraph at lines 267--268
+warning: main.tex:268: Overfull \hbox (34.52275pt too wide) in paragraph at lines 267--268
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
